@@ -1,0 +1,6 @@
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\12. Little John\bin\Debug\_12.Little_John.exe.config
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\12. Little John\bin\Debug\_12.Little_John.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\12. Little John\bin\Debug\_12.Little_John.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\12. Little John\obj\Debug\12. Little John.csprojResolveAssemblyReference.cache
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\12. Little John\obj\Debug\_12.Little_John.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\12. Little John\obj\Debug\_12.Little_John.pdb

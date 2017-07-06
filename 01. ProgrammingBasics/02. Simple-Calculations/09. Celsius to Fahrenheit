@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace Hello_Word
+{
+	class Program
+	{
+		static void Main (string[] args)
+		{
+          float celsius = float.Parse(Console.ReadLine());
+          float Fahrenheit = celsius * 1.8F + 32;
+          
+          Console.WriteLine(Fahrenheit);
+        }
+    }
+}

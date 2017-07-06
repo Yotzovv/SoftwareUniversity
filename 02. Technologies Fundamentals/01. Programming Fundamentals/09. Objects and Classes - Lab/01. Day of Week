@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+
+namespace SumAdjacentEqualNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string date = Console.ReadLine();
+            DateTime lol = DateTime.ParseExact(date, "d-M-yyyy", CultureInfo.InvariantCulture);
+            Console.WriteLine(lol.DayOfWeek);
+        }
+    }
+}

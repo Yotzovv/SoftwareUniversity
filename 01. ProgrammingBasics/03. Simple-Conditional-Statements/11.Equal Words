@@ -1,0 +1,22 @@
+using System;
+
+namespace asdasdasd
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			string word = Console.ReadLine ();
+			word = word.ToLower ();
+
+			string word1 = Console.ReadLine ();
+			word1 = word1.ToLower ();
+
+			if (word == word1) {
+				Console.WriteLine ("yes");
+			} else {
+				Console.WriteLine ("no");
+			}
+		}
+	}
+}

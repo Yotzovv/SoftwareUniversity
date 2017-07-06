@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Globalization;
+using System.Numerics;
+namespace SalesReport
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            BigInteger number1 = BigInteger.Parse(Console.ReadLine());
+            BigInteger number2 = BigInteger.Parse(Console.ReadLine());
+            Console.WriteLine(number1 * number2);
+
+        }
+    }
+}

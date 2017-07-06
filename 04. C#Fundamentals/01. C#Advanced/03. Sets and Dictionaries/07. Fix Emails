@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StackAndQueues
+{
+    class ReverseString
+    {
+        static void Main(string[] args)
+        {
+            string name = string.Empty;
+            string email = string.Empty;
+            var emailsBook = new Dictionary<string, string>();
+
+            while(!(name = Console.ReadLine()).Equals("stop"))
+            {
+                email = Console.ReadLine().Trim();
+                var domain = email.Substring(email.IndexOf('.') + 1);
+
+                if(emailsBook.ContainsKey(name))
+                {
+                    emailsBook[name] = email;
+                }
+                else if (domain.ToLower() == "bg")
+                {
+                    emailsBook.Add(name, email);
+                }
+            }
+
+            foreach (var item in emailsBook)
+            {
+                Console.WriteLine($"{item.Key} -> {item.Value}");
+            }
+        }
+    }
+}

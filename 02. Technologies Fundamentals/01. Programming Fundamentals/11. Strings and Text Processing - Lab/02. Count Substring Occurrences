@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Globalization;
+
+namespace SalesReport
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string text = Console.ReadLine().ToLower();
+            string word = Console.ReadLine().ToLower();
+            int index = text.IndexOf(word);
+            int counter = 0;
+
+            while(index != -1)
+            {
+                counter++;
+                index = text.IndexOf(word, index + 1);
+            }
+            Console.WriteLine(counter);
+        }
+    }
+}

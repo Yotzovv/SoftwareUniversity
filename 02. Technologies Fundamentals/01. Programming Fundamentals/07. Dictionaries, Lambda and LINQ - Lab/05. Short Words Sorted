@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace ExtractSentencesbyKeyword
+{
+    class ExtractSentencesbyKeyword
+    {
+        static void Main(string[] args)
+        {
+            string[] text = Console.ReadLine().ToLower().Trim().Split(new char[] { '.', ',', ':', ';', '(', ')', '[', ']', '"', '\\', '/', '!', '?', ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+            Console.WriteLine(string.Join(", ", text.Where(x => x.Length < 5).OrderBy(x => x).Distinct()));
+        }
+    }
+}

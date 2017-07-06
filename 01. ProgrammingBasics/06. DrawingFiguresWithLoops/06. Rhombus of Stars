@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Diamond
+{
+    class RhombusOfstars
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int space = n - 1;
+            string stars = "";
+
+            for (int i = 1; i <= n; i++)
+            {
+                stars += "* ";
+                Console.WriteLine("{0}{1}", new string(' ', space), stars);
+                space--;
+            }
+
+
+            space = 1;
+            int stars_ = n - 1;
+            for (int i = n - 1; i >= 1; i--)
+            {
+                for (int e = 0; e < space; e++)
+                {
+                    Console.Write(" ");
+                }
+                for (int c = 0; c < stars_; c++)
+                {
+                    Console.Write("* ");
+                }
+                Console.WriteLine();
+                space++;
+                stars_--;
+            }
+        }
+    }
+}

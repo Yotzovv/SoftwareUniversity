@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercise_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            Book[] books = new Book[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                books[i] = ReadBook();
+            }
+
+            PrintAuthorsAndPrices(books);
+
+        }
+
+        private static void PrintAuthorsAndPrices(Book[] books)
+        {
+            DateTime startdate = DateTime.ParseExact(Console.ReadLine(), "dd.MM.yyyy", CultureInfo.InvariantCulture);
+            Dictionary<string, DateTime> authors = new Dictionary<string, DateTime>();
+
+            foreach (var book in books)
+            {
+                if (!authors.ContainsKey(book.title))
+                {
+                    DateTime date = DateTime.ParseExact(book.releaseDate, "dd.M.yyyy", CultureInfo.InvariantCulture);
+                    authors[book.title] = date;
+                }
+                else
+                {
+                    DateTime date = DateTime.ParseExact(book.releaseDate, "dd.M.yyyy", CultureInfo.InvariantCulture);
+                    authors[book.title] = date;
+                }
+            }
+            foreach (var book in authors.Where(x => x.Value > startdate).OrderBy(x => x.Value).ThenBy(x => x.Key))
+            {
+                string date = book.Value.ToString("dd.MM.yyyy");
+                Console.WriteLine($"{book.Key} -> {date}");
+            }
+        }
+
+        private static Book ReadBook()
+        {
+            string[] arr = Console.ReadLine().Split().ToArray();
+            Book book = new Book();
+            book.title = arr[0];
+            book.author = arr[1];
+            book.publisher = arr[2];
+            book.releaseDate = arr[3];
+            book.isbn = arr[4];
+            book.price = double.Parse(arr[5]);
+
+            return book;
+        }
+    }
+
+    class Book
+    {
+        public string title { get; set; }  
+        public string author { get; set; }
+        public string publisher { get; set; }
+        public string releaseDate { get; set; }
+        public string isbn { get; set; }
+        public double price { get; set; }
+    }
+}

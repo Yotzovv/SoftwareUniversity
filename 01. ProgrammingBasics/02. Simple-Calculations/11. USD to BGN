@@ -1,0 +1,12 @@
+using System;
+class W 
+{
+  static void Main(String[] args)
+  {
+    decimal usd = decimal.Parse(Console.ReadLine());
+    decimal bgn = usd * 1.79549m;
+    
+    Console.Write (Math.Round(bgn, 2));
+  }
+}
+    

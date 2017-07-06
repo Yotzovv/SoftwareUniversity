@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Globalization;
+using System.Numerics;
+namespace SalesReport
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string word = Console.ReadLine();
+                         
+            var chars = word
+                        .Select(c => (int)c)
+                        .Select(c => $@"\u{c:x4}");
+
+            var result = string.Concat(chars);
+            Console.WriteLine(result);
+        }
+    }
+}

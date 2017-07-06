@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace AdvancedLoops
+{
+	class OneToNpow
+	{
+		static void Main (string[] args)
+		{
+			int n = int.Parse (Console.ReadLine ());
+
+			for(int i = 1;i <= Math.Pow(2, n);i*=2)
+			{
+				Console.WriteLine(i);
+			}
+		}
+	}
+}

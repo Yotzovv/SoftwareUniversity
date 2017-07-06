@@ -1,0 +1,85 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+ 
+namespace MentorGroup
+{
+    class User
+    {
+        public string Name { get; set; }
+        public List<string> Comments { get; set; }
+        public List<DateTime> Dates { get; set; }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var dateInput = Console.ReadLine();
+            List<User> users = new List<User>();
+            while (!dateInput.Equals("end of dates"))
+            {
+                var split = dateInput.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+                if (users.Any(x => x.Name == split[0]))
+                {
+                    List<DateTime> dates = new List<DateTime>();
+                    for (int i = 1; i < split.Length; i++)
+                    {
+                        dates.Add(DateTime.ParseExact(split[i], "dd/MM/yyyy", CultureInfo.InvariantCulture));
+                    }
+                    var existingUser = users.First(c => c.Name == split[0]);
+                    existingUser.Dates.AddRange(dates);
+                }
+                else
+                {
+                    List<DateTime> dates = new List<DateTime>();
+                    List<string> comments = new List<string>();
+                    User user = new User();
+                    user.Name = split[0];
+                    for (int i = 1; i < split.Length; i++)
+                    {
+                        dates.Add(DateTime.ParseExact(split[i], "dd/MM/yyyy", CultureInfo.InvariantCulture).Date);
+                    }
+                    user.Dates = dates;
+                    user.Comments = comments;
+                    users.Add(user);
+                }
+ 
+                dateInput = Console.ReadLine();
+            }
+            var commentssInput = Console.ReadLine();
+            while (!commentssInput.Equals("end of comments"))
+            {
+                var split = commentssInput.Split('-').ToArray();
+                if (users.Any(x => x.Name == split[0]))
+                {
+                    List<string> comments = new List<string>();
+                    string userName = split[0];
+                    for (int i = 1; i < split.Length; i++)
+                    {
+                        comments.Add(split[i]);
+                    }
+                    users.First(x => x.Name == userName).Comments.AddRange(comments);
+                }
+                commentssInput = Console.ReadLine();
+            }
+            var ordered = users.OrderBy(x => x.Name).ThenByDescending(x => x.Dates);
+            foreach (var user in ordered)
+            {
+                Console.WriteLine(user.Name);
+                Console.WriteLine("Comments:");
+                foreach (var comment in user.Comments)
+                {
+                    Console.WriteLine("- {0}", comment);
+                }
+                Console.WriteLine("Dates attended:");
+                foreach (var date in user.Dates.OrderBy(x => x.Date))
+                {
+                    Console.WriteLine("-- {0}", date.ToString("dd/MM/yyyy"));
+                }
+            }
+        }
+ 
+    }
+ 
+}

@@ -1,0 +1,6 @@
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\02. Students by First and Last Name\bin\Debug\_02.Students_by_First_and_Last_Name.exe.config
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\02. Students by First and Last Name\bin\Debug\_02.Students_by_First_and_Last_Name.exe
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\02. Students by First and Last Name\bin\Debug\_02.Students_by_First_and_Last_Name.pdb
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\02. Students by First and Last Name\obj\Debug\_02.Students_by_First_and_Last_Name.exe
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\02. Students by First and Last Name\obj\Debug\_02.Students_by_First_and_Last_Name.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\02. Students by First and Last Name\obj\Debug\02. Students by First and Last Name.csprojResolveAssemblyReference.cache

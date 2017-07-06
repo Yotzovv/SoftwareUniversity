@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StackAndQueues
+{
+    class ReverseString
+    {
+        static void Main(string[] args)
+        {
+            var materials = new Dictionary<string, int>();
+            materials.Add("shards", 0);
+            materials.Add("fragments", 0);
+            materials.Add("motes", 0);
+
+            var legendaries = new Dictionary<string, string>();
+            legendaries.Add("shards", "Shadowmourne");
+            legendaries.Add("fragments", "Valanyr");
+            legendaries.Add("motes", "Dragonwrath");
+
+            bool legendaryIsObtained = false;
+            var legendaryItem = string.Empty;
+
+            while (!legendaryIsObtained)
+            {
+                var input = Console.ReadLine().ToLower().Trim().Split().ToArray();
+
+                for (int i = 1; i < input.Length; i += 2)
+                {
+                    if (materials.ContainsKey(input[i]))
+                    {
+                        materials[input[i]] += int.Parse(input[i - 1]);
+                    }
+                    else
+                    {
+                        materials.Add(input[i], int.Parse(input[i - 1]));
+                    }
+
+                    if (materials["shards"] >= 250
+                                           || materials["fragments"] >= 250
+                                           || materials["motes"] >= 250)
+                    {
+                        legendaryIsObtained = true;
+                        legendaryItem = legendaries[materials.FirstOrDefault(m => m.Value >= 250).Key];
+                        materials[materials.FirstOrDefault(m => m.Value >= 250).Key] -= 250;
+                        break;
+                    }
+                }
+            }
+
+            Console.WriteLine($"{legendaryItem} obtained!");
+
+            foreach (var material in materials.Where(k => k.Key == "shards" || k.Key == "fragments" || k.Key == "motes").OrderBy(n => n.Key).OrderByDescending(q => q.Value))
+            {
+                Console.WriteLine($"{material.Key}: {material.Value}");
+            }
+
+            foreach (var material in materials.Where(k => k.Key != "shards" && k.Key != "fragments" && k.Key != "motes").OrderBy(n => n.Key))
+            {
+                Console.WriteLine($"{material.Key}: {material.Value}");
+            }
+        }
+    }
+}

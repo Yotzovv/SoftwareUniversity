@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace AdvancedLoops
+{
+	class SumDigit
+	{
+		static double trArea(double width, double heigth)
+		{
+			return width * heigth / 2;
+		}
+		
+
+		static void Main (string[] args)
+		{
+			double width = double.Parse (Console.ReadLine ());
+			double height = double.Parse (Console.ReadLine ());
+			double area = trArea (width, height);
+
+			Console.WriteLine (area);
+						
+		}
+	}
+}
+

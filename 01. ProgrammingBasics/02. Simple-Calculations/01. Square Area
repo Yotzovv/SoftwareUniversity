@@ -1,0 +1,10 @@
+using System;
+class SqArea
+{
+  static void Main(string[] args)
+  {
+    int heigth = int.Parse(Console.ReadLine());    
+    int area = heigth * heigth;
+    Console.WriteLine(area);
+  }
+}

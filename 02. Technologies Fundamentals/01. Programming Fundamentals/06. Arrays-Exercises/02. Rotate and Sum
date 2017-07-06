@@ -1,0 +1,38 @@
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SumAdjacentEqualNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> n = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+            List<int> result = new List<int>();
+            int k = int.Parse(Console.ReadLine());
+
+            for(int a = 0;a < n.Count;a++)
+            {
+                result.Add(0);
+            }
+
+            for (int i = 0; i < k; i++)
+            {
+                int number = n[n.Count - 1];
+                n.RemoveAt(n.Count - 1);
+                n.Insert(0, number);
+                for(int c = 0;c < n.Count;c++)
+                {
+                    result[c] += n[c];
+                }
+            }
+
+            foreach (var num in result)
+            {
+                Console.Write(num + " ");
+            }
+
+        }
+    }
+}

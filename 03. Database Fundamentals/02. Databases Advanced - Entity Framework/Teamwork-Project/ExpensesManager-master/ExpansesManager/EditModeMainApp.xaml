@@ -1,0 +1,104 @@
+﻿<Window x:Class="ExpansesManager.EditModeMainApp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpansesManager"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="EditModeMainApp" Height="400" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <!--DataTemplate for Published Date column defined in Grid.Resources.  PublishDate is a property on the ItemsSource of type DateTime -->
+            <DataTemplate x:Key="DateTemplate" >
+                <TextBlock Text="{Binding DateBought, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:dd/MM/yyyy}}" FontWeight="Bold" HorizontalAlignment="Center" />
+            </DataTemplate>
+            <!--DataTemplate for the Published Date column when in edit mode. -->
+            <DataTemplate x:Key="EditingDateTemplate">
+                <DatePicker SelectedDate="{Binding Path=DateBought, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+            </DataTemplate>
+        </Grid.Resources>
+        <TextBlock x:Name="textBox" Grid.Row="0" Grid.Column="2"  TextWrapping="Wrap" />
+
+
+        <DataGrid x:Name="GroupsGrid" Grid.Row="1" Grid.Column="0"
+                      AutoGenerateColumns="False"
+                      SelectionUnit="FullRow"
+                      CanUserAddRows="True"
+                      SelectedIndex="0"
+                      CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Group Name" Width="*" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Tag="{Binding}" Click="DeleteGroup_OnClick"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <DataGrid x:Name="SubGroupsGrid" Grid.Row="0"
+                          DataContext="{Binding}"
+                          ItemsSource="{Binding ElementName=GroupsGrid, Path=SelectedItem.SubGroups}"
+                      AutoGenerateColumns="False"
+                      SelectionUnit="FullRow"
+                      CanUserAddRows="True"
+                      SelectedIndex="0"
+                      CanUserDeleteRows="False">
+                <DataGrid.Columns>
+                    <!--<DataGridCheckBoxColumn Header="Is Active" Binding="{Binding Path=IsActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>-->
+                    <DataGridTextColumn Header="Sub Group Name" Width="*" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Header="Delete">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Tag="{Binding}" Click="DeleteSubGroup_OnClick"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <DataGrid x:Name="ElementsGrid" Grid.Row="1"
+                          DataContext="{Binding}"
+                          ItemsSource="{Binding ElementName=SubGroupsGrid, Path=SelectedItem.Elements}"
+                      AutoGenerateColumns="False"
+                      SelectionUnit="FullRow"
+                      CanUserAddRows="True"
+                      SelectedIndex="0"
+                      CanUserDeleteRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Element Name" Binding="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Price" Binding="{Binding Path=Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    <!--<DataGridTextColumn Header="Date Bought" Width="*" Binding="{Binding Path=DateBought, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>-->
+                    <DataGridTemplateColumn Header="Date Bought" Width="*" CellTemplate="{StaticResource DateTemplate}" CellEditingTemplate="{StaticResource EditingDateTemplate}"></DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Delete">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Delete" Tag="{Binding}" Click="DeleteElement_OnClick"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Button Grid.Row="2" Grid.Column="2" Click="ButtonSaveChanges_OnClick" Width="200" BorderBrush="Black" >Save Changes</Button>
+        <Button x:Name="BackButton" Grid.Row="2"  Grid.Column="0" Width="200" Content="Back" BorderBrush="Black" HorizontalAlignment="Left" Click="BackButton_Click" />
+    </Grid>
+</Window>

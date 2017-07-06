@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StackAndQueues
+{
+    class ReverseString
+    {
+        static void Main(string[] args)
+        {
+            string[] input;
+            var users = new SortedDictionary<string, Dictionary<string, int>>();
+
+            while((input = Console.ReadLine().Trim().Split(' ', '='))[0] != ("end"))
+            {
+                string ip = input[1];
+                string user = input[5];
+
+                if(users.ContainsKey(user))
+                {
+                    if(users[user].ContainsKey(ip))
+                    {
+                        users[user][ip]++;
+                    }
+                    else
+                    {
+                        users[user][ip] = 1;
+                    }
+                }
+                else
+                {
+                    users[user] = new Dictionary<string, int>();
+                    users[user][ip] = 1;
+                }
+            }
+
+            foreach (var item in users)
+            {
+                Console.WriteLine("{0}: ", item.Key);
+                foreach (var values in item.Value)
+                {
+                    if (values.Key != item.Value.Keys.Last())
+                    {
+                        Console.Write($"{values.Key} => {values.Value}, ");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{values.Key} => {values.Value}.");
+                    }
+
+                }
+            }
+        }
+    }
+}

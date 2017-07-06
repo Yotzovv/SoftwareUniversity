@@ -1,0 +1,26 @@
+using System;
+
+class program
+{
+	static void Main()
+	{
+		string year = Console.ReadLine (); //leap or normal
+		double holidays = double.Parse(Console.ReadLine()); //praznici
+		double hometown = double.Parse (Console.ReadLine ()); //weekendi v rodniq grad 
+
+
+		double weekendsSofia = 48 - hometown;
+		double gamesInSofia = weekendsSofia * (3.0 / 4);
+		double gamesInHomeTown = hometown;
+		double gamesInHolidays = holidays * (2.0 / 3);
+
+		double result = gamesInSofia + gamesInHolidays + gamesInHomeTown;
+
+
+		if (year == "leap") {
+			result = result + (result * 0.15);
+		}
+		Console.WriteLine(Math.Truncate(result));
+	}
+}
+

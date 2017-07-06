@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Linq.Expressions;
+
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+            var myDict = new Dictionary<string, string>();
+
+            while (!input.Equals("END"))
+            {
+
+                var elements = input.Split(' ');
+
+                if (elements[0] == "A")
+                {
+                    var name = elements[1];
+                    var number = elements[2];
+
+                    if (myDict.ContainsKey(name))
+                    {
+                        myDict[name] = number;
+                    }
+                    else
+                    {
+                        myDict.Add(name, number);
+                    }
+                }
+                else if (elements[0] == "S")
+                {
+                    var name = elements[1];
+                    if (myDict.ContainsKey(name))
+                    {
+                        Console.WriteLine("{0} -> {1}", name, myDict[name]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Contact {0} does not exist.", name);
+                    }
+                }
+                input = Console.ReadLine();
+
+            }
+        }
+
+    }
+
+}

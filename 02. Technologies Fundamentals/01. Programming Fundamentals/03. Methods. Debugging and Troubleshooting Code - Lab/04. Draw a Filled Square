@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace AdvancedLoops
+{
+	class SumDigit
+	{
+		static void fsHeader(int n)
+		{
+			Console.WriteLine (new String ('-', n * 2));
+		}
+
+		static void fsBody(int n)
+		{
+			Console.Write ('-');
+
+			for(int i = 1;i < n;i++)
+			{
+				Console.Write ("\\/");
+			}
+			Console.WriteLine ('-');
+		}
+
+
+
+		static void Main (string[] args)
+		{
+			int n = int.Parse (Console.ReadLine ());
+			fsHeader (n);
+			for(int i = 1;i <= n-2;i++)
+			{
+				fsBody(n);
+			}
+			fsHeader (n);
+
+		}
+	}
+}
+

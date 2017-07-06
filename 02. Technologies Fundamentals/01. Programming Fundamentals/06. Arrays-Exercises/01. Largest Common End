@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SumAdjacentEqualNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] first = Console.ReadLine().Split(' ').ToArray();
+            string[] second = Console.ReadLine().Split(' ').ToArray();
+            int counter1 = 0;
+            int counter2 = 0;
+
+            for (int a = 0; a < Math.Min(first.Length, second.Length); a++)
+            {
+                if (first[a] == second[a])
+                {
+                    counter1++;
+                }
+            }
+
+            first = first.Reverse().ToArray();
+            second = second.Reverse().ToArray();
+
+            for (int b = 0; b < Math.Min(first.Length, second.Length); b++)
+            {
+                if (first[b] == second[b])
+                {
+                    counter2++;
+                }
+            }
+            Console.WriteLine(Math.Max(counter1, counter2));
+        }
+    }
+}

@@ -1,0 +1,35 @@
+ using System;
+
+namespace asdasdasd
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			string figura = Console.ReadLine ();
+
+			if (figura == "square") {
+				double a = double.Parse (Console.ReadLine ());
+				double squarea = a * a;
+				Console.WriteLine (squarea);
+
+			} else if (figura == "rectangle") {
+				double aa = double.Parse (Console.ReadLine ());
+				double bb = double.Parse (Console.ReadLine ());
+				double recarea = aa * bb;
+				Console.WriteLine (recarea);
+
+			} else if (figura == "circle") {
+				double aaa = double.Parse (Console.ReadLine ());
+				double cirea = 3.14159265359 * (aaa * aaa);
+				Console.WriteLine (cirea);
+
+			} else if (figura == "triangle") {
+				double aaaa = double.Parse (Console.ReadLine ());
+				double bbbb = double.Parse (Console.ReadLine ());
+				double triera = (aaaa * bbbb) / 2;
+				Console.WriteLine (triera);
+			}
+		}
+	}
+}

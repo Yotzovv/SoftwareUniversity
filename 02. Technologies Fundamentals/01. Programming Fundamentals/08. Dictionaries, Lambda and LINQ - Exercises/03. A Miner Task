@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SumAdjacentEqualNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string resource = Console.ReadLine();
+            Dictionary<string, long> resources = new Dictionary<string, long>();
+
+            while (!resource.Contains("stop"))
+            {
+                
+                    if (!resources.ContainsKey(resource))
+                    {
+                        long quantity = long.Parse(Console.ReadLine());
+                        resources.Add(resource, quantity);
+                    }
+                    else
+                    {
+                        resources[resource] += long.Parse(Console.ReadLine());
+                    }
+                
+                resource = Console.ReadLine();
+            }
+
+            foreach (var item in resources)
+            {
+                Console.WriteLine($"{item.Key} -> {item.Value}");
+            }
+        }
+    }
+} 

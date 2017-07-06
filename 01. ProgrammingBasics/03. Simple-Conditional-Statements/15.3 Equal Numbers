@@ -1,0 +1,20 @@
+using System;
+
+namespace asdasdasd
+{
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			int hour = int.Parse (Console.ReadLine ());
+			int min = int.Parse (Console.ReadLine ());
+			int addmin = int.Parse (Console.ReadLine ());
+
+			if (hour == min && min == addmin) {
+				Console.WriteLine ("yes");
+			} else {
+				Console.WriteLine ("no");
+			}
+		}
+	}
+}

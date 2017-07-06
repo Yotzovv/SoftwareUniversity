@@ -1,0 +1,64 @@
+using System;
+ 
+ 
+class HolidaysBetweenTwoDates
+{
+    static void Main()
+    {
+        int numberPrices = int.Parse(Console.ReadLine());
+        double significance = double.Parse(Console.ReadLine());
+        double firstPrice = double.Parse(Console.ReadLine());
+ 
+        for (int i = 0; i < numberPrices - 1; i++)
+        {
+            double priceImput = double.Parse(Console.ReadLine());
+            double difference = Percent(firstPrice, priceImput);
+            bool hasSigDifference = HasDifference(difference, significance);
+ 
+ 
+ 
+            string message = Get(priceImput, firstPrice, difference, hasSigDifference);
+            Console.WriteLine(message);
+ 
+            firstPrice = priceImput;
+        }
+    }
+ 
+    private static string Get(double priceImput, double firstPrice, double difference, bool hasSigDifference)
+    {
+        string message = "";
+        if (difference == 0)
+        {
+            message = string.Format("NO CHANGE: {0}", priceImput);
+        }
+        else if (!hasSigDifference)
+        {
+            message = string.Format("MINOR CHANGE: {0} to {1} ({2:F2}%)", firstPrice, priceImput, difference);
+        }
+        else if (hasSigDifference && (difference > 0))
+        {
+            message = string.Format("PRICE UP: {0} to {1} ({2:F2}%)", firstPrice, priceImput, difference);
+        }
+        else if (hasSigDifference && (difference < 0))
+            message = string.Format("PRICE DOWN: {0} to {1} ({2:F2}%)", firstPrice, priceImput, difference);
+        return message;
+    }
+    private static bool HasDifference(double significance, double difference)
+    {
+        if (Math.Abs(significance) >= difference*100)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+ 
+    }
+ 
+    private static double Percent(double firstPrice, double priceImput)
+    {
+        double r = ((priceImput - firstPrice) / firstPrice)*100;
+        return r;
+    }
+}

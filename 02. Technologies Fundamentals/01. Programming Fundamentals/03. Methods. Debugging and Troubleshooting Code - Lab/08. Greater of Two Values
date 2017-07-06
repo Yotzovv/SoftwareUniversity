@@ -1,0 +1,54 @@
+using System;
+ 
+ 
+class MathPower
+{
+    public static int GetMax(int a, int b)
+    {
+        return Math.Max(a, b);
+    }
+    static void Main()
+    {
+        string type = Console.ReadLine();
+        switch (type)
+        {
+            case "int":
+                int a = int.Parse(Console.ReadLine());
+                int b = int.Parse(Console.ReadLine());
+                int result=GetMax(a,b);
+                Console.WriteLine(result);
+                break;
+            case"char":
+                char c = char.Parse(Console.ReadLine());
+                char d = char.Parse(Console.ReadLine());
+                char resultC = GetMax(c,d);
+                Console.WriteLine(resultC);
+                break;
+            case"string":
+                string e = Console.ReadLine();
+                string f = Console.ReadLine();
+                string resultE = GetMax(e,f);
+                Console.WriteLine(resultE);
+                break;
+        }
+    }
+ 
+    public static string GetMax(string e ,string f)
+    {
+       if (e.CompareTo(f) > 0)
+        {
+            return e;
+        }
+        return f;
+    }
+ 
+    public static char GetMax(char c , char d)
+    {
+        if (c.CompareTo(d) > 0)
+        {
+            return c;
+        }
+        return d;
+       
+    }
+}

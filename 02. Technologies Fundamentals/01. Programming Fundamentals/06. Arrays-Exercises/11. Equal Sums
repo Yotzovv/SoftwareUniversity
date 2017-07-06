@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SumAdjacentEqualNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            bool equals = false;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                int sumRight = 0;
+                int sumLeft = 0;
+                for (int right = i + 1; right < numbers.Length; right++)
+                {
+                    sumRight += numbers[right];
+                }
+                for (int left = 0; left < i; left++)
+                {
+                    sumLeft += numbers[left];
+                }
+
+                if (sumLeft == sumRight)
+                {
+                    Console.WriteLine(i);
+                    equals = true;
+                    break;
+                }
+            }
+
+            if(!equals)
+            {
+                Console.WriteLine("no");
+            }            
+        }
+    }
+}

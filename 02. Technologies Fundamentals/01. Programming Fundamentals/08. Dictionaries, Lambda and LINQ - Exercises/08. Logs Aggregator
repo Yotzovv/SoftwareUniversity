@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Globalization;
+
+namespace SalesReport
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int inputs = int.Parse(Console.ReadLine());
+            Dictionary<string, Dictionary<string, int>> output = new Dictionary<string, Dictionary<string, int>>();
+
+            for(int i = 0;i < inputs;i++)
+            {
+                string[] accessLogs = Console.ReadLine().Split(' ').ToArray();
+                string ip = accessLogs[0];
+                string user = accessLogs[1];
+                int duration = int.Parse(accessLogs[2]);
+
+                if (!output.ContainsKey(user))
+                {
+                    output[user] = new Dictionary<string, int>();
+                }
+                
+                if(output[user].ContainsKey(ip))
+                {
+                    output[user][ip] += duration;
+                }
+                else
+                {
+                    output[user][ip] = duration;
+                }
+            }
+
+            foreach (var user in output.OrderBy(x => x.Key))
+            {
+                Console.Write(user.Key + ": ");
+                Console.Write(user.Value.Values.Sum() + " ");
+                Console.WriteLine("[" + string.Join(", ", user.Value.Keys.OrderBy(x => x)) + "]");
+            }
+        }
+    }
+}

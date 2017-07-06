@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Linq.Expressions;
+
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            int[] numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+
+            int k = numbers.Length / 4;
+
+            int[] firstPart = numbers.Take(k).Reverse().ToArray();
+            int[] lastPart = numbers.Reverse().Take(k).ToArray();
+            int[] upperRow = firstPart.Concat(lastPart).ToArray();
+            int[] lowerRow = numbers.Skip(k).Take(k * 2).ToArray();
+
+            var sumArray = upperRow.Select((x, index) => x + lowerRow[index]);
+            Console.WriteLine(string.Join(" ",sumArray));
+        }
+    }
+
+}

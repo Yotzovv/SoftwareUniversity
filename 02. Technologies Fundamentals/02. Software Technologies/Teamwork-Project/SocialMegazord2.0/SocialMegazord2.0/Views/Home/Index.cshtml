@@ -1,0 +1,104 @@
+﻿@using Microsoft.AspNet.Identity;
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    @Styles.Render("~/Content/mainPage")
+    @Scripts.Render("~/bundles/modernizr")
+    <title>Social Megazord</title>
+</head>
+
+<body>
+
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "profile_div" }))
+        {
+            @Html.AntiForgeryToken()
+            <div id="profile_div">
+                <ul class="profile-wrapper">
+                    <li>
+                        <div class="profile">
+                            @Html.ActionLink(User.Identity.GetUserName(), "Index", "Home", new { area = "" }, new { @class = "name" })
+                            <ul class="menu">
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li>
+                                        <a id="page_settings" href="#">Admin Functionalities</a>
+                                        <div class="horizontal_menu">
+                                            <ul>
+                                                <li>@Html.ActionLink("Edit Users", "EditUsers", "User", null, htmlAttributes: new { id = "editUsersLink" })</li>
+                                                <li>@Html.ActionLink("Edit Posts", "EditPosts", "User", null, new { area = "", value = "editPostsLink" })</li>
+                                                <li>@Html.ActionLink("Edit Events", "EditEvents", "User", null, htmlAttributes: new { id = "editEventsLink" })</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                }
+                                <li>
+                                    <a id="page_settings" href="#">My profile</a>
+                                    <div class="horizontal_menu">
+                                        <ul>
+                                            <li>@Html.ActionLink("My Profile", "Index", "Manage", null, htmlAttributes: new { id = "profileLink" })</li>
+                                            <li>@Html.ActionLink("Interests", "UpdateInterests", "Manage", null, new { area = "", value = "Interests" })</li>
+                                            <li>@Html.ActionLink("Events", "List", "Event", null, htmlAttributes: new { id = "eventsLink" })</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a id="page_settings" href="#">Settings</a>
+                                    <div class="horizontal_menu" hidden>
+                                        <ul>
+                                            <li>@Html.ActionLink("Change Password", "ChangePassword", "Manage", null, new { area = "" })</li>
+                                            <li>@Html.ActionLink("Change Username", "ChangeUsername", "Manage", null, new { area = "" })</li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
+                                {
+                                    <li><a href="javascript:document.getElementById('profile_div').submit()">Log Off</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        }
+    }
+    else
+    {
+        <div id="profile_div">
+            <ul class="profile-wrapper">
+                <li>
+                    <div class="profile">
+                        <a href="#" class="name">Register/Login</a>
+                        <ul class="menu">
+                            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                            <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    }
+
+    <div id="contents">
+        @Html.ActionLink("Entertainment", "Entertainment", "Comunities", null, new { @id = "button1", @class = "button button1" })
+        @Html.ActionLink("Science", "Science", "Comunities", null, new { @id = "button3", @class = "button button3" })
+        @Html.ActionLink("MutualHelp", "MutualHelp", "Comunities", null, new { @id = "button2", @class = "button button2" })
+    </div>
+
+    <footer class="the_footer">
+        <p>@Html.ActionLink("About Us","AboutUs","Home",null,new { area="",@color="black"})</p>
+        <p>&copy; @DateTime.Now.Year - Social Megazord</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/coolchange")
+    @*// @RenderSection("scripts", required: false)*@
+</body>
+</html>

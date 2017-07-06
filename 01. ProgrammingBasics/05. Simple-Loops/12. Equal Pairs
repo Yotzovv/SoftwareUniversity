@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SimpleLoops
+{
+    class EqualPairs
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int prev = 0;
+            int current = 0;
+            int maxdiff = 0;
+            
+            for(int i = 1;i <= n;i++)
+            {
+                current = prev;   //0
+                int num_0 = int.Parse(Console.ReadLine());  //5
+                int num_1 = int.Parse(Console.ReadLine());      //5
+                prev = num_0 + num_1;
+
+                if(i >= 2)
+                {
+                    if(current - prev != 0 && Math.Abs(current - prev) > maxdiff)
+                    {
+                        maxdiff = Math.Abs(current - prev);
+                    }
+                }
+            }
+            Console.WriteLine(maxdiff == 0 ? "Yes, value=" + prev : "No, maxdiff=" + Math.Abs(maxdiff));
+        }
+    }
+}

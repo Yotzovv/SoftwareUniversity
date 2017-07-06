@@ -1,0 +1,107 @@
+using Exercise_1;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercise_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Read products in stock.
+            Dictionary<string, decimal> stocks = ReadStocks();
+
+            // Take orders
+            List<Sale> sales = TakeOrders(stocks);
+
+            // Print
+            Print(stocks, sales);
+        }
+
+        private static List<Sale> TakeOrders(Dictionary<string, decimal> stocks)
+        {
+            List<Sale> sales = new List<Sale>();
+            string[] order = Console.ReadLine().Split(new char[] { '-', ',' });
+
+            while (!order.Contains("end of clients"))
+            {
+                // if custumer buys few times
+                // if custumer buys recognized product
+                if (stocks.ContainsKey(order[1]))
+                {
+                    if (!sales.Any(x => x.Custumer == order[0]))
+                    {
+                        Sale sale = new Sale();
+                        sale.Custumer = order[0];
+                        sale.boughtProducts = new Dictionary<string, int>();
+                        sale.boughtProducts[order[1]] = int.Parse(order[2]);
+                        sales.Add(sale);
+                    }
+                    else
+                    {
+                        foreach (var custumer in sales.Where(x => x.Custumer == order[0]))
+                        {
+                            if(custumer.boughtProducts.ContainsKey(order[1]))
+                            {
+                                custumer.boughtProducts[order[1]] += int.Parse(order[2]);
+                            }
+                            else
+                            {
+                                custumer.boughtProducts[order[1]] = int.Parse(order[2]);
+                            }
+                        }
+                    }
+                }
+                order = Console.ReadLine().Split(new char[] { '-', ',' });
+            }
+
+            return sales;
+        }
+
+        private static void Print(Dictionary<string, decimal> stocks, List<Sale> sales)
+        {
+            // order by name ascending
+            // count bills
+            decimal totalBill = 0;
+
+            foreach (var sale in sales.OrderBy(x => x.Custumer))
+            {
+                Console.WriteLine(sale.Custumer);
+                decimal bill = 0;
+
+                foreach (var product in sale.boughtProducts)
+                {
+                    bill += product.Value * stocks[product.Key];
+                    Console.WriteLine($"-- {product.Key} - {product.Value}");
+                }
+                totalBill += bill;
+                Console.WriteLine($"Bill: {bill:f2}");
+            }
+            Console.WriteLine($"Total bill: {totalBill:f2}");
+        }
+
+        private static Dictionary<string, decimal> ReadStocks()
+        {
+            int n = int.Parse(Console.ReadLine());
+            Dictionary<string, decimal> stocks = new Dictionary<string, decimal>();
+
+            for (int i = 0; i < n; i++)
+            {
+                string[] stock = Console.ReadLine().Split('-');
+                stocks[stock[0]] = decimal.Parse(stock[1]);
+            }
+
+            return stocks;
+        }
+    }
+
+    class Sale
+    {
+        public string Custumer { get; set; }
+        public Dictionary<string, int> boughtProducts { get; set; }
+    }
+}

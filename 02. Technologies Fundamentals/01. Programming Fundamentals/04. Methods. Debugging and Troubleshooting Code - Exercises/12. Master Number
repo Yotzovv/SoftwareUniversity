@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+public class GeometryCalculator
+{
+    public static void Main()
+    {
+        var n = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= n; i++)
+        {
+            if (Palindrome(i) == true && SumIsDiv(i) == true && IsEven(i) == true)
+            {
+                Console.WriteLine(i);
+            }
+        }
+    }
+
+    static bool Palindrome(int number)
+    {
+        string numberSTR = number.ToString();
+        int min = 0;
+        int max = numberSTR.Length - 1;
+        while (true)
+        {
+            if (min > max)
+            {
+                return true;
+            }
+            char a = numberSTR[min];
+            char b = numberSTR[max];
+            if (char.ToLower(a) != char.ToLower(b))
+            {
+                return false;
+            }
+            min++;
+            max--;
+        }
+    }
+
+    static bool IsEven(int i)
+    {
+        while (i != 0)
+        {
+            if ((i % 10) % 2 == 0)
+            {
+                return true;
+            }
+            i /= 10;
+        }
+        return false;
+    }
+
+    static bool SumIsDiv(int i)
+    {
+        int sum = 0;
+
+        while (i != 0)
+        {
+            sum += i % 10;
+            i /= 10;
+        }
+        if (sum % 7 == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+}
+

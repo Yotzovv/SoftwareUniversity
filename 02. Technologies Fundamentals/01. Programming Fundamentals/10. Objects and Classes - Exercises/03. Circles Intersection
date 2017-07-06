@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercise_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Circle circle1 = ReadCircle();
+            Circle circle2 = ReadCircle();
+
+            Intersect(circle1, circle2);
+        }
+
+        private static void Intersect(Circle circle1, Circle circle2)
+        {
+            double distance = calcDistance(circle1, circle2);
+
+            if(distance <= circle1.radius + circle2.radius)
+            {
+                Console.WriteLine("Yes");
+            }
+            else
+            {
+                Console.WriteLine("No");
+            }
+
+        }
+
+        private static double calcDistance(Circle circle1, Circle circle2)
+        {
+            int a = Math.Abs(circle1.center[0] - circle2.center[0]);
+            int b = Math.Abs(circle1.center[1] - circle2.center[1]);
+
+            return Math.Sqrt(a * a + b * b);
+        }
+
+        private static Circle ReadCircle()
+        {
+            Circle circle = new Circle();
+            int[] properties = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            circle.center = new int[] { properties[0], properties[1] };
+            circle.radius = properties[2];
+
+            return circle;
+        }
+    }
+
+    class Circle
+    {
+        public int[] center { get; set; }
+        public int radius { get; set; }
+    }
+}

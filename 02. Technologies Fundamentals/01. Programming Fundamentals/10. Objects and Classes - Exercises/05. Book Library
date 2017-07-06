@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercise_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            Book[] books = new Book[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                books[i] = ReadBook();
+            }
+
+            //List<Book> output = new List<Book>(books.OrderByDescending(x => x.price).ThenBy(x => x.author).Distinct().ToList());
+
+            PrintAuthorsAndPrices(books);
+
+        }
+
+        private static void PrintAuthorsAndPrices(Book[] books)
+        {
+            SortedDictionary<string, double> authors = new SortedDictionary<string, double>();
+
+            foreach (var book in books)
+            {
+                if (!authors.ContainsKey(book.author))
+                {
+                    authors[book.author] = 0;
+                }
+                authors[book.author] += book.price;
+            }
+            foreach (var pair in authors.OrderByDescending(x => x.Value).ThenBy(a => a.Key))
+            {
+                Console.WriteLine("{0} -> {1:f2}", pair.Key, pair.Value);
+            }
+        }
+
+        private static Book ReadBook()
+        {
+            string[] arr = Console.ReadLine().Split().ToArray();
+            Book book = new Book();
+            book.title = arr[0];
+            book.author = arr[1];
+            book.publisher = arr[2];
+            book.releaseDate = arr[3];
+            book.isbn = arr[4];
+            book.price = double.Parse(arr[5]);
+
+            return book;
+        }
+    }
+
+    class Book
+    {
+        public string title { get; set; }
+        public string author { get; set; }
+        public string publisher { get; set; }
+        public string releaseDate { get; set; }
+        public string isbn { get; set; }
+        public double price { get; set; }
+    }
+}

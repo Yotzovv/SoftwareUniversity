@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace _04.Tripple_Sum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] arr = Console.ReadLine().Split(' ').ToArray();
+
+            foreach (var item in arr.Reverse())
+            {
+                Console.Write(item + " ");
+            }
+        }
+    }
+}

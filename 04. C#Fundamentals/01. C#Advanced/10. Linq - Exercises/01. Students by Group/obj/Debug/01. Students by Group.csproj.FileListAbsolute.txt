@@ -1,0 +1,6 @@
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\01. Students by Group\bin\Debug\_01.Students_by_Group.exe.config
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\01. Students by Group\bin\Debug\_01.Students_by_Group.exe
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\01. Students by Group\bin\Debug\_01.Students_by_Group.pdb
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\01. Students by Group\obj\Debug\01. Students by Group.csprojResolveAssemblyReference.cache
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\01. Students by Group\obj\Debug\_01.Students_by_Group.exe
+c:\users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\01. Students by Group\obj\Debug\_01.Students_by_Group.pdb

@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int sum1 = 0;
+            int sum2 = 0;
+
+            for(int i = 1;i <= n;i++)
+            {
+                int nums = int.Parse(Console.ReadLine());
+                sum1 += nums;
+            }
+
+            for(int i = 1;i <= n;i++)
+            {
+                int nums = int.Parse(Console.ReadLine());
+                sum2 += nums;
+            }
+
+            if(sum1 == sum2)
+            {
+                Console.Write("Yes sum {0}", sum1);
+            }
+            else if(sum1 > sum2 || sum2 > sum1)
+            {
+                Console.WriteLine("No diff {0}", sum1 > sum2 ? Math.Abs(sum1 - sum2) : Math.Abs(sum2 - sum1));
+            }
+        }
+    }
+}

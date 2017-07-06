@@ -1,0 +1,4 @@
+SELECT FirstName FROM Employees
+WHERE Employees.DepartmentID = 3
+OR Employees.DepartmentID = 10
+AND year(HireDate) BETWEEN 1995 AND 2005

@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Globalization;
+using System.Numerics;
+namespace SalesReport
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var nums = Console.ReadLine().Split(' ').Select(BigInteger.Parse).ToList();
+            BigInteger b = (nums[0]);
+            BigInteger number = (nums[1]);
+            List<BigInteger> output = new List<BigInteger>();
+
+            while(number > 0)
+            {
+                BigInteger remainer = number % b;
+                number /= b;
+
+                output.Add(remainer);
+            }
+            
+            for (int i = output.Count-1;  i >= 0; i--)
+            {
+                Console.Write(output[i]);
+            }
+            Console.WriteLine();
+        }
+    }
+}

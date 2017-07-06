@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+
+public class TrailingZeros
+{
+    public static void Main()
+    {
+        int n = int.Parse(Console.ReadLine());
+        FactZeros(n);
+    }
+
+    public static void FactZeros(int n)
+    {
+        BigInteger factorial = 1;
+
+        for (int i = 1; i <= n; i++)
+        {
+            factorial *= i;
+        }
+        GetZeros(factorial);
+    }
+
+    public static void GetZeros(BigInteger factorial)
+    {
+        int counter = 0;
+
+        foreach (var item in factorial.ToString().Reverse())
+        {
+            if(item != '0')
+            {
+                break;
+            }
+            else
+            {
+                counter++;
+            }
+        }
+        Console.WriteLine(counter);
+    }
+}

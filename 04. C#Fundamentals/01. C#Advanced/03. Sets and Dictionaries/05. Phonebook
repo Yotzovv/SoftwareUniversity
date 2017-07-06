@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StackAndQueues
+{
+    class ReverseString
+    {
+        static void Main(string[] args)
+        {
+            string[] input = Console.ReadLine().Split('-', ' ');
+            var phonebook = new SortedDictionary<string, string>();
+
+            while(!input[0].Equals("search"))
+            { 
+                if(phonebook.ContainsKey(input[0]))
+                {
+                    phonebook[input[0]] = input[1];
+                }
+                else
+                {
+                    phonebook.Add(input[0], input[1]);
+                }
+
+                input = Console.ReadLine().Split('-', ' ');
+            
+                if(input.Length > 2)
+                {
+                    continue;
+                }
+            }
+
+            while(!(input[0] = Console.ReadLine()).Equals("stop"))
+             {
+                if (phonebook.ContainsKey(input[0]))
+                {
+                    Console.WriteLine($"{input[0]} -> {phonebook[input[0]]}");
+                }
+                else
+                {
+                    Console.WriteLine($"Contact {input[0]} does not exist.");
+                }
+            }
+        }
+    }
+}

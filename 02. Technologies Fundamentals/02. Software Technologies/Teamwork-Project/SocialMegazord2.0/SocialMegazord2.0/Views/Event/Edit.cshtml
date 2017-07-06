@@ -1,0 +1,132 @@
+﻿@model SocialMegazord2._0.Models.EventViewModel
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Edit";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <title>Edit Event</title>
+</head>
+
+<body>
+
+    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "profile_div" }))
+    {
+     
+
+        <div id="profile_div">
+            <ul class="profile-wrapper">
+                @if (User.IsInRole("Admin"))
+                {
+                    <li>
+                        <a id="page_settings" href="#">Admin Functionalities</a>
+                        <div class="horizontal_menu">
+                            <ul>
+                                <li>@Html.ActionLink("Edit Users", "EditUsers", "User", null, htmlAttributes: new { id = "editUsersLink" })</li>
+                                <li>@Html.ActionLink("Edit Posts", "EditPosts", "User", null, new { area = "", value = "editPostsLink" })</li>
+                                <li>@Html.ActionLink("Edit Events", "EditEvents", "User", null, htmlAttributes: new { id = "editEventsLink" })</li>
+                            </ul>
+                        </div>
+                    </li>
+                }
+                <li>
+                    <div class="profile">
+                        @Html.ActionLink(User.Identity.GetUserName(), "Index", "Home", new { area = "" }, new { @class = "name" })
+                        <ul class="menu">
+                            <li>
+                                <a id="page_settings" href="#">My Profile</a>
+                                <div class="horizontal_menu">
+                                    <ul>
+                                        <li>@Html.ActionLink("Interests", "Interests", "Manage", new { area = "", value = "Interests" })</li>
+                                        <li>@Html.ActionLink("Events", "List", "Event", routeValues: null, htmlAttributes: new { id = "eventsLink" })</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a id="page_settings" href="#">Settings</a>
+                                <div class="horizontal_menu" hidden>
+                                    <ul>
+                                        <li>@Html.ActionLink("Change Password", "Change Password", "Manage", new { area = "" })</li>
+                                        <li>@Html.ActionLink("Change Username", "Change Username", "Manage", new { area = "" })</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
+                            {
+                                <li><a href="javascript:document.getElementById('profile_div').submit()">Log Off</a></li>
+                            }
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    }
+
+
+    <div id="contents">
+        @Html.ActionLink(" ", "Entertainment", "Comunities", null, new { @id = "button1", @class = "button button1" })
+        @Html.ActionLink(" ", "Science", "Comunities", null, new { @id = "button3", @class = "button button3" })
+        @Html.ActionLink(" ", "MutualHelp", "Comunities", null, new { @id = "button2", @class = "button button2" })
+    </div>
+
+    <div id="navMyProfile">
+        <ul class="navUL">
+            <li class="navLi">@Html.ActionLink("Interests", "Index", "Manage", routeValues: null, htmlAttributes: new { id = "interestsLink" })</li>
+            <li class="navLi">@Html.ActionLink("Events", "List", "Event", routeValues: null, htmlAttributes: new { id = "eventsLink" })</li>
+        </ul>
+    </div>
+    @using (Html.BeginForm("Edit", "Event", FormMethod.Post, new { @class = "formEvent" }))
+    {
+        
+
+        <div class="eventType">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.AuthorId)
+            @Html.LabelFor(m => m.Type, new { @class = "lable", @value = "Choose type" })
+            @Html.TextBoxFor(m => m.Type, new { @class = "content", @type = "text", @name = "disc", placeholder = "Example: Meeting" })
+            <div>
+                <br>
+                @Html.LabelFor(m => m.Title, new { @class = "lable", @value = "Choose a proper title" })
+                @Html.TextBoxFor(m => m.Title, new { @class = "content", @type = "text", @name = "disc", @placeholer = "Example: HARRY POTTER AT NDK, ON 12 FEBRUARY!!!" })
+            </div>
+            <br>
+            <div>
+                @Html.LabelFor(m => m.Date, new { @class = "lable", @value = "Date:" })
+                @Html.TextBoxFor(model => model.Date, new { @class = "content", @type = "date", @name = "Date" })
+                @Html.TextBoxFor(model => model.Time, new { @class = "content", @type = "time" })
+            </div>
+            <br>
+            <div>
+                @Html.LabelFor(m => m.Place, new { @class = "lable", @value = "Place of Event" })
+                @Html.TextBoxFor(m => m.Place, new { @class = "content", @value = "Place", @placeholder = "Some City" })
+            </div>
+            <br>
+            <div>
+                @Html.LabelFor(m => m.AdditionalContent, new { @class = "lable", @value = "Additional Content" })
+            </div>
+            <br><br>
+            <div>
+                @Html.TextAreaFor(m => m.AdditionalContent, new { @rows = "20", cols = "50", @class = "content", @value = "Content" })
+            </div>
+            <br>
+
+        </div>
+        @Html.ActionLink("Cancel", "List", "Event", null, new { @type = "button", @class = "submitButtons" })
+        <input type="submit" class="submitButtons" value="Edit" />
+    }
+    <footer>
+        <div class="the_footer">
+            <h3>© 2016 - SocialMegazord inc.</h3>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/coolchange")
+</body>
+</html>

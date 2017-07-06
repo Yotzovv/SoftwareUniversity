@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StackAndQueues
+{
+    class ReverseString
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            var logs = new Dictionary<string, Dictionary<string, int>>();
+
+            for (int i = 0; i < n; i++)
+            {
+                var input = Console.ReadLine().Trim().Split().ToArray();
+                string ip = input[0];
+                string user = input[1];
+                int duration = int.Parse(input[2]);
+
+                if(!logs.ContainsKey(user))
+                {
+                    logs[user] = new Dictionary<string, int>();
+                }
+
+                if(logs[user].ContainsKey(ip))
+                {
+                    logs[user][ip] += duration;
+                }
+                else
+                {
+                    logs[user][ip] = duration;
+                }
+            }
+
+            foreach (var log in logs.OrderBy(u => u.Key))
+            {
+                Console.WriteLine($"{log.Key}: {log.Value.Values.Sum()} {("[" + string.Join(", ", log.Value.Keys.OrderBy(i => i)) + "]")}");
+            }
+
+        }
+    }
+}

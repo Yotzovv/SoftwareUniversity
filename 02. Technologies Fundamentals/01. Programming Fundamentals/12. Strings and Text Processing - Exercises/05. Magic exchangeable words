@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Globalization;
+using System.Numerics;
+
+namespace Longest_Increasing_Subsequence
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Security.Cryptography.X509Certificates;
+
+    public class LongestIncreasingSubsequence
+    {
+        public static void Main()
+        {
+            string[] inputArray = Console.ReadLine().Trim().Split();
+            HashSet<char> firstWord = new HashSet<char>(inputArray[0]);
+            HashSet<char> secondWord = new HashSet<char>(inputArray[1]);
+            Console.WriteLine((firstWord.Count == secondWord.Count) ? "true" : "false");
+        }
+    }
+}

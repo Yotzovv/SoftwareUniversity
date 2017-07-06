@@ -1,0 +1,18 @@
+using System;
+
+public class Substring_broken
+{
+    private static int GetMax(int a, int b, int c)
+    {
+        return Math.Max(c, Math.Max(a, b));
+    }
+
+    public static void Main()
+    {
+        int a = int.Parse(Console.ReadLine());
+        int b = int.Parse(Console.ReadLine());
+        int c = int.Parse(Console.ReadLine());
+        var result = GetMax(a,b,c);
+        Console.WriteLine(result);
+    }   
+}

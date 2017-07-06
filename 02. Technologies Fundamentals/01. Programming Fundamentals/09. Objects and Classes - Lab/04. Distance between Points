@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+
+namespace SumAdjacentEqualNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Point p1 = Point.GetPoint();
+            Point p2 = Point.GetPoint();
+            Console.WriteLine("{0:f3}",Point.CalcDistance(p1, p2));
+        }        
+    }
+
+    public class Point
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public static Point GetPoint()
+        {
+            int[] first = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            Point point = new Point();
+            point.X = first[0];
+            point.Y = first[1];
+            return point;
+        }
+        public static double CalcDistance(Point p1, Point p2)
+        {
+            int a = Math.Abs(p1.X - p2.X);
+            int b = Math.Abs(p1.Y - p2.Y);
+            double c = Math.Sqrt(a * a + b * b);
+            return (c);
+        }
+    }
+}

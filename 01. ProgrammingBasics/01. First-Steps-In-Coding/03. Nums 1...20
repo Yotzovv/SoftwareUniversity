@@ -1,0 +1,13 @@
+    using System;
+class Expr
+{
+	static void Main(string[] args)
+	{
+		int i = 0;
+		while ( i <= 19)
+		{
+			i = i + 1;
+			Console.WriteLine (i + ", ");
+		}
+	}
+}

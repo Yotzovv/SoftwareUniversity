@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercise_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            Student[] students = new Student[n];
+
+            for(int i = 0;i < n;i++)
+            {
+                students[i] = ReadStudent();
+            }
+
+            foreach (var student in students.Where(a => a.average_grade >= 5.00).OrderBy(x => x.name).ThenByDescending(s => s.average_grade))
+            {
+                Console.WriteLine($"{student.name} -> {student.average_grade:f2}");
+            }
+        }
+        
+        public static Student ReadStudent()
+        {
+            string[] array = Console.ReadLine().Split().ToArray();
+            string name = array[0];
+            Student student = new Student();
+
+            List<double> grades = new List<double>();
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                grades.Add(double.Parse(array[i]));
+            }
+
+            student.name = name;
+            student.grades = grades;
+            student.average_grade = student.grades.Average();
+
+
+            return student;
+        }
+    }
+    
+    class Student
+    {
+        public string name { get; set; }
+        public List<double> grades { get; set; }
+        public double average_grade { get; set; }
+        
+    }
+}

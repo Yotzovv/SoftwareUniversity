@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace _04.Tripple_Sum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr1 = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();      
+
+            while (arr1.Length > 1)
+            {
+                var condensed = new int[arr1.Length - 1];
+                for (int a = 0; a < arr1.Length - 1; a++)
+                {
+                    for (int b = 0; b < arr1.Length - 1; b++)
+                    {
+                        condensed[b] = arr1[b] + arr1[b+1];
+                    }
+                }
+                arr1 = condensed;
+            }
+            Console.WriteLine(arr1[0]);
+        }
+    }
+}

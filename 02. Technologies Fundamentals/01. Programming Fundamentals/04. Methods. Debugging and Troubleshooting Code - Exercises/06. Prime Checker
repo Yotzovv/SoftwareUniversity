@@ -1,0 +1,32 @@
+using System;
+using System.Linq;
+public class NumbersInReversedOrder
+{
+    public static void Main()
+    {
+        long n = long.Parse(Console.ReadLine());
+        isPrime(n);
+    }
+
+    private static void isPrime(long n)
+    {
+        bool prime = true;
+
+        if(n >= 2)
+        {
+            for (long i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n % i == 0)
+                {
+                    prime = false;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            prime = false;
+        }       
+        Console.WriteLine(prime);
+    }
+}

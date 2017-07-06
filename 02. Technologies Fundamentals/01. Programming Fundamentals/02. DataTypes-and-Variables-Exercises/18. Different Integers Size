@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace _15_Comparing_floats
+{
+    class ComparingFloats
+    {
+        static void Main(string[] args)
+        {
+            string n = Console.ReadLine();
+
+            try
+            {
+                var a = long.Parse(n);
+                Console.WriteLine("{0} can fit in: ", n);
+            }
+            catch { }
+
+            try
+            {
+                var a = sbyte.Parse(n);
+                Console.WriteLine("* sbyte");
+            }
+            catch { }
+
+            try
+            {
+                var a = byte.Parse(n);
+                Console.WriteLine("* byte");
+            }
+            catch { }
+
+            try
+            {
+                var a = short.Parse(n);
+                Console.WriteLine("* short");
+            }
+            catch { }
+
+            try
+            {
+                var a = ushort.Parse(n);
+                Console.WriteLine("* ushort");
+            }
+            catch { }
+
+            try
+            {
+                var a = int.Parse(n);
+                Console.WriteLine("* int");
+            }
+            catch { }
+
+            try
+            {
+                var a = uint.Parse(n);
+                Console.WriteLine("* uint");
+            }
+            catch { }
+
+            try
+            {
+                var a = long.Parse(n);
+                Console.WriteLine("* long");
+            }
+            catch
+            {
+                Console.WriteLine("{0} can't fit in any type", n);
+            }
+        }
+    }
+}

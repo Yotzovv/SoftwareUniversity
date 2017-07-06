@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Globalization;
+
+namespace SalesReport
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string toReverse = Console.ReadLine();
+            string reversed = "";
+
+            for(int i = toReverse.Length-1;i >= 0;i--)
+            {
+                reversed += toReverse[i];
+            }
+
+            Console.WriteLine(reversed);
+        }
+    }
+}

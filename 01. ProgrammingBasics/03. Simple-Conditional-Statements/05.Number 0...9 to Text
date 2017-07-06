@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace Hello_Word
+{
+	class Program
+	{
+		static void Main (string[] args)
+		{
+			int fnum = int.Parse (Console.ReadLine ());
+
+			if (fnum == 1) {
+				Console.WriteLine ("one");
+			}
+			else if(fnum == 2) {
+				Console.WriteLine ("two");
+			}
+			else if(fnum ==3) {
+				Console.WriteLine ("three");
+			}
+			else if(fnum == 4) {
+				Console.WriteLine ("four");
+			}
+			else if(fnum == 5) {
+				Console.WriteLine ("five");
+			}
+			else if(fnum == 6) {
+				Console.WriteLine ("six");
+			}
+			else if(fnum == 7) {
+				Console.WriteLine ("seven");
+			}
+			else if(fnum == 8) {
+				Console.WriteLine ("eight");
+			}
+			else if(fnum == 9) {
+				Console.WriteLine ("nine");
+			}
+			else{
+				Console.Write ("number too big");
+			}		
+		}
+	}
+}

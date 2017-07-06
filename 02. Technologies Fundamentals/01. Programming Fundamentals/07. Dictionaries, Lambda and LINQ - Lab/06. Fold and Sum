@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace ExtractSentencesbyKeyword
+{
+    class ExtractSentencesbyKeyword
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            int k = numbers.Length / 4;
+
+            List<int> first = new List<int>();
+            List<int> second = new List<int>();
+
+            first.AddRange(numbers.Take(k).Reverse());
+            first.AddRange(numbers.Reverse().Take(k));
+            second.AddRange(numbers.Skip(k).Take(2 * k));
+
+            int[] result = new int[first.Count];
+
+            for (int i = 0; i < first.Count; i++)
+            {
+                result[i] = first[i] + second[i];
+            }
+            Console.WriteLine(string.Join(" ", result));
+        }
+    }
+}

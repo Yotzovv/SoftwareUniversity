@@ -1,0 +1,5 @@
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\04. Sort Students\bin\Debug\_04.Sort_Students.exe.config
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\04. Sort Students\bin\Debug\_04.Sort_Students.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\04. Sort Students\bin\Debug\_04.Sort_Students.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\04. Sort Students\obj\Debug\_04.Sort_Students.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\04. Sort Students\obj\Debug\_04.Sort_Students.pdb

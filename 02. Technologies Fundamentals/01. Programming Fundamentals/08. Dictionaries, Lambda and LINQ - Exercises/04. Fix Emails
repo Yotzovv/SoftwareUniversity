@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SumAdjacentEqualNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string randomShit = Console.ReadLine();
+            Dictionary<string, string> name_Emails = new Dictionary<string, string>();
+
+            while(randomShit != "stop")
+            {
+                if(!name_Emails.ContainsKey(randomShit))
+                {
+                    string email = Console.ReadLine();
+                    name_Emails.Add(randomShit, email);
+                }
+                randomShit = Console.ReadLine();
+            }
+            foreach (var item in name_Emails)
+            {
+                if(!(item.Value.Contains("us") || item.Value.Contains("uk")))
+                {
+                    Console.WriteLine($"{item.Key} -> {item.Value}");
+                }
+                else if (!(item.Value.Contains("US") || item.Value.Contains("UK")))
+                {
+                    Console.WriteLine($"{item.Key} -> {item.Value}");
+                }
+            }
+        }
+    }
+}

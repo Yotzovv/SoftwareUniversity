@@ -1,0 +1,102 @@
+﻿@model SocialMegazord2._0.Models.IndexViewModel
+
+@using Microsoft.AspNet.Identity 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <title>My profile</title>
+</head>
+
+<body>
+
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "profile_div" }))
+        {
+            @Html.AntiForgeryToken()
+            <div id="profile_div">
+                <ul class="profile-wrapper">
+                    <li>
+                        <div class="profile">
+                            @Html.ActionLink(User.Identity.GetUserName(), "Index", "Home", new { area = "" }, new { @class = "name" })
+                            <ul class="menu">
+                                <li>
+                                    <a id="page_settings" href="#">My Profile</a>
+                                    <div class="horizontal_menu">
+                                        <ul>
+                                          
+                                            <li>@Html.ActionLink("Events", "List", "Event", null, new { id = "eventsLink" })</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a id="page_settings" href="#">Settings</a>
+                                    <div class="horizontal_menu" hidden>
+                                        <ul>
+                                            <li>@Html.ActionLink("Change Password", "ChangePassword", "Manage", routeValues: null, htmlAttributes: new { id = "eventsLink" })</li>
+                                            <li>@Html.ActionLink("Change Username", "Change Username", "Manage", new { area = "" })</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post))
+                                {
+                                    <li><a href="javascript:document.getElementById('profile_div').submit()">Log Off</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        }
+    }
+
+    <div id="contents">
+        @Html.ActionLink(" ", "Entertainment", "Comunities", null, new { @id = "button1", @class = "button button1" })
+        @Html.ActionLink(" ", "Science", "Comunities", null, new { @id = "button3", @class = "button button3" })
+        @Html.ActionLink(" ", "MutualHelp", "Comunities", null, new { @id = "button2", @class = "button button2" })
+    </div>
+
+    <div id="navMyProfile">
+        <ul class="navUL">
+            <li class="navLi">@Html.ActionLink("Events", "List", "Event", routeValues: null, htmlAttributes: new { id = "eventsLink" })</li>
+            <li class="navLi">@Html.ActionLink("Posts", "List", "Post", routeValues: null, htmlAttributes: new { id = "postsLink" })</li>
+        </ul>
+    </div>
+    @using (Html.BeginForm("Index", "Manage", FormMethod.Post))
+    {
+        <div class="formEvent">
+            <div class="row">
+               
+                @Html.LabelFor(m => m.Name, new { @class = "lable", @value = "Name::" })
+                @Model.Name
+                <br><br>
+               
+                @Html.LabelFor(m => m.Email, new { @class = "lable", @value = "Email::" })
+                @Model.Email
+                <br><br>
+                @Html.LabelFor(m=>m.Interests, new { @class = "lable", @value = "Interests::" })
+
+                <p>
+                    @if (Model.Interests == null)
+                    {
+                        Model.Interests = "No content";
+                    }
+                 @Model.Interests
+                </p>
+                @Html.ActionLink("Update Interests", "UpdateInterests", "Manage", routeValues: null, htmlAttributes: new { id = "interestsLink" , @class = "submitButtons" })
+            </div>
+        </div>
+    }
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/coolchange")
+    <footer>
+        <div class="the_footer">
+            <h3>© 2016 - SocialMegazord inc.</h3>
+        </div>
+    </footer>
+</body>
+</html>

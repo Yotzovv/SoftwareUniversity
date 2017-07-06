@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Exercises_1
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            double[] nums = Console.ReadLine().Split().Select(double.Parse).OrderBy(a => a).ToArray();
+            HashSet<string> occurances = new HashSet<string>();
+
+            for (var num = 0;num <= nums.Length-1;num++)
+            {
+                int counter = 0;
+
+                foreach(var n in nums)
+                {
+                    if(n == nums[num])
+                    {
+                        counter++;
+                    }
+                }
+                occurances.Add($"{nums[num]} -> {counter}");
+            }
+
+            Console.WriteLine(string.Join("\n", occurances));
+        }
+    }
+}

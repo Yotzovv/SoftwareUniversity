@@ -1,0 +1,6 @@
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\13. Office Stuff\bin\Debug\_13.Office_Stuff.exe.config
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\13. Office Stuff\bin\Debug\_13.Office_Stuff.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\13. Office Stuff\bin\Debug\_13.Office_Stuff.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\13. Office Stuff\obj\Debug\_13.Office_Stuff.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\13. Office Stuff\obj\Debug\_13.Office_Stuff.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\13. Office Stuff\obj\Debug\13. Office Stuff.csprojResolveAssemblyReference.cache

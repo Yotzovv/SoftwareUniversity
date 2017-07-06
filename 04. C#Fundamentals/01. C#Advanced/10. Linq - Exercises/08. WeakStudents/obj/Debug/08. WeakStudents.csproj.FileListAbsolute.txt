@@ -1,0 +1,6 @@
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\08. WeakStudents\bin\Debug\_08.WeakStudents.exe.config
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\08. WeakStudents\bin\Debug\_08.WeakStudents.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\08. WeakStudents\bin\Debug\_08.WeakStudents.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\08. WeakStudents\obj\Debug\08. WeakStudents.csprojResolveAssemblyReference.cache
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\08. WeakStudents\obj\Debug\_08.WeakStudents.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\08. WeakStudents\obj\Debug\_08.WeakStudents.pdb

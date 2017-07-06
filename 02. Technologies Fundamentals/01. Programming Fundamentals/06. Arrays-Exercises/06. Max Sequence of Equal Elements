@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _1.Max_Sequence_of_Equal_Elements
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> nums = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+            int currentLength = 1;
+            int maxLength = 1;
+            int number = 1;
+
+            for (int i = 1; i < nums.Count; i++)
+            {
+                if (nums[i] == nums[i - 1])
+                {
+                    currentLength++;
+                }
+                else
+                {
+                    currentLength = 1;
+                }
+
+                if (maxLength < currentLength)
+                {
+                    maxLength = currentLength;
+                    number = nums[i];
+                }
+            }
+            for (int i = 0; i < maxLength; i++)
+            {
+                Console.Write(number + " ");
+            }
+
+        }
+    }
+}

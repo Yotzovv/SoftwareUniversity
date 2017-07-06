@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace Hello_Word
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine ("lenght: ");
+			int lenght = int.Parse(Console.ReadLine());
+
+			Console.WriteLine ("width: ");
+			int width = int.Parse(Console.ReadLine());
+	
+			int recarea = lenght * width;
+
+			Console.Write (recarea);
+		}
+	}
+}

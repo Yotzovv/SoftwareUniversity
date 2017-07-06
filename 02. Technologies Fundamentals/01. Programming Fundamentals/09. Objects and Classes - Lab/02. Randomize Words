@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Exercises_1
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            string[] text = Console.ReadLine().Split().ToArray();
+            Random rnd = new Random();
+
+            for(int i = 0;i <= text.Length-1;i++)
+            {
+                string oldStr = text[i];
+                int index = rnd.Next(0, text.Length - 1);
+
+                text[i] = text[index];
+                text[index] = oldStr;
+            }
+            Console.WriteLine(string.Join("\n", text));
+        }
+    }
+}

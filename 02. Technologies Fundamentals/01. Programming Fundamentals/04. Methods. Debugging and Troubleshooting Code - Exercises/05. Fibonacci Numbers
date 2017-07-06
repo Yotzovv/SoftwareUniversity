@@ -1,0 +1,32 @@
+using System;
+using System.Linq;
+public class NumbersInReversedOrder
+{
+    public static void Main()
+    {
+        double num = double.Parse(Console.ReadLine());
+        if (num == 0)
+        {
+            Console.WriteLine(1);
+        }
+        else
+        {
+            Fibonacci(num);
+        }
+    }
+
+    private static void Fibonacci(double num)
+    {
+        int first = 0;
+        int second = 1;
+        var third = 0;
+
+        for (int i = 0; i < num; i++)
+        {
+            third = first + second;
+            first = second;
+            second = third;
+        }
+        Console.WriteLine(third);
+    }
+}

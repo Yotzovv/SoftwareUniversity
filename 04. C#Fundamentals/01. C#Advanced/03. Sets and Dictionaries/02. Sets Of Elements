@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StackAndQueues
+{
+    class ReverseString
+    {
+        static void Main(string[] args)
+        {
+            int[] sets = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            var firstSet = new HashSet<int>();
+            var result = new HashSet<int>();
+
+            for (int i = 0; i < sets[0]; i++)
+            {
+                var input = int.Parse(Console.ReadLine());
+
+                firstSet.Add(input);
+
+            }
+
+            for (int i = 0; i < sets[1]; i++)
+            {
+                var input = int.Parse(Console.ReadLine());
+
+                if(firstSet.Contains(input))
+                {
+                    result.Add(input);
+                }
+            }
+
+
+            foreach (var item in result)
+            {
+                Console.Write(item + " ");
+            }
+        }
+    }
+}

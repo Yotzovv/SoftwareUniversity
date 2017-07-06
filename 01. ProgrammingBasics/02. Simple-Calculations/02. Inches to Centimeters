@@ -1,0 +1,15 @@
+using System;
+class Convertor
+{
+  static void Main(String[] args)
+  {
+    //inch input
+    float inch = float.Parse(Console.ReadLine());
+    
+    //inch to cm convert
+    float cm = inch * 2.54F;
+    
+    //output
+    Console.WriteLine(cm);
+  }
+}

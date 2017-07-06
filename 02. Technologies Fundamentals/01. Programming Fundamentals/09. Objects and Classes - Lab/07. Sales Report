@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercise_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            Sale[] sales = new Sale[n];
+            for (int i = 0; i < n; i++)
+            {
+                sales[i] = ReadSale();
+            }
+
+            var towns = sales.Select(x => x.town).Distinct().OrderBy(a => a);
+
+            foreach (var town in towns)
+            {
+                double moneyPerTown = sales.Where(x => x.town == town).Select(a => a.price * a.quantity).Sum();
+                Console.WriteLine($"{town} -> {moneyPerTown:f2}");
+            }
+
+           
+        }
+
+        private static Sale ReadSale()
+        {
+            Sale sale = new Sale();
+            string[] order = Console.ReadLine().Split().ToArray();
+
+            sale.town = order[0];
+            sale.product = order[1];
+            sale.price = double.Parse(order[2]);
+            sale.quantity = double.Parse(order[3]);
+
+            return sale;
+        }
+    }
+
+    public class Sale
+    {
+        public string town { get; set; }
+        public string product { get; set; }
+        public double price { get; set; }
+        public double quantity { get; set; }
+    }
+}

@@ -1,0 +1,27 @@
+using System;
+
+public class Substring_broken
+{
+    public static void Main()
+    {
+        float distanceInMeters = float.Parse(Console.ReadLine());
+        float hours = float.Parse(Console.ReadLine());
+        float mins = float.Parse(Console.ReadLine());
+        float sec = float.Parse(Console.ReadLine());
+
+        float timeInSeconds = hours * 60f * 60f + mins * 60f + sec;
+        float timeInHours = hours + mins / 60f + sec / 60f / 60f;
+
+        float distanceInKm = distanceInMeters / 1000f;
+        float distanceInMiles = distanceInMeters / 1609f;
+
+        float metersPerSecond = distanceInMeters / timeInSeconds;
+        float kilometersPerHour = distanceInKm / timeInHours;
+        float milesPerHour = distanceInMiles / timeInHours;
+
+        Console.WriteLine(metersPerSecond);
+        Console.WriteLine(kilometersPerHour);
+        Console.WriteLine(milesPerHour);
+    }
+}
+        

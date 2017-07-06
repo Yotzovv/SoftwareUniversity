@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+public class NumbersInReversedOrder
+{
+    public static void Main()
+    {
+        double side = double.Parse(Console.ReadLine());
+        string parameter = Console.ReadLine();
+
+        if(parameter == "face")
+        {
+            Console.WriteLine("{0:f2}", face(side));
+        }
+        else if(parameter == "space")
+        {
+            Console.WriteLine("{0:f2}", space(side));
+        }
+        else if(parameter == "volume")
+        {
+            Console.WriteLine("{0:f2}",volume(side));
+        }
+        else if(parameter == "area")
+        {
+            Console.WriteLine("{0:f2}", area(side));
+        }
+    }
+
+    public static double area(double side)
+    {
+        return side * side * 6;
+    }
+
+    public static double volume(double side)
+    {
+        return Math.Pow(side, 3);
+    }
+
+    public static double space(double side)
+    {
+        return Math.Sqrt(3 * Math.Pow(side, 2));
+    }
+
+    public static double face(double side)
+    {
+        return side * Math.Sqrt(2);
+    }
+
+
+}
+

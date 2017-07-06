@@ -1,0 +1,126 @@
+susing System;
+
+class program
+{
+	static void Main()
+	{
+		int i = 1;
+		Console.WriteLine (i);
+
+		if (i <= 100) {
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);
+			i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);i = i + 1;
+			Console.WriteLine (i);
+		}
+
+	}
+}

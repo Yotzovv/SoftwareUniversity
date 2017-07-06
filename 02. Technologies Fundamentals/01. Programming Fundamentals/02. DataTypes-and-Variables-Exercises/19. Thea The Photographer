@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _15_Comparing_floats
+{
+    class ComparingFloats
+    {
+        static void Main(string[] args)
+        {
+            var n = double.Parse(Console.ReadLine());  //Pictures Thea had taken
+            var filterTime = double.Parse(Console.ReadLine()); //seconds required to filter a single pic
+            var filterFactor = double.Parse(Console.ReadLine());   //the total procentage good pictures to be uploaded
+            var timeToUpload = double.Parse(Console.ReadLine());   //time needed to upload a filtered picture
+
+            var useful = Math.Ceiling(n * (filterFactor / 100));
+            var totalTime = (n * filterTime) + (useful * timeToUpload);
+            TimeSpan time = TimeSpan.FromSeconds(totalTime);
+            string str = time.ToString(@"d\:hh\:mm\:ss");
+            Console.WriteLine(str);
+        }
+    }
+}

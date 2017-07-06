@@ -1,0 +1,18 @@
+using System;
+
+public class Substring_broken
+{
+    public static void Main()
+    {
+        double num = double.Parse(Console.ReadLine());
+        double power = double.Parse(Console.ReadLine());
+        var result = toPow(num, power);
+        Console.WriteLine(result);
+        
+    }
+
+    static double toPow(double num, double power)
+    {
+        return Math.Pow(num, power);
+    }
+}

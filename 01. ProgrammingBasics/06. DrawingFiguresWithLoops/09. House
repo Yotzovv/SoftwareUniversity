@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Drawings
+{
+    class house
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int stars = 1;
+            int lines = (n - stars)/2;
+
+            if(n % 2 == 0)
+            {
+                stars++;
+            }
+            for(int i = 0;i < (n+1)/2;i++)
+            {
+                Console.WriteLine("{0}{1}{0}", new string('-', lines), new string('*', stars));
+                stars+=2;
+                lines--;
+            }
+            stars = n - 2;
+            for(int e = n/2-1;e >= 0;e--)
+            {
+                Console.WriteLine("{0}|{1}|{0}", new string(' ', lines+1), new string('*', stars));
+            }
+        }
+    }
+}

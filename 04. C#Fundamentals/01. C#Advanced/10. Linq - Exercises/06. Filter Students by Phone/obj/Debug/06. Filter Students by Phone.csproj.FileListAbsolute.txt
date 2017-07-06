@@ -1,0 +1,5 @@
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\06. Filter Students by Phone\bin\Debug\_06.Filter_Students_by_Phone.exe.config
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\06. Filter Students by Phone\bin\Debug\_06.Filter_Students_by_Phone.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\06. Filter Students by Phone\bin\Debug\_06.Filter_Students_by_Phone.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\06. Filter Students by Phone\obj\Debug\_06.Filter_Students_by_Phone.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\06. Filter Students by Phone\obj\Debug\_06.Filter_Students_by_Phone.pdb

@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+
+namespace HW
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            var max = -100000;
+            int sum = 0;
+
+            for(int i = 0;i < n;i++)
+            {
+                int nums = int.Parse(Console.ReadLine());
+                if(nums > max)
+                {
+                    max = nums;
+                }
+                sum += nums;
+            }
+           
+            sum -= max;
+            if(max == sum)
+            {
+                Console.WriteLine("Yes sum = {0}", max);
+            }
+            else
+            {
+                Console.WriteLine("No Diff = {0}", Math.Abs(max - sum));
+            }
+        }
+    }
+}

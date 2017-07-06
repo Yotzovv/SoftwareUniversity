@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Globalization;
+using System.Text.RegularExpressions;
+
+namespace SalesReport
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] banned = Console.ReadLine().Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+            string text = Console.ReadLine();
+
+            foreach (var word in banned)
+            {
+                if(text.Contains(word))
+                {
+                    text = text.Replace(word, new string('*', word.Length));
+                }
+            }
+            Console.WriteLine(text);
+        }
+    }
+}

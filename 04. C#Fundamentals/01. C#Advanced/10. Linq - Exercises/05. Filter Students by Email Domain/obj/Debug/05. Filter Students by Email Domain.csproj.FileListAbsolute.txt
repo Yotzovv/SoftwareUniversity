@@ -1,0 +1,5 @@
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\05. Filter Students by Email Domain\bin\Debug\_05.Filter_Students_by_Email_Domain.exe.config
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\05. Filter Students by Email Domain\bin\Debug\_05.Filter_Students_by_Email_Domain.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\05. Filter Students by Email Domain\bin\Debug\_05.Filter_Students_by_Email_Domain.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\05. Filter Students by Email Domain\obj\Debug\_05.Filter_Students_by_Email_Domain.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\05. Filter Students by Email Domain\obj\Debug\_05.Filter_Students_by_Email_Domain.pdb

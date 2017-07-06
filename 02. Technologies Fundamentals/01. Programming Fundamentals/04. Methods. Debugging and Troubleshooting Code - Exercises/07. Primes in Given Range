@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+public class NumbersInReversedOrder
+{
+    public static void Main()
+    {
+        int startPoint = int.Parse(Console.ReadLine());
+        int endPoint = int.Parse(Console.ReadLine());
+        isPrime(startPoint, endPoint);
+    }
+
+    public static void isPrime(int startPoint, int endPoint)
+    {
+        List<int> Nums = new List<int>();
+        List<int> primeNumbers = new List<int>();
+
+        for (int i = startPoint; i <= endPoint; i++)
+        {
+            Nums.Add(i);
+        }
+
+
+        foreach (var item in Nums)
+        {
+            bool prime = true;
+
+            if (item >= 2)
+            {
+                for(int i = 2;i < item;i++)
+                {
+                    if(item % i == 0)
+                    {
+                        prime = false;
+                    }
+                }
+            }
+            else
+            {
+                prime = false;
+            }
+            if (prime == true)
+            {
+                primeNumbers.Add(item);
+            }
+
+        }
+            Console.WriteLine(string.Join(", ", primeNumbers));
+    }
+}

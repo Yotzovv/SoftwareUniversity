@@ -1,0 +1,6 @@
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\11. Students Joined to Specialties\bin\Debug\_11.Students_Joined_to_Specialties.exe.config
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\11. Students Joined to Specialties\bin\Debug\_11.Students_Joined_to_Specialties.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\11. Students Joined to Specialties\bin\Debug\_11.Students_Joined_to_Specialties.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\11. Students Joined to Specialties\obj\Debug\_11.Students_Joined_to_Specialties.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\11. Students Joined to Specialties\obj\Debug\_11.Students_Joined_to_Specialties.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\11. Students Joined to Specialties\obj\Debug\11. Students Joined to Specialties.csprojResolveAssemblyReference.cache

@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Globalization;
+
+namespace SalesReport
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] input = Console.ReadLine().Trim().Split('|').ToArray();
+            Dictionary<string, Dictionary<string, long>> theMatrix = new Dictionary<string, Dictionary<string, long>>();
+
+            while(!input.Contains("report"))
+            {
+                string city = input[0];
+                string country = input[1];
+                long population = long.Parse(input[2]);
+
+                if(!theMatrix.ContainsKey(country))
+                {
+                    theMatrix[country] = new Dictionary<string, long>();
+                }
+
+                if(theMatrix[country].ContainsKey(city))
+                {
+                    theMatrix[country][city] += population;
+                }
+                else
+                {
+                    theMatrix[country][city] = population;
+                }
+                input = Console.ReadLine().Trim().Split('|').ToArray();
+            }
+           var orderedCountry = theMatrix.OrderByDescending(x => x.Value.Values.Sum());
+            foreach (var item in orderedCountry)
+            {
+                Console.WriteLine("{0} (total population: {1})", item.Key, item.Value.Values.Sum());
+                foreach (var values in item.Value.OrderByDescending(x => x.Value))
+                {
+                    Console.WriteLine($"=>{values.Key}: {values.Value}");
+                }
+            }
+        }
+    }
+}

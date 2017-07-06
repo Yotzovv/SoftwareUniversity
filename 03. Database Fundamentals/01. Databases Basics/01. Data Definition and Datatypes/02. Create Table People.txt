@@ -1,0 +1,18 @@
+CREATE TABLE People
+(
+[id] int IDENTITY(1,1),
+[name] varchar(200) NOT NULL,
+[picture] varbinary(max),
+[height] float(2),
+[weight] float(2),
+[gender] varchar(1) NOT NULL,
+[birthdate] date NOT NULL,
+[biography] text,
+);
+
+INSERT INTO People (name, picture, height, weight, gender, birthdate, biography)
+VALUES ('Annie', NULL, NULL, NULL, 'f', '1993-12-10', '010101010101010'),
+('Lilly', NULL, NULL, NULL, 'f', '1995-03-15', '011101010110010101'),
+('Ivan', NULL, NULL, NULL, 'm', '1993-08-09', '0110101010101101101'),
+('Stoyan', NULL, NULL, NULL, 'm', '1003-03-13', '01011101010101110'),
+('MyGf', NULL, NULL, NULL, 'f', '3006-12-13', '1011110110111000101');

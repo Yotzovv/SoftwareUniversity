@@ -1,0 +1,6 @@
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\03. Students by Age\bin\Debug\_03.Students_by_Age.exe.config
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\03. Students by Age\bin\Debug\_03.Students_by_Age.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\03. Students by Age\bin\Debug\_03.Students_by_Age.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\03. Students by Age\obj\Debug\_03.Students_by_Age.exe
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\03. Students by Age\obj\Debug\_03.Students_by_Age.pdb
+C:\Users\asd\documents\visual studio 2015\Projects\LINQ-Exercises\03. Students by Age\obj\Debug\03. Students by Age.csprojResolveAssemblyReference.cache

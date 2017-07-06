@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace asdasdasd
+{
+	class MainClass
+	{
+		static void Main (string[] args)
+		{
+			string product = Console.ReadLine ().ToLower();
+			string day = Console.ReadLine ().ToLower();
+			double quantity = double.Parse (Console.ReadLine ());
+			double prize = -1.0;
+
+			if (day == "monday" || day == "tuesday" || day == "wednesday" || day == "thursday" || day == "friday") {
+				if (product == "banana") {prize = 2.50;}
+				else if (product == "apple") {prize = 1.20; }
+				else if (product == "orange") {prize = 0.85; }
+				else if (product == "grapefruit") {prize = 1.45; }
+				else if (product == "kiwi") {prize = 2.70 ;}
+				else if (product == "pineapple") {prize = 5.50 ;}
+				else if (product == "grapes") {prize = 3.85 ;}
+			}
+			else if (day == "saturday" || day == "sunday") {
+				if (product == "banana") {prize = 2.70;}
+				else if (product == "apple") {prize = 1.25; }
+				else if (product == "orange") {prize = 0.90; }
+				else if (product == "grapefruit") {prize = 1.60;} 
+					else if (product == "kiwi") {prize = 3.0; }
+					else if (product == "pineapple") {prize = 5.60; }
+					else if (product == "grapes") {prize = 4.20; }
+			}
+			if (prize >= 0) {
+				Console.WriteLine ("{0:f2}", quantity * prize);
+			} else {
+				Console.WriteLine ("error");
+			}
+		}
+	}
+}

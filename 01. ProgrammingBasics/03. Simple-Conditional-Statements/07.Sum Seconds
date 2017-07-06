@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int c = int.Parse(Console.ReadLine());
+
+            int sec = (a + b + c) % 60;
+            int min = (a + b + c) / 60;
+
+            Console.WriteLine(min + ":" + "{0:00}", sec);          
+        }
+    }
+}
+

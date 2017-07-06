@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SumAdjacentEqualNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            bool[] primes = new bool[n + 1];
+
+            for(int i = 2;i <= primes.Length-1;i++)
+            {
+                primes[i] = true;
+            }
+
+            for(int a = 2;a <= primes.Length-1;a++)
+            {
+                for(int mltp = 2; (a * mltp) <= n;mltp++)
+                {
+                    primes[mltp * a] = false;
+                }
+            }
+
+            for(int i = 0;i <= primes.Length-1;i++)
+            {
+                if (primes[i])
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+    }
+}

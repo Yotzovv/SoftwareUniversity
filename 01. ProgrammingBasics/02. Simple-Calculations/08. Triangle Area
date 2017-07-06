@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace Hello_Word
+{
+	class Program
+	{
+		static void Main (string[] args)
+		{
+			//input base
+			decimal b;
+			Console.Write ("");
+			b = decimal.Parse (Console.ReadLine ());
+
+			//input height
+			decimal h;
+			Console.Write ("");
+			h = decimal.Parse (Console.ReadLine ());
+
+			//Area formula
+			decimal  A = (b * h) / 2;
+			A = Math.Round (A, 2);
+
+			//Area output
+			Console.Write (A);
+
+		}
+	}
+}

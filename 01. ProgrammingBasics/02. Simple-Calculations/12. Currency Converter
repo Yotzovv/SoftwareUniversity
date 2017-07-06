@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace Hello_Word
+{
+	class Program
+	{
+		static void Main (string[] args)
+		{
+			//input value
+			decimal value = decimal.Parse (Console.ReadLine ());
+
+			//input string
+			string firstcur = Console.ReadLine ();
+			string secondcur = Console.ReadLine ();
+
+			//dictionary
+			var cur = new Dictionary<string, decimal> () {
+				{"BGN", 1},
+				{"USD", 1.79549m},
+				{"EUR", 1.95583m},
+				{"GBP", 2.53405m}
+			};
+
+			//result
+			decimal result = value * (cur[firstcur] / cur[secondcur]);
+			Console.Write(Math.Round(result, 2));
+		}
+	}
+}
+

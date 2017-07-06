@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var usrinp = int.Parse(Console.ReadLine());
+            var bonus = 0.0;
+
+            if (usrinp <= 100)
+            {
+                bonus = bonus + 5;
+            }
+            else if (usrinp > 100  && usrinp < 1000)
+            {
+                bonus = usrinp * 0.2;
+            }
+            else if (usrinp > 1000)
+            {
+                bonus = usrinp * 0.1;
+            };
+
+            if (usrinp % 2 == 0)
+            {
+                bonus = bonus + 1;
+            };
+
+            if (usrinp % 10 == 5)
+            {
+                bonus = bonus + 2;
+            }
+
+            Console.WriteLine(bonus);
+            Console.WriteLine(bonus + usrinp);
+        }
+    }
+}

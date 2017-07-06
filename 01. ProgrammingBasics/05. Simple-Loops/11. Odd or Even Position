@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+
+namespace HW
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            double max = -100000.0;
+            double min = 100000.0;
+            double sum = 0;
+            double sum_Odd = 0;
+            double max_Odd = -100000.0;
+            double min_Odd = 100000.0;
+
+            for(int i = 1;i <= n;i++)
+            {
+                double nums = double.Parse(Console.ReadLine());
+                
+                if(i % 2 == 0)
+                {
+                    sum += nums;
+                    if (nums > max)
+                    {
+                        max = nums;
+                    }
+                    if (nums < min)
+                    {
+                        min = nums;
+                    }
+                }
+                else
+                {
+                    sum_Odd += nums;
+                    if (nums > max_Odd)
+                    {
+                        max_Odd = nums;
+                    }
+                    if (nums < min_Odd)
+                    {
+                        min_Odd = nums;
+                    }
+                }
+            }
+            Console.WriteLine("OddSum={0}", sum_Odd);
+            Console.WriteLine("OddMin={0}", min_Odd == 100000.0 ? "No" : min_Odd.ToString());
+            Console.WriteLine("OddMax={0}", max_Odd == -100000.0 ? "No" : max_Odd.ToString());
+            Console.WriteLine("EvenSum={0}", sum);
+            Console.WriteLine("EvenMin={0}", min == 100000.0 ? "No" : min.ToString());
+            Console.WriteLine("EvenMax={0}", max == -100000.0 ? "No" : max.ToString());
+        }
+    }
+}

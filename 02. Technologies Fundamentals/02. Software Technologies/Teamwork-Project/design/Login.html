@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/communities.css">
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <title>Register</title>
+</head>
+
+<body>
+<div id="profile_div">
+    <ul class="profile-wrapper">
+        <li>
+            <div class="profile">
+                <a href ="#" class="name">Register/Login</a>
+                <ul class="menu">
+                    <li>
+                        <a href="Registration.html">Register</a>
+                    </li>
+                    <li>
+                        <a href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div id="register">
+
+    <form>
+        <h1>Login Form <br/>
+            <span>Please fill all the texts in the fields.</span>
+        </h1>
+
+
+        <div id="otherRows">
+            <input type="email" pattern="[a-zA-Z0-9_]{3,}@[a-zA-Z0-9_]{3,}.[a-zA-Z0-9_]{2,4}"
+                   placeholder="sample@email.com"	title="Please enter a valid email address">
+            <input type="password" placeholder="Password" required="true" title="Enter password"><br/><br/>
+
+            <center><label>
+                <input type="button" class="button flex-button" value="Login" />
+            </label>
+            </center>
+        </div>
+    </form>
+</div>
+<footer >
+    <div class="the_footer">
+        <h3>© 2016 - SocialMegazord inc.</h3>
+    </div>
+</footer>
+<script src="scripts/backgroundChange.js"></script>
+
+</body>
+</html>

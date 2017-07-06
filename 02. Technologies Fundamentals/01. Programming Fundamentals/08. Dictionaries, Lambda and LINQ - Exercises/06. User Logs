@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _15_SumReversedNumbers
+{
+    class SumReversedNumbers
+    {
+        static void Main(string[] args)
+        {
+            string[] input = Console.ReadLine().Split(' ').ToArray();
+            SortedDictionary<string, Dictionary<string, int>> UsrLogs = new SortedDictionary<string, Dictionary<string, int>>();     
+
+            while (input[0] != "end")
+            {
+                string ip = input[0].Replace("IP=", string.Empty);
+                string message = input[1].Replace("message=", string.Empty).Replace("\'", string.Empty).Replace(".", string.Empty).Replace("&", " ");
+                string user = input[2].Replace("user=", string.Empty);
+
+                if(!UsrLogs.ContainsKey(user))
+                {
+                    UsrLogs[user] = new Dictionary<string, int>();
+                }
+
+                if (UsrLogs[user].ContainsKey(ip))
+                {
+                    UsrLogs[user][ip]++;
+                }
+                else
+                {
+                    UsrLogs[user][ip] = 1;
+                }
+                input = Console.ReadLine().Split(' ').ToArray();
+            }
+
+            foreach (var item in UsrLogs)
+            {
+                Console.WriteLine("{0}: ", item.Key);
+                foreach (var values in item.Value)
+                {
+                    if (values.Key != item.Value.Keys.Last())
+                    {
+                        Console.Write($"{values.Key} => {values.Value}, ");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{values.Key} => {values.Value}.");
+                    }
+
+                }
+            }
+        }
+    }
+}

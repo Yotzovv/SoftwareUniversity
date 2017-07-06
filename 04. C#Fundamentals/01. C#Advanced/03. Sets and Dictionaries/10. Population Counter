@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StackAndQueues
+{
+    class ReverseString
+    {
+        static void Main(string[] args)
+        {
+            string[] input;
+            var countries = new Dictionary<string, Dictionary<string, long>>();
+
+            while (!(input = Console.ReadLine().Trim().Split('|').ToArray())[0].Equals("report"))
+            {
+                string city = input[0];
+                string country = input[1];
+                int population = int.Parse(input[2]);
+
+                if (!countries.ContainsKey(country))
+                {
+                    countries[country] = new Dictionary<string, long>();
+                    countries[country][city] = population;
+                }
+                else
+                {
+                    countries[country][city] = population;
+                }
+            }
+
+            foreach (var country in countries.OrderByDescending(p => p.Value.Values.Sum()))
+            {
+                Console.WriteLine($"{country.Key} (total population: {country.Value.Values.Sum()})");
+
+                foreach (var city in country.Value.OrderByDescending(c => c.Value))
+                {
+                    Console.WriteLine($"=>{city.Key}: {city.Value}");
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace Hello_Word
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float inp1 = float.Parse(Console.ReadLine());
+            float inp2 = float.Parse(Console.ReadLine());
+
+            if (inp1 > inp2)
+            {
+                Console.WriteLine(inp1);
+            }
+            else
+            {
+                Console.WriteLine(inp2);
+            }
+        
+        }
+    }
+}
