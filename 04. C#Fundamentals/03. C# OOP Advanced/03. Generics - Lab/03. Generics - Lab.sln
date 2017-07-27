@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Box", "01. Box\01. Box.csproj", "{630E80AD-C62C-4DD0-BA33-54EAB6A73F0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Generic Array Creator", "02. Generic Array Creator\02. Generic Array Creator.csproj", "{A0D875A0-2572-4A28-9C07-0CB88CD29800}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Scale", "03. Scale\03. Scale.csproj", "{06A62A27-0256-49D0-9CFA-F4A5EBDD54D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{630E80AD-C62C-4DD0-BA33-54EAB6A73F0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630E80AD-C62C-4DD0-BA33-54EAB6A73F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630E80AD-C62C-4DD0-BA33-54EAB6A73F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630E80AD-C62C-4DD0-BA33-54EAB6A73F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D875A0-2572-4A28-9C07-0CB88CD29800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D875A0-2572-4A28-9C07-0CB88CD29800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D875A0-2572-4A28-9C07-0CB88CD29800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D875A0-2572-4A28-9C07-0CB88CD29800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06A62A27-0256-49D0-9CFA-F4A5EBDD54D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06A62A27-0256-49D0-9CFA-F4A5EBDD54D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06A62A27-0256-49D0-9CFA-F4A5EBDD54D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06A62A27-0256-49D0-9CFA-F4A5EBDD54D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
