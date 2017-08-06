@@ -25,7 +25,7 @@ class ListyIterator<T> : IEnumerable<T>
         {
             internalIndex++;
             return true;
-        }
+        } 
 
         return false;
     }
@@ -44,17 +44,10 @@ class ListyIterator<T> : IEnumerable<T>
         }
     }
 
-    public void PrintAll()
-    {
-        string.Join(" ", this.collection);
-    }
+    public void PrintAll() => Console.WriteLine(string.Join(" ", this.collection));
 
-    public IEnumerator<T> GetEnumerator()
-    {
-         return this.GetEnumerator();
-    }
-
-
+    public IEnumerator<T> GetEnumerator() => this.GetEnumerator();
+    
     IEnumerator IEnumerable.GetEnumerator()
     {
         yield return this.collection.GetEnumerator();
