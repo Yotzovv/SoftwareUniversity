@@ -5,11 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Harvesting Fields", "01. Harvesting Fields\01. Harvesting Fields.csproj", "{18FE594E-30CE-4743-B7DB-833711F6ABF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02BlackBoxInteger", "02. BlackBoxInteger\02BlackBoxInteger.csproj", "{56403F2F-210D-4F01-AC6C-A31B8CBB305B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.BlackBoxInteger", "02. BlackBoxInteger\02.BlackBoxInteger.csproj", "{42F3900F-00C3-40B4-ADF1-0255F169BDAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.BarracksFactory", "03.BarracksFactory\03.BarracksFactory.csproj", "{6B9565B7-DD7A-43D0-9F1F-F5DFB1EC09F3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. BarrackWars - The Commands Strike Back", "04. BarrackWars - The Commands Strike Back\04. BarrackWars - The Commands Strike Back.csproj", "{CB690606-EC05-4F42-A5D9-1FD7B6DC081C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.BarracksFactory", "03. BarrackWars\03.BarracksFactory.csproj", "{6B9565B7-DD7A-43D0-9F1F-F5DFB1EC09F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +19,14 @@ Global
 		{18FE594E-30CE-4743-B7DB-833711F6ABF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18FE594E-30CE-4743-B7DB-833711F6ABF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18FE594E-30CE-4743-B7DB-833711F6ABF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56403F2F-210D-4F01-AC6C-A31B8CBB305B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56403F2F-210D-4F01-AC6C-A31B8CBB305B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56403F2F-210D-4F01-AC6C-A31B8CBB305B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56403F2F-210D-4F01-AC6C-A31B8CBB305B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42F3900F-00C3-40B4-ADF1-0255F169BDAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42F3900F-00C3-40B4-ADF1-0255F169BDAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42F3900F-00C3-40B4-ADF1-0255F169BDAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42F3900F-00C3-40B4-ADF1-0255F169BDAA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B9565B7-DD7A-43D0-9F1F-F5DFB1EC09F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6B9565B7-DD7A-43D0-9F1F-F5DFB1EC09F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B9565B7-DD7A-43D0-9F1F-F5DFB1EC09F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B9565B7-DD7A-43D0-9F1F-F5DFB1EC09F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB690606-EC05-4F42-A5D9-1FD7B6DC081C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB690606-EC05-4F42-A5D9-1FD7B6DC081C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB690606-EC05-4F42-A5D9-1FD7B6DC081C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB690606-EC05-4F42-A5D9-1FD7B6DC081C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

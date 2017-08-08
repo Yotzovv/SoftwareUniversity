@@ -2,6 +2,9 @@
 {
     using System;
     using Contracts;
+    using System.Globalization;
+    using System.Reflection;
+    using System.Linq;
 
     class Engine : IRunnable
     {
@@ -36,39 +39,20 @@
         // TODO: refactor for Problem 4
         private string InterpredCommand(string[] data, string commandName)
         {
-            string result = string.Empty;
-            switch (commandName)
+            string commandCompleteName = $"_03BarracksFactory.Core.Commands.{CultureInfo.CurrentCulture.TextInfo.ToTitleCase(commandName)}Command";
+
+            Type commandType = Type.GetType(commandCompleteName);
+
+            if(commandType == null)
             {
-                case "add":
-                    result = this.AddUnitCommand(data);
-                    break;
-                case "report":
-                    result = this.ReportCommand(data);
-                    break;
-                case "fight":
-                    Environment.Exit(0);
-                    break;
-                default:
-                    throw new InvalidOperationException("Invalid command!");
+                throw new InvalidOperationException("Invalid command!");
             }
-            return result;
-        }
 
+            object[] cmdParams = { data, this.repository, this.unitFactory };
 
-        private string ReportCommand(string[] data)
-        {
-            string output = this.repository.Statistics;
-            return output;
-        }
+            IExecutable currentCommand = Activator.CreateInstance(commandType, cmdParams) as IExecutable;
 
-
-        private string AddUnitCommand(string[] data)
-        {
-            string unitType = data[1];
-            IUnit unitToAdd = this.unitFactory.CreateUnit(unitType);
-            this.repository.AddUnit(unitToAdd);
-            string output = unitType + " added!";
-            return output;
-        }
+            return currentCommand.Execute();
+        }      
     }
 }

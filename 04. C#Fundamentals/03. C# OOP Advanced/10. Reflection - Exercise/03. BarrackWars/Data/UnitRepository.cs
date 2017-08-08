@@ -42,15 +42,12 @@
 
         public void RemoveUnit(string unitType)
         {
-            if(!this.amountOfUnits.ContainsKey(unitType) || this.amountOfUnits[unitType] == 0)
+            if(!this.amountOfUnits.ContainsKey(unitType))
             {
-                throw new InvalidOperationException("No such units in repository.");
+                throw new ArgumentException("No such units in repository.");
             }
-            else
-            {
-                this.amountOfUnits[unitType]--;
-                Console.WriteLine($"{unitType} retired!");
-            }
+
+            this.amountOfUnits[unitType]--;
         }
     }
 }
