@@ -1,0 +1,3 @@
+SELECT Username, SUBSTRING(Email, CHARINDEX('@', Email) + 1, 1000) AS [Email Provider]
+FROM Users
+ORDER BY [Email Provider], Username

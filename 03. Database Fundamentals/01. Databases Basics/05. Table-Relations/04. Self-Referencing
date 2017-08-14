@@ -1,0 +1,9 @@
+CREATE TABLE Teachers
+(
+TeacherID int PRIMARY KEY,
+Name varchar(30),
+ManagerID int
+);
+
+ALTER TABLE Teachers
+ADD CONSTRAINT FK_111 FOREIGN KEY(ManagerID) REFERENCES Teachers(TeacherID)

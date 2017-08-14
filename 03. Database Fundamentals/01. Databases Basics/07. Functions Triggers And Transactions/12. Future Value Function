@@ -1,0 +1,8 @@
+CREATE FUNCTION ufn_CalculateFutureValue(@sum money, @interest float, @years int)
+RETURNS money
+AS
+BEGIN
+DECLARE @output money = @sum
+SET @output = @sum * (POWER((@interest + 1), @years))
+RETURN @output
+END

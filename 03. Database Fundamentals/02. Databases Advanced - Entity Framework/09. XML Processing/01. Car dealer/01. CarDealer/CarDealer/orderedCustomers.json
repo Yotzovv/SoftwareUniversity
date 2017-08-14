@@ -1,0 +1,312 @@
+[
+  {
+    "id": 2,
+    "name": "Natalie Poli",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 6,
+    "name": "Lino Subia",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 10,
+    "name": "Audrea Cardinal",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "carId": 296,
+        "customerId": 10
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Carole Witman",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "carId": 213,
+        "customerId": 12
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Kristian Engberg",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 18,
+    "name": "Taina Achenbach",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "carId": 74,
+        "customerId": 18
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Nisha Markwell",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "carId": 190,
+        "customerId": 20
+      },
+      {
+        "carId": 63,
+        "customerId": 20
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Daniele Zarate",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 23,
+    "name": "Faustina Burgher",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 25,
+    "name": "Sylvie Mcelravy",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": [
+      {
+        "carId": 191,
+        "customerId": 25
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Garret Capron",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 29,
+    "name": "Louann Holzworth",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": false,
+    "sales": []
+  },
+  {
+    "id": 1,
+    "name": "Emmitt Benally",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 347,
+        "customerId": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Marcelle Griego",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 4,
+    "name": "Zada Attwood",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 280,
+        "customerId": 4
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Hai Everton",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 297,
+        "customerId": 5
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Rico Peer",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 61,
+        "customerId": 7
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Teddy Hobby",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 55,
+        "customerId": 8
+      },
+      {
+        "carId": 159,
+        "customerId": 8
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Johnette Derryberry",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 11,
+    "name": "Francis Mckim",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 13,
+    "name": "Oren Perlman",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 83,
+        "customerId": 13
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Brett Brickley",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 16,
+    "name": "Carri Knapik",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 17,
+    "name": "Rema Revelle",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 255,
+        "customerId": 17
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Yvonne Mccalla",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": []
+  },
+  {
+    "id": 21,
+    "name": "Cinthia Lasala",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 34,
+        "customerId": 21
+      },
+      {
+        "carId": 32,
+        "customerId": 21
+      },
+      {
+        "carId": 224,
+        "customerId": 21
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Jimmy Grossi",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 213,
+        "customerId": 24
+      },
+      {
+        "carId": 267,
+        "customerId": 24
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Hipolito Lamoreaux",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 192,
+        "customerId": 26
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Donnetta Soliz",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": [
+      {
+        "carId": 117,
+        "customerId": 28
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Ann Mcenaney",
+    "birthDate": "0001-01-01T00:00:00",
+    "isYoungDriver": true,
+    "sales": []
+  }
+]

@@ -1,0 +1,7 @@
+DECLARE @allCountries INT = 0
+DECLARE @countriesWithoutMountains INT = 0
+
+SET @allCountries = ( SELECT COUNT(c.CountryCode) FROM Countries c )
+SET @countriesWithoutMountains = ( SELECT COUNT(distinct mc.CountryCode) FROM MountainsCountries mc )
+
+SELECT @allCountries - @countriesWithoutMountains AS [CountriesWithoutMountains]

@@ -1,0 +1,9 @@
+SELECT MountainRange, Mountain.PeakName, Mountain.Elevation
+FROM 
+	(
+		SELECT MountainRange, PeakName, Elevation
+		FROM Mountains as M, Peaks as P
+		WHERE MountainRange = 'Rila'
+		AND P.MountainId = 17
+	) AS [Mountain]
+ORDER BY Mountain.Elevation DESC

@@ -1,0 +1,6 @@
+SELECT e.EmployeeID, e.FirstName, e.ManagerID, emp.FirstName as [ManagerName]
+FROM Employees E
+Join Employees as emp ON e.ManagerID = emp.EmployeeID
+WHERE e.ManagerID = 3
+OR e.ManagerID = 7
+ORDER BY EmployeeID

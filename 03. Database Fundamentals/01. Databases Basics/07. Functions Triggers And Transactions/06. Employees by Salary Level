@@ -1,0 +1,7 @@
+CREATE PROC usp_EmployeesBySalaryLevel(@level varchar(10))
+AS
+BEGIN
+SELECT e.FirstName, e.LastName
+FROM Employees e
+WHERE dbo.ufn_GetSalaryLevel(e.Salary) = @level
+  END
