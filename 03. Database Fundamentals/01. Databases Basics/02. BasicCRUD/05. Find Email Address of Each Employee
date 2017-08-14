@@ -1,1 +1,0 @@
-SELECT FIRSTNAME + '.' + LASTNAME + '@softuni.bg' FROM Employees

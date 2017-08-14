@@ -1,3 +1,0 @@
-SELECT DepositGroup, MAX(MagicWandSize) as [LongestWandSize]
-FROM WizzardDeposits
-GROUP BY DepositGroup

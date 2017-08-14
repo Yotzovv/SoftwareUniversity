@@ -1,1 +1,0 @@
-C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\03. Database Fundamentals\02. Databases Advanced - Entity Framework\06. EF Advanced Querying\01. BookShopSystem\BookShopSystem\bin\Debug\BookShopSystem.exe.config

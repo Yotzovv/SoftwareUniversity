@@ -1,4 +1,0 @@
-SELECT P.PeakName, R.RiverName, LOWER(P.PeakName + SUBSTRING(R.RiverName, 2, 100)) AS [Mix]
-FROM Peaks P, Rivers R
-WHERE RIGHT(P.PeakName, 1) = LEFT(R.RiverName, 1)
-ORDER BY Mix

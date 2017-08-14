@@ -1,6 +1,0 @@
-CREATE PROC usp_GetHoldersFullName
-AS
-	BEGIN
-		SELECT FirstName + ' ' + LastName as [FullName]
-		FROM AccountHolders
-	END

@@ -1,9 +1,0 @@
-CREATE PROC usp_GetHoldersWithBalanceHigherThan(@num money)
-AS
-BEGIN
-	SELECT ah.FirstName, ah.LastName
-	FROM AccountHolders ah
-	INNER JOIN Accounts a ON a.AccountHolderId = ah.Id
-	GROUP BY ah.FirstName, ah.LastName
-	HAVING SUM(Balance) > @num
-END

@@ -1,4 +1,0 @@
-SELECT TOP 1 WITH TIES AVG(e.Salary) as [MinAvgSalary]
-FROM Employees e
-GROUP BY e.DepartmentID
-ORDER BY MinAvgSalary

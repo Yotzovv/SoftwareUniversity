@@ -1,8 +1,0 @@
-CREATE PROC usp_CalculateFutureValueForAccount(@AccountId int, @InterestRate float)
-AS
-BEGIN
-SELECT A.Id, AH.FirstName, AH.LastName, A.Balance [CurrentBalance],[dbo].[ufn_CalculateFutureValue] (a.Balance, @InterestRate, 5) [Blanace in 5 years]
-FROM Accounts A
-JOIN AccountHolders AH ON AH.Id = A.AccountHolderId
-WHERE A.Id = @AccountId
-END
