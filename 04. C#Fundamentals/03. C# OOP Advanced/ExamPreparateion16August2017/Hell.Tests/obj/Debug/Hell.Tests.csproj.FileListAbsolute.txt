@@ -1,0 +1,9 @@
+C:\Users\asd\Downloads\ExamPreparateion16August2017\Hell.Tests\bin\Debug\Hell.Tests.dll
+C:\Users\asd\Downloads\ExamPreparateion16August2017\Hell.Tests\bin\Debug\Hell.Tests.pdb
+C:\Users\asd\Downloads\ExamPreparateion16August2017\Hell.Tests\bin\Debug\Hell.exe
+C:\Users\asd\Downloads\ExamPreparateion16August2017\Hell.Tests\bin\Debug\nunit.framework.dll
+C:\Users\asd\Downloads\ExamPreparateion16August2017\Hell.Tests\bin\Debug\Hell.pdb
+C:\Users\asd\Downloads\ExamPreparateion16August2017\Hell.Tests\bin\Debug\nunit.framework.xml
+C:\Users\asd\Downloads\ExamPreparateion16August2017\Hell.Tests\obj\Debug\Hell.Tests.csprojResolveAssemblyReference.cache
+C:\Users\asd\Downloads\ExamPreparateion16August2017\Hell.Tests\obj\Debug\Hell.Tests.dll
+C:\Users\asd\Downloads\ExamPreparateion16August2017\Hell.Tests\obj\Debug\Hell.Tests.pdb

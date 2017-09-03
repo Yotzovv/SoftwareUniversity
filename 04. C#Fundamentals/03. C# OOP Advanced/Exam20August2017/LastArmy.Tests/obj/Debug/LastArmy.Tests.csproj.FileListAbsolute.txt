@@ -1,0 +1,10 @@
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\bin\Debug\LastArmy.Tests.dll
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\bin\Debug\LastArmy.Tests.pdb
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\bin\Debug\Last Army.exe
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\bin\Debug\nunit.framework.dll
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\bin\Debug\Last Army.pdb
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\bin\Debug\nunit.framework.xml
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\obj\Debug\LastArmy.Tests.csprojResolveAssemblyReference.cache
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\obj\Debug\LastArmy.Tests.dll
+C:\Users\asd\Documents\Visual Studio 2015\Projects\Exam20August2017\LastArmy.Tests\obj\Debug\LastArmy.Tests.pdb
