@@ -1,0 +1,11 @@
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\bin\Debug\netcoreapp2.0\02. Working With The Database.deps.json
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\bin\Debug\netcoreapp2.0\02. Working With The Database.runtimeconfig.json
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\bin\Debug\netcoreapp2.0\02. Working With The Database.runtimeconfig.dev.json
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\bin\Debug\netcoreapp2.0\02. Working With The Database.dll
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\obj\Debug\netcoreapp2.0\02. Working With The Database.csprojResolveAssemblyReference.cache
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\obj\Debug\netcoreapp2.0\02. Working With The Database.csproj.CoreCompileInputs.cache
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\obj\Debug\netcoreapp2.0\02. Working With The Database.AssemblyInfoInputs.cache
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\obj\Debug\netcoreapp2.0\02. Working With The Database.AssemblyInfo.cs
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\bin\Debug\netcoreapp2.0\02. Working With The Database.pdb
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\obj\Debug\netcoreapp2.0\02. Working With The Database.dll
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\02. Working With The Database\obj\Debug\netcoreapp2.0\02. Working With The Database.pdb

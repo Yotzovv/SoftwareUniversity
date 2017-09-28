@@ -1,0 +1,11 @@
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\bin\Debug\netcoreapp2.0\04. Social Network.deps.json
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\bin\Debug\netcoreapp2.0\04. Social Network.runtimeconfig.json
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\bin\Debug\netcoreapp2.0\04. Social Network.runtimeconfig.dev.json
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\bin\Debug\netcoreapp2.0\04. Social Network.dll
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\bin\Debug\netcoreapp2.0\04. Social Network.pdb
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\obj\Debug\netcoreapp2.0\04. Social Network.csprojResolveAssemblyReference.cache
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\obj\Debug\netcoreapp2.0\04. Social Network.csproj.CoreCompileInputs.cache
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\obj\Debug\netcoreapp2.0\04. Social Network.AssemblyInfoInputs.cache
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\obj\Debug\netcoreapp2.0\04. Social Network.AssemblyInfo.cs
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\obj\Debug\netcoreapp2.0\04. Social Network.dll
+C:\Users\asd\source\repos\02. Introduction to .NET Core and EF Core-Exercise\04. Social Network\obj\Debug\netcoreapp2.0\04. Social Network.pdb
