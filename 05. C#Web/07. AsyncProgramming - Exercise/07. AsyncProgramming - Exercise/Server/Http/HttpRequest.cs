@@ -5,16 +5,20 @@ using System.Net;
 
 public class HttpRequest : IHttpRequest
 {
-    
-    public HttpRequest(string requestString)
+    private readonly string requestText;
+
+    public HttpRequest(string requestText)
     {
-        CoreValidator.ThrowIfNullOrEmpty(requestString, nameof(requestString));
+        CoreValidator.ThrowIfNullOrEmpty(requestText, nameof(requestText));
+
+        this.requestText = requestText;
+
         this.FormData = new Dictionary<string, string>();
         this.Headers = new HttpHeaderCollection();
         this.UrlParameters = new Dictionary<string, string>();
         this.QueryParameters = new Dictionary<string, string>();
 
-        this.ParseRequest(requestString);
+        this.ParseRequest(requestText);
     }
 
 
@@ -42,7 +46,7 @@ public class HttpRequest : IHttpRequest
 
     private void ParseRequest(string requestString)
     {
-        var tokens = requestString.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+        var tokens = requestString.Split(Environment.NewLine);
 
         if(!tokens.Any())
         {
@@ -57,8 +61,9 @@ public class HttpRequest : IHttpRequest
         }
 
         this.Method = this.ParseMethod(requestLine[0]);
-        this.Url = tokens[1];
+        this.Url = requestLine[1];
         this.Path = this.ParsePath(Url);
+
         this.ParseHeaders(tokens);
         this.ParseParameters();
         this.ParseFormData(tokens.Last());
@@ -115,7 +120,7 @@ public class HttpRequest : IHttpRequest
     {
         var emptyLineAfterHeadersIndex = Array.IndexOf(tokens, string.Empty);
 
-        for (int i = 1; i < tokens.Length; i++)
+        for (int i = 1; i < emptyLineAfterHeadersIndex; i++)
         {
             var currentLine = tokens[i];
             var headerParts = currentLine.Split(new[] { ": " }, StringSplitOptions.RemoveEmptyEntries);
@@ -127,6 +132,7 @@ public class HttpRequest : IHttpRequest
 
             var headerKey = headerParts[0];
             var headerValue = headerParts[1].Trim();
+
             this.Headers.Add(new HttpHeader(headerKey, headerValue));
         }
 
@@ -135,8 +141,6 @@ public class HttpRequest : IHttpRequest
             BadRequestException.ThrowFromInvalidRequest();
         }
     }
-
-
 
     private string ParsePath(string url)
     {
@@ -154,4 +158,7 @@ public class HttpRequest : IHttpRequest
 
         return parsedMethod;
     }
+
+    public override string ToString() => this.requestText;
+
 }

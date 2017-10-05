@@ -2,6 +2,6 @@
 {
     HttpStatusCode StatusCode { get; }
 
-    HttpHeaderCollection Headers { get; } 
+    IHttpHeaderCollection Headers { get; } 
 }
 

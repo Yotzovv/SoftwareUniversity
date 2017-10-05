@@ -1,19 +1,18 @@
 ﻿using System;
 
-public class ViewResponse : IHttpResponse
+public class ViewResponse : HttpResponse
 {
     private readonly IView view;
     
     public ViewResponse(HttpStatusCode statusCode, IView view)
     {
         this.ValidateStatusCode(statusCode);
+
         this.view = view;
         this.StatusCode = statusCode;
+
+        this.Headers.Add("Content-Type", "text/html");
     }
-
-    public HttpStatusCode StatusCode { get; }
-
-    public HttpHeaderCollection Headers { get; }
 
     private void ValidateStatusCode(HttpStatusCode statusCode)
     {

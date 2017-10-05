@@ -1,10 +1,7 @@
-﻿public class NotFoundResponse : IHttpResponse
+﻿public class NotFoundResponse : HttpResponse
 {
     public NotFoundResponse()
     {
+        this.StatusCode = HttpStatusCode.NotFound;
     }
-
-    public HttpStatusCode StatusCode { get; }
-
-    public HttpHeaderCollection Headers { get; }
 }

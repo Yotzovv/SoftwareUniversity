@@ -15,7 +15,7 @@ public class RoutingContext : IRoutingContext
         this.args = args;
     }
 
-    public IEnumerable<string> Parameters { get; private set; }
+    public IEnumerable<string> Parameters => args;
 
-    public RequestHandler RequestHandler { get; }
+    public RequestHandler RequestHandler => value;
 }

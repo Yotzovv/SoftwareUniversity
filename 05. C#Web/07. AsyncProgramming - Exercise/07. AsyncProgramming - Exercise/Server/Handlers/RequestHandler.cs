@@ -10,12 +10,16 @@ public class RequestHandler : IRequestHandler
 
         this.handlingFunc = handlingFunc;
     }
-
+    
     public IHttpResponse Handle(IHttpContext context)
     {
         var response = this.handlingFunc(context.Request);
+        HttpHeader httpHeader = new HttpHeader("Content-Type", "text/html");
 
-        response.Headers.Add(new HttpHeader("Content-Type", "text/html"));
+        if (!response.Headers.ContainsKey(httpHeader.Key))
+        {
+            response.Headers.Add(httpHeader);
+        }
 
         return response;
     }

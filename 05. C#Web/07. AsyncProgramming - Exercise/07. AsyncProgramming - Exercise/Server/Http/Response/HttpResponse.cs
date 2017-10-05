@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-public abstract class HttpResponse
+public abstract class HttpResponse : IHttpResponse
 {
     private string StatusCodeMessage => this.StatusCode.ToString();
 
@@ -9,7 +9,7 @@ public abstract class HttpResponse
         this.Headers = new HttpHeaderCollection();
     }
     
-    public HttpHeaderCollection Headers { get; }
+    public IHttpHeaderCollection Headers { get; }
 
     public HttpStatusCode StatusCode { get; protected set; }
     
@@ -21,7 +21,6 @@ public abstract class HttpResponse
 
         response.AppendLine($"HTTP/1.1 {statusCodeNumber} {this.StatusCodeMessage}");
         response.AppendLine(this.Headers.ToString());
-        response.AppendLine();
 
         return response.ToString();
     }
