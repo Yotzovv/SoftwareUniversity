@@ -15,7 +15,7 @@ namespace _07._AsyncProgramming___Exercise
         {
             var app = new MainApplication();
             var appRouteConfig = new AppRouteConfig();
-            app.Start(appRouteConfig);
+            app.Configure(appRouteConfig);
 
             this.webServer = new WebServer(1337, appRouteConfig);
             this.webServer.Run();

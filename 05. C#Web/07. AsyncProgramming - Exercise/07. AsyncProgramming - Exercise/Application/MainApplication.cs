@@ -1,7 +1,9 @@
 ﻿public class MainApplication : IApplication
 {
-    public void Start(IAppRouteConfig appRouteConfig)
+    public void Configure(IAppRouteConfig appRouteConfig)
     {
-        appRouteConfig.AddRoute("/", HttpRequestMethod.Get ,new GetHandler(HttpContext => new HomeController().Index()));
+        appRouteConfig.Get("/", req => new HomeController().Index());
+        appRouteConfig.Get("/testsession", req => new HomeController().SessionTest(req));
+
     }
 }

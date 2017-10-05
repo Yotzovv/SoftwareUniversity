@@ -17,6 +17,7 @@ public class HttpRequest : IHttpRequest
         this.Headers = new HttpHeaderCollection();
         this.UrlParameters = new Dictionary<string, string>();
         this.QueryParameters = new Dictionary<string, string>();
+        this.Cookies = new HttpCookieCollection();
 
         this.ParseRequest(requestText);
     }
@@ -24,9 +25,13 @@ public class HttpRequest : IHttpRequest
 
     public IDictionary<string, string> FormData { get; private set; }
 
-    public HttpHeaderCollection Headers { get; private set; }
+    public IHttpHeaderCollection Headers { get; private set; }
 
-    public string Path { get; private set; }
+    public IHttpCookieCollection Cookies { get; private set; }
+
+    public IHttpSession Session { get; set; }
+
+    public IDictionary<string, string> UrlParameters { get; private set; }
 
     public IDictionary<string, string> QueryParameters { get; private set; }
 
@@ -34,7 +39,10 @@ public class HttpRequest : IHttpRequest
 
     public string Url { get; private set; }
 
-    public IDictionary<string, string> UrlParameters { get; private set; }
+    public string Path { get; private set; }
+
+
+
 
     public void AddUrlParameter(string key, string value)
     {
@@ -65,8 +73,60 @@ public class HttpRequest : IHttpRequest
         this.Path = this.ParsePath(Url);
 
         this.ParseHeaders(tokens);
+        this.ParseCookies();
         this.ParseParameters();
         this.ParseFormData(tokens.Last());
+
+        this.SetSession();
+    }
+
+    private void SetSession()
+    {
+        if(this.Cookies.ContainsKey(SessionStore.SessionCookieKey))
+        {
+            var cookie = this.Cookies.Get(SessionStore.SessionCookieKey);
+            var sessionId = cookie.Value;
+
+            this.Session = SessionStore.Get(sessionId);
+        }
+    }
+
+    private void ParseCookies()
+    {
+        if(this.Headers.ContainsKey(HttpHeader.Cookie))
+        {
+            var allCookies = this.Headers.Get(HttpHeader.Cookie);
+
+            foreach (var cookie in allCookies)
+            {
+                if(!cookie.Value.Contains('='))
+                {
+                    return;
+                }
+
+                var cookieParts = cookie.Value
+                                        .Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries)
+                                        .ToList();
+
+                if(cookieParts.Any())
+                {
+                    continue;
+                }
+
+                foreach (var cookiePart in cookieParts)
+                {
+                    var cookieKeyValuePair = cookiePart.Split(new[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    if (cookieKeyValuePair.Length == 2)
+                    {
+                        var key = cookieKeyValuePair[0].Trim();
+                        var value = cookieKeyValuePair[1].Trim();
+
+                        this.Cookies.Add(new HttpCookie(key, value, false));
+                    }
+                }
+            }
+        }
     }
 
     private void ParseFormData(string formDataLine)
@@ -136,7 +196,7 @@ public class HttpRequest : IHttpRequest
             this.Headers.Add(new HttpHeader(headerKey, headerValue));
         }
 
-        if(!this.Headers.ContainsKey("Host"))
+        if(!this.Headers.ContainsKey(HttpHeader.Host))
         {
             BadRequestException.ThrowFromInvalidRequest();
         }

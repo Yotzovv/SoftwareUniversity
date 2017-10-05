@@ -21,17 +21,20 @@ public class AppRouteConfig : IAppRouteConfig
 
     public IReadOnlyDictionary<HttpRequestMethod, IDictionary<string, RequestHandler>> Routes => this.routes;
     
+
+
+    public void Get(string route, Func<IHttpRequest, IHttpResponse> handler)
+    {
+        this.AddRoute(route, HttpRequestMethod.Get, new RequestHandler(handler));
+    }
+
+    public void Post(string route, Func<IHttpRequest, IHttpResponse> handler)
+    {
+        this.AddRoute(route, HttpRequestMethod.Post, new RequestHandler(handler));
+    }
+
     public void AddRoute(string route, HttpRequestMethod method, RequestHandler httpHandler)
     {
-        var handlerName = httpHandler.GetType().Name.ToLower();
-
-        if(handlerName.Contains("get"))
-        {
-            this.routes[HttpRequestMethod.Get].Add(route, httpHandler);
-        }
-        else
-        {
-            this.routes[HttpRequestMethod.Post].Add(route, httpHandler);
-        }
+        this.routes[method].Add(route, httpHandler);
     }
 }

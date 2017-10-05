@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 public interface IAppRouteConfig
 {
@@ -8,5 +9,9 @@ public interface IAppRouteConfig
     }
 
     void AddRoute(string route, HttpRequestMethod method, RequestHandler httpHandler);
+
+    void Get(string route, Func<IHttpRequest, IHttpResponse> handler);
+
+    void Post(string route, Func<IHttpRequest, IHttpResponse> handler);
 }
 

@@ -7,12 +7,19 @@ public abstract class HttpResponse : IHttpResponse
     protected HttpResponse()
     {
         this.Headers = new HttpHeaderCollection();
+        this.Cookies = new HttpCookieCollection();
     }
     
     public IHttpHeaderCollection Headers { get; }
 
+    public IHttpCookieCollection Cookies { get; }
+
     public HttpStatusCode StatusCode { get; protected set; }
     
+
+
+
+
     public override string ToString()
     {
         var response = new StringBuilder();

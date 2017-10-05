@@ -1,0 +1,11 @@
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\obj\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.csprojResolveAssemblyReference.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\obj\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.csproj.CoreCompileInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\obj\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.AssemblyInfoInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\obj\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.AssemblyInfo.cs
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\bin\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.deps.json
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\bin\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.runtimeconfig.json
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\bin\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.runtimeconfig.dev.json
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\bin\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\bin\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\obj\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\07. AsyncProgramming - Exercise\07. AsyncProgramming - Exercise\obj\Debug\netcoreapp2.0\07. AsyncProgramming - Exercise.pdb
