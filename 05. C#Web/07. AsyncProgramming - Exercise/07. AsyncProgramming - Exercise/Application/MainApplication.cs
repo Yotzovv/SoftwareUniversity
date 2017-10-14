@@ -2,8 +2,8 @@
 {
     public void Configure(IAppRouteConfig appRouteConfig)
     {
-        appRouteConfig.Get("/", req => new HomeController().Index());
-        appRouteConfig.Get("/testsession", req => new HomeController().SessionTest(req));
+        appRouteConfig.Get("/", req => new GameStoreHomeController().Index());
+        appRouteConfig.Get("/testsession", req => new GameStoreHomeController().SessionTest(req));
 
     }
 }

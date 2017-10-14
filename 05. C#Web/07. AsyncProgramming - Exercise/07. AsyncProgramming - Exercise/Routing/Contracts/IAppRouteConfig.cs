@@ -8,6 +8,8 @@ public interface IAppRouteConfig
         get;
     }
 
+    ICollection<string> AnonymousPaths { get; }
+
     void AddRoute(string route, HttpRequestMethod method, RequestHandler httpHandler);
 
     void Get(string route, Func<IHttpRequest, IHttpResponse> handler);

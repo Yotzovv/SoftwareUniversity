@@ -6,6 +6,8 @@
 
     T Get<T>(string key);
 
+    bool Contains(string key);
+
     void Add(string key, object value);
 
     void Clear();

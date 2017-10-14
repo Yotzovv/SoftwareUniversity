@@ -179,7 +179,7 @@ public class HttpRequest : IHttpRequest
     private void ParseHeaders(string[] tokens)
     {
         var emptyLineAfterHeadersIndex = Array.IndexOf(tokens, string.Empty);
-
+        
         for (int i = 1; i < emptyLineAfterHeadersIndex; i++)
         {
             var currentLine = tokens[i];

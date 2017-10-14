@@ -82,9 +82,9 @@ public class ServerRouteConfig : IServerRouteConfig
                 throw new InvalidOperationException($"Route parameter in '{currentToken}' is not valid.");
             }
 
-            var paramName = match.Groups[0].Value.Substring(1, match.Groups[0].Length - 2);
+            var parameter = match.Value.Substring(1, match.Length - 2);
             
-            args.Add(paramName);
+            args.Add(parameter);
 
             var currentTokenWithoutCurlyBrackets = currentToken.Substring(1, currentToken.Length - 2);
 

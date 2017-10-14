@@ -1,6 +1,6 @@
 ﻿using System;
 
-class HomeController
+public class GameStoreHomeController
 {
     public IHttpResponse Index()
     {
