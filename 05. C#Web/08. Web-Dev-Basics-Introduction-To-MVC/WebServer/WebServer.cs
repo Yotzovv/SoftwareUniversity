@@ -14,16 +14,20 @@
 
         private readonly IHandleable mvcRequestHandler;
 
+        private readonly IHandleable resourceHandler;
+
         private readonly TcpListener listener;
 
         private bool isRunning;
+        private int v;
 
-        public WebServer(int port, IHandleable mvcRequestHandler)
+        public WebServer(int port, IHandleable mvcRequestHandler, IHandleable resourceHandler)
         {
             this.port = port;
             this.listener = new TcpListener(IPAddress.Parse(localHostIpAddress), port);
 
             this.mvcRequestHandler = mvcRequestHandler;
+            this.resourceHandler = resourceHandler;
         }
 
         public void Run()
@@ -42,7 +46,7 @@
             {
                 Console.WriteLine("Waiting for connection...");
                 var client = await this.listener.AcceptSocketAsync();
-                var connectionHandler = new ConnectionHandler(client, this.mvcRequestHandler);
+                var connectionHandler = new ConnectionHandler(client, this.mvcRequestHandler, this.resourceHandler);
                 await connectionHandler.ProcessRequestAsync();
             }
         }

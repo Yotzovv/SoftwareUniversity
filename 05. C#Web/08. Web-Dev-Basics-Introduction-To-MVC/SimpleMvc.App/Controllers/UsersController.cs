@@ -1,18 +1,43 @@
 ﻿using SimpleMvc.App.BindingModels;
-using SimpleMvc.App.ViewModels;
 using SimpleMvc.Data;
 using SimpleMvc.Domain;
+using SimpleMvc.Framework.ActionResults;
 using SimpleMvc.Framework.Attributes;
 using SimpleMvc.Framework.Controllers;
 using SimpleMvc.Framework.Interfaces;
-using SimpleMvc.Framework.Interfaces.Generic;
 using System.Collections.Generic;
 using System.Linq;
+using WebServer.Http.Response;
 
 namespace SimpleMvc.App.Controllers
 {
     public class UsersController : Controller
     {
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginUserBindingModel loginUserBinding)
+        {
+            using (var context = new NotesDbContext())
+            {
+                var foundUser = context.Users.FirstOrDefault(u => u.Username == loginUserBinding.Username);
+
+                if(foundUser == null)
+                {
+                    return RedirectToAction("/home/login");
+                }
+
+                context.SaveChanges();
+                this.SignIn(foundUser.Username);
+            }
+
+            return RedirectToAction("/home/index");
+        }
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -22,6 +47,11 @@ namespace SimpleMvc.App.Controllers
         [HttpPost]
         public IActionResult Register(RegisterUserBindingModel model)
         {
+            if(!this.IsValidModel(model))
+            {
+                return View();
+            }
+
             //TODO: Add User into the db
             var user = new Domain.User()
             {
@@ -40,51 +70,53 @@ namespace SimpleMvc.App.Controllers
         }
 
         [HttpGet]
-        public IActionResult<AllUsernamesViewModel> All()
+        public IActionResult All()
         {
-            List<string> usernames = new List<string>();
+            if(!this.User.IsAuthenticated)
+            {
+                return RedirectToAction("/users/login");
+            }
+
+            Dictionary<int, string> users = new Dictionary<int, string>();
 
             using (var context = new NotesDbContext())
             {
-                usernames = context.Users.Select(n => n.Username).ToList();
+                users = context.Users.ToDictionary(u => u.Id, u => u.Username);
             }
 
-            var viewModel = new AllUsernamesViewModel()
-            {
-                Usernames = usernames
-            };
+            this.Model["users"] = users.Any()
+                                  ? string.Join(string.Empty, users.Select(u =>
+                                  $"<li><a href=\"/users/profile?id={u.Key}\">{u.Value}</a></li>"))
+                                  : string.Empty;
 
-            return View(viewModel);
+            return View();
         }
 
         [HttpGet]
-        public IActionResult<UserProfileViewModel> Profile(int id)
+        public IViewable Profile(int id)
         {
+            if(!this.User.IsAuthenticated)
+            {
+                return RedirectToAction("/users/login");
+            }
+
+            User user = new User();
+
             using (var context = new NotesDbContext())
             {
-                var user = context.Users.Find(id);
-
-                var viewModel = new UserProfileViewModel()
-                {
-                    UserId = user.Id,
-                    Username = user.Username,
-                    Notes = context.Notes
-                                   .Where(nid => nid.Owner.Id == user.Id)
-                                   .Select(n =>
-                                       new NoteViewModel()
-                                       {
-                                           Title = n.Title,
-                                           Content = n.Content
-                                       })
-                                       .ToList(),
-                };
-
-                return View(viewModel);
+                user = context.Users.Find(id);
             }
+
+            return View();
+        }
+
+        private IViewable RedirectToAction(string v)
+        {
+            return new RedirectResult(v);
         }
 
         [HttpPost]
-        public IActionResult<UserProfileViewModel> Profile(AddNoteBindingModel model)
+        public IViewable Profile(AddNoteBindingModel model)
         {
             using (var context = new NotesDbContext())
             {
@@ -103,5 +135,14 @@ namespace SimpleMvc.App.Controllers
 
             return Profile(model.UserId);
         }
+
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            this.SignOut();
+
+            return RedirectToAction("/home/index");
+        }
+
     }
 }

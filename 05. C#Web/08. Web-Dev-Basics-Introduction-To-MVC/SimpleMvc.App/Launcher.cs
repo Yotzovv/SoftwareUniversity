@@ -7,7 +7,7 @@ namespace SimpleMvc.App
     {
         static void Main(string[] args)
         {
-            MvcEngine.Run(new WebServer.WebServer(8000, new ControllerRouter()));
+            MvcEngine.Run(new WebServer.WebServer(8000, new ControllerRouter(), new ResourceRouter()));
         }
     }
 }

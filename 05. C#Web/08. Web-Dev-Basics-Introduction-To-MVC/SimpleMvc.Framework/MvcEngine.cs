@@ -36,6 +36,7 @@ namespace SimpleMvc.Framework
         private static void RegisterViews()
         {
             MvcContext.Get.ViewsFolder = "Views";
+            MvcContext.Get.ResourcesFolder = "Resources";
         }
 
         private static void RegisterModels()

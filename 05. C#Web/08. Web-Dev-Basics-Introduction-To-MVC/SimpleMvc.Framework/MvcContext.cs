@@ -8,6 +8,8 @@
 
         public static MvcContext Get => Instance == null ? (Instance = new MvcContext()) : Instance;
 
+        public string ResourcesFolder { get; set; }
+
         public string AssemblyName { get; set; }
 
         public string ControllersFolder { get; set; }

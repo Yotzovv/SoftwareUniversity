@@ -1,7 +1,7 @@
 ﻿namespace SimpleMvc.Framework.Interfaces
 {
-    public interface IActionResult : IInvocable
+    public interface IActionResult
     {
-        IRenderable Action { get; set; }
+        string Invoke();
     }
 }
