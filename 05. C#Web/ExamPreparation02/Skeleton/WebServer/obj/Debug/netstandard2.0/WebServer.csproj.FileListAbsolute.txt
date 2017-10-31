@@ -1,0 +1,27 @@
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\WebServer\bin\Debug\netstandard2.0\WebServer.deps.json
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\WebServer\bin\Debug\netstandard2.0\WebServer.dll
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\WebServer\bin\Debug\netstandard2.0\WebServer.pdb
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\WebServer\obj\Debug\netstandard2.0\WebServer.csproj.CoreCompileInputs.cache
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\WebServer\obj\Debug\netstandard2.0\WebServer.AssemblyInfoInputs.cache
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\WebServer\obj\Debug\netstandard2.0\WebServer.AssemblyInfo.cs
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\WebServer\obj\Debug\netstandard2.0\WebServer.dll
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\WebServer\obj\Debug\netstandard2.0\WebServer.pdb
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\WebServer\obj\Debug\netstandard2.0\WebServer.csprojResolveAssemblyReference.cache
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\WebServer\bin\Debug\netstandard2.0\WebServer.deps.json
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\WebServer\bin\Debug\netstandard2.0\WebServer.dll
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\WebServer\bin\Debug\netstandard2.0\WebServer.pdb
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.csprojResolveAssemblyReference.cache
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.csproj.CoreCompileInputs.cache
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.AssemblyInfoInputs.cache
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.AssemblyInfo.cs
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.dll
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\WebServer\bin\Debug\netstandard2.0\WebServer.deps.json
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\WebServer\bin\Debug\netstandard2.0\WebServer.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\WebServer\bin\Debug\netstandard2.0\WebServer.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.csprojResolveAssemblyReference.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.csproj.CoreCompileInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.AssemblyInfoInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.AssemblyInfo.cs
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\WebServer\obj\Debug\netstandard2.0\WebServer.pdb

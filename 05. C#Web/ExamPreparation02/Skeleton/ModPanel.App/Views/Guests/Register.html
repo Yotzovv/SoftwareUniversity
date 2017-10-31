@@ -1,0 +1,46 @@
+﻿<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col col-md-6">
+                <div class="text-center">
+                    <h1 class="display-3">Register</h1>
+                </div>
+                <hr />
+
+                <form method="post">
+
+                    <div class="form-group row">
+                        <label class="col-form-label" for="email">Email</label>
+                        <input name="Email" type="email" class="form-control" id="email" placeholder="example@example.com" />
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label" for="pass">Password</label>
+                        <input name="Password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" id="pass" class="form-control" placeholder="Password" />
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label" for="pass">Confirm Password</label>
+                        <input name="ConfirmPassword" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" id="pass" class="form-control" placeholder="Password" />
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label" for="pass">Position</label>
+                        <select name="Position" class="form-control">
+                            <option selected disabled>Select a position</option>
+                            <option>Developer</option>
+                            <option>Designer</option>
+                            <option>Technical Support</option>
+                            <option>Technical Trainer</option>
+                            <option>HR</option>
+                            <option>Marketing Specialist</option>
+                        </select>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Register" />
+                </form>
+                <br />
+            </div>
+        </div>
+    </div>
+</main>

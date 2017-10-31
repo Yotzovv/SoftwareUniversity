@@ -1,0 +1,39 @@
+﻿<main>
+    <div class="row justify-content-center">
+        <div class="container text-center">
+            <br />
+            <div class="jumbotron">
+                <h1 class="display-3">Hello, {{{name}}}!</h1>
+
+                <ul style="display: {{{annonymousDisplay}}}">
+                    Please login in our system in order to use it.
+                    <hr style="display: {{{annonymousDisplay}}}" class="style2">
+                </ul>
+                <ul style="display: {{{annonymousDisplay}}}">
+                    you don't have a registration yet, you can register
+                    <a href="/guests/register">here</a>.
+                    <br />
+                    <br />
+                    <a class="btn btn-primary btn-lg" href="/guests/login" role="button">Login</a>
+                </ul>
+
+                <ul style="display: {{{adminDisplay}}}">
+                    You can view your contests or review your submissions.
+                    <br />
+                    <br />
+                    <a class="btn btn-primary btn-lg" href="/users/contests" role="button">Contests</a>
+                    <a class="btn btn-primary btn-lg" href="/users/submissions" role="button">Submissions</a>
+                </ul>
+
+                <ul style="display: {{{userDisplay}}}">
+                    You can view your contests or review your submissions.
+                    <br />
+                    <br />
+                    <a class="btn btn-primary btn-lg" href="/users/contests" role="button">Contests</a>
+                    <a class="btn btn-primary btn-lg" href="/users/submissions" role="button">Submissions</a>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,9 @@
+C:\Users\asd\Desktop\Exam Resources\WebServer\bin\Debug\netstandard2.0\WebServer.deps.json
+C:\Users\asd\Desktop\Exam Resources\WebServer\bin\Debug\netstandard2.0\WebServer.dll
+C:\Users\asd\Desktop\Exam Resources\WebServer\bin\Debug\netstandard2.0\WebServer.pdb
+C:\Users\asd\Desktop\Exam Resources\WebServer\obj\Debug\netstandard2.0\WebServer.csprojResolveAssemblyReference.cache
+C:\Users\asd\Desktop\Exam Resources\WebServer\obj\Debug\netstandard2.0\WebServer.csproj.CoreCompileInputs.cache
+C:\Users\asd\Desktop\Exam Resources\WebServer\obj\Debug\netstandard2.0\WebServer.AssemblyInfoInputs.cache
+C:\Users\asd\Desktop\Exam Resources\WebServer\obj\Debug\netstandard2.0\WebServer.AssemblyInfo.cs
+C:\Users\asd\Desktop\Exam Resources\WebServer\obj\Debug\netstandard2.0\WebServer.dll
+C:\Users\asd\Desktop\Exam Resources\WebServer\obj\Debug\netstandard2.0\WebServer.pdb

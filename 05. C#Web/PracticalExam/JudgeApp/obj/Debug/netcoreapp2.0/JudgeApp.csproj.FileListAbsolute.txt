@@ -1,0 +1,15 @@
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\bin\Debug\netcoreapp2.0\JudgeApp.deps.json
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\bin\Debug\netcoreapp2.0\JudgeApp.runtimeconfig.json
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\bin\Debug\netcoreapp2.0\JudgeApp.runtimeconfig.dev.json
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\bin\Debug\netcoreapp2.0\JudgeApp.dll
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\bin\Debug\netcoreapp2.0\JudgeApp.pdb
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\bin\Debug\netcoreapp2.0\SimpleMvc.Framework.dll
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\bin\Debug\netcoreapp2.0\WebServer.dll
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\bin\Debug\netcoreapp2.0\SimpleMvc.Framework.pdb
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\bin\Debug\netcoreapp2.0\WebServer.pdb
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\obj\Debug\netcoreapp2.0\JudgeApp.csprojResolveAssemblyReference.cache
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\obj\Debug\netcoreapp2.0\JudgeApp.csproj.CoreCompileInputs.cache
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\obj\Debug\netcoreapp2.0\JudgeApp.AssemblyInfoInputs.cache
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\obj\Debug\netcoreapp2.0\JudgeApp.AssemblyInfo.cs
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\obj\Debug\netcoreapp2.0\JudgeApp.dll
+C:\Users\asd\Desktop\Exam Resources\JudgeApp\obj\Debug\netcoreapp2.0\JudgeApp.pdb

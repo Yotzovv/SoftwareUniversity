@@ -1,0 +1,11 @@
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.deps.json
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.dll
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.pdb
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\bin\Debug\netstandard2.0\WebServer.dll
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\bin\Debug\netstandard2.0\WebServer.pdb
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.csprojResolveAssemblyReference.cache
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.csproj.CoreCompileInputs.cache
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.AssemblyInfoInputs.cache
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.AssemblyInfo.cs
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.dll
+C:\Users\asd\Desktop\Exam Resources\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.pdb

@@ -1,0 +1,33 @@
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.deps.json
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.dll
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.pdb
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\bin\Debug\netstandard2.0\WebServer.dll
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\bin\Debug\netstandard2.0\WebServer.pdb
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.csproj.CoreCompileInputs.cache
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.AssemblyInfoInputs.cache
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.AssemblyInfo.cs
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.dll
+C:\Users\Trainer\Desktop\MvcDemo\08. Web-Dev-Basics-Introduction-To-MVC\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.pdb
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.deps.json
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.dll
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.pdb
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\WebServer.dll
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\WebServer.pdb
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.csprojResolveAssemblyReference.cache
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.csproj.CoreCompileInputs.cache
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.AssemblyInfoInputs.cache
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.AssemblyInfo.cs
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.dll
+C:\Users\Trainer\Desktop\RealExamPrep\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.deps.json
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\SimpleMvc.Framework.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\WebServer.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\bin\Debug\netstandard2.0\WebServer.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.csprojResolveAssemblyReference.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.csproj.CoreCompileInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.AssemblyInfoInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.AssemblyInfo.cs
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\ExamPreparation02\Skeleton\SimpleMvc.Framework\obj\Debug\netstandard2.0\SimpleMvc.Framework.pdb
