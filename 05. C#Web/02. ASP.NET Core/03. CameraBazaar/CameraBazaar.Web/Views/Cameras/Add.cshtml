@@ -1,0 +1,89 @@
+﻿@model AddCameraViewModel
+@{
+    ViewData["Title"] = "Add Camera";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <h4>Create a new camera.</h4>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Make"></label>
+                <select class="form-control" asp-for="Make" asp-items="Html.GetEnumSelectList<CameraMake>()"></select>
+                <span asp-validation-for="Make" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinShutterSpeed"></label>
+                <input asp-for="MinShutterSpeed" class="form-control" />
+                <span asp-validation-for="MinShutterSpeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxShutterSpeed"></label>
+                <input asp-for="MaxShutterSpeed" class="form-control" />
+                <span asp-validation-for="MaxShutterSpeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MinISO"></label>
+                <input asp-for="MinISO" class="form-control" />
+                <span asp-validation-for="MinISO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxISO"></label>
+                <input asp-for="MaxISO" step="100" min="200" max="409600" class="form-control" />
+                <span asp-validation-for="MaxISO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsFullFrame"></label>
+                @Html.RadioButtonFor(m => m.IsFullFrame, true)  Yes
+                @Html.RadioButtonFor(m => m.IsFullFrame, false) No
+                <span asp-validation-for="IsFullFrame" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoResolution"></label>
+                <input asp-for="VideoResolution" step="100" min="200" max="409600" class="form-control" />
+                <span asp-validation-for="VideoResolution" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LightMeterings"></label>
+                @foreach (var enumValue in Enum.GetValues(typeof(LightMeter)).Cast<LightMeter>())
+                {
+                    <input type="checkbox" name="@nameof(LightMeter)ings" value="@((int)enumValue)" /> @: @enumValue.DisplayName()
+                }
+                <span asp-validation-for="LightMeterings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-default">Add Camera</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
