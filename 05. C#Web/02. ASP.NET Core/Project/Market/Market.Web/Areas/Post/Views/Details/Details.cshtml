@@ -1,0 +1,160 @@
+﻿@model PostDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div id="imgDescr" class="table-hover">
+    <table align="left" class="table-hover table-responsive">
+        <tbody>
+            <tr>
+                <td>
+                    @if (Model.Images.Count == 0)
+                    {
+                        <img id="detailsImg" src="http://placehold.it/500x300" class="img-responsive" />
+
+                    }
+                    else
+                    {
+                        var profileImage = Convert.ToBase64String(Model.Images.First(x => x.IsProductProfilePicture).ImageBytes);
+                        <img src="data:image;base64,@profileImage" id="detailsImg">
+
+
+                        //<div class="carousel slide article-slide" id="article-photo-carousel">
+                        //    <!-- Wrapper for slides -->
+                        //    <div class="carousel-inner cont-slider">
+                        //        @foreach (var image in Model.Images)
+                        //        {
+                        //            var img = Convert.ToBase64String(Model.Images.First(x => x.IsProductProfilePicture).ImageBytes);
+                        //
+                        //            <div class="item active">
+                        //                <img id="detailsImg" alt="" title="" src="data:image;base64,@img" class="img-responsive">
+                        //            </div>
+                        //        }
+                        //    </div>
+                        //
+                        //    <!-- Indicators -->
+                        //    <ol class="carousel-indicators">
+                        //        @foreach (var indicator in Model.Images)
+                        //        {
+                        //            var ind = Convert.ToBase64String(Model.Images.First(x => x.IsProductProfilePicture).ImageBytes);
+                        //
+                        //            <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
+                        //                <img alt="" src="data:image;base64,@ind" class="img-responsive">
+                        //            </li>
+                        //        }
+                        //    </ol>
+                        //</div>
+                    }
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <figcaption style="width:700px;">
+                        <p>
+                            @Model.Description
+                        </p>
+                    </figcaption>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="margin-top:4.5%; margin-left:730px;">
+    <h2>@Model.Title</h2>
+    <table class="table-hover table-responsive table-condensed">
+        <tr>
+            <th>Seller:</th>
+            <td><a asp-area="User" asp-controller="Profile" asp-action="Profile" asp-route-username="@Model.Owner.UserName">@Model.Owner.UserName</a></td>
+        </tr>
+        <tr>
+            <th>First Name:</th>
+            <td>@Model.Owner.FirstName</td>
+        </tr>
+        @if (!string.IsNullOrWhiteSpace(Model.Owner.MiddleName))
+        {
+            <tr>
+                <th>Middle Name:</th>
+                <td>@(Model.Owner.MiddleName ?? "--")</td>
+            </tr>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Owner.LastName))
+        {
+            <tr>
+                <th>Last Name:</th>
+                <td>@(Model.Owner.LastName ?? "--")</td>
+            </tr>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Owner.PhoneNumber))
+        {
+            <tr>
+                <th>Phone number:</th>
+                <td>@Model.Owner.PhoneNumber</td>
+            </tr>
+        }
+        <tr>
+            <th>Location:</th>
+            <td>@Model.Owner.Area, @Model.Owner.Country</td>
+        </tr>
+        <tr>
+            <th>Price:</th>
+            <td>@Model.Price USD</td>
+        </tr>
+        <tr>
+            <th>Category:</th>
+            <td>@Model.Category</td>
+        </tr>
+        <tr>
+            @if (User.Identity.Name == Model.Owner.UserName)
+            {
+                <th>
+                    <a asp-area="Post" asp-controller="Update" asp-action="Update" asp-route-postId="@Model.Id" style="margin-top: 10px;" class="btn btn-warning">Edit Post</a>
+                </th>
+                <th>
+                    <form>
+                        <a asp-area="Post" asp-controller="Delete" asp-action="Delete" asp-route-id="@Model.Id" style="margin-top: 10px;" class="btn btn-danger">Delete</a>
+                    </form>
+                </th>
+            }
+            else
+            {
+                <th>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a style="margin-top:10px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@Model.Owner">Send Message</a>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                                <input type="text" class="form-control" id="recipient-name" value="@Model.Owner.UserName" readonly />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-form-label">Message:</label>
+                                                <textarea name="sentMSG" id="sentMessage" class="form-control"></textarea>
+                                                <span class="text-danger"></span>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a asp-area="Communication" asp-controller="SendMessage" asp-action="SendMessageAsync" asp-route-recieverId="@Model.Owner.Id" asp-route-text="Test message 3!" class="btn btn-primary">Send message</a>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </th>
+            }
+        </tr>
+    </table>
+</div>

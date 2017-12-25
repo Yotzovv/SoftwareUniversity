@@ -1,0 +1,15 @@
+﻿@model HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    @await Html.PartialAsync("_SearchFormPartial", Model)
+</div>
+
+<hr />
+
+<div class="row course-listings">
+    @await Html.PartialAsync("_StocksListingPartial", Model.Stocks)
+</div>

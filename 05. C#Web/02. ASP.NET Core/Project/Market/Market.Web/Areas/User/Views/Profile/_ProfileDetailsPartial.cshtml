@@ -1,0 +1,73 @@
+﻿@model UserProfileServiceModel
+
+@{
+    ViewData["Title"] = "_ProfileDetailsPartial";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 ">
+            <div class="panel panel-default">
+                <div class="panel-heading"></div>
+                <div class="panel-body">
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <div class="col-sm-4">
+                                <div align="center">
+                                    @if (Model.ProfilePicture == null)
+            {
+                        <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
+}
+else
+{
+                        <img alt="User Pic" id="profile-image1" class="img-circle img-responsive" src="data:image;base64,@System.Convert.ToBase64String(Model.ProfilePicture)" />
+}
+                                    <input id="profile-image-upload" class="hidden" type="file">
+                                    <!--Upload Image Js And Css-->
+                                </div>
+
+                                <br>
+
+                                <!-- /input-group -->
+                            </div>
+                            <div class="col-sm-6">
+                                <h1 style="color:#00b1b1;">@Model.Username</h1>
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr style="margin:5px 0 5px 0;">
+
+
+                            <div class="col-sm-5 col-xs-6 tital ">First Name:</div><div class="col-sm-7 col-xs-6 ">@Model.FirstName</div>
+                            <div class="clearfix"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Middle Name:</div><div class="col-sm-7 col-xs-6 ">@(Model.MiddleName ?? "--")</div>
+                            <div class="clearfix"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Last Name:</div><div class="col-sm-7 col-xs-6 ">@(Model.LastName ?? "--")</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Date Of Birth:</div><div class="col-sm-7">@Model.BirthDate.ToShortDateString()</div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Location: </div><div class="col-sm-7">@Model.Area, @Model.Country</div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital ">Phone number: </div><div class="col-sm-7">@(Model.PhoneNumber ?? "--")</div>
+
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $('#profile-image1').on('click', function () {
+                    $('#profile-image-upload').click();
+                });
+            });
+        </script>
+    </div>
+</div>

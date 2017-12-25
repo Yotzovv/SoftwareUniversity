@@ -1,0 +1,29 @@
+﻿@model HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "_SearchFormPartial";
+}
+
+<div class="container" style="margin-top: 5%;">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <form asp-action="Search">
+                <div class="input-group">
+                    <div class="input-group-btn search-panel">
+                        <div class="form-group">
+                            <label for="type1" class="control-label">Category</label>
+                            <select asp-for="Category" asp-items="Html.GetEnumSelectList<Categories>()" class="form-control" id="location1">
+                                <option selected="selected" value="">Please select category..</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="hidden" name="search_param" value="all" id="search_param">
+                    <input asp-for="SearchText" type="text" class="form-control" placeholder="Search for snippets" />
+                    <span class="input-group-btn">
+                        <input class="btn btn-primary" type="submit" value="Search" /><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

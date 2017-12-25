@@ -1,0 +1,40 @@
+﻿@model UserProfileServiceModel
+
+<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom:5%; margin-top: 2%;">
+    <li class="nav-item active">
+        <a class="nav-link" id="home-tab" data-toggle="tab" href="#stocks" role="tab" aria-controls="home" aria-selected="true">Stock</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+    </li>
+    @if (Model.Username == User.Identity.Name)
+    {
+        <li class="nav-item">
+            <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+        </li>
+    }
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        @await Html.PartialAsync("_ProfileDetailsPartial", Model)
+        @if (Model.Username == User.Identity.Name)
+        {
+            <a asp-controller="Manage" asp-action="Index" class="btn btn-default">Edit Profile</a>
+        }
+    </div>
+    <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+        @await Html.PartialAsync("_MessagesPartial", Model)
+    </div>
+    <div class="tab-pane fade active in" id="stocks" role="tabpanel" aria-expanded="true" aria-labelledby="home-tab">
+        <div class="row course-listings">
+            @if (!Model.Posts.Any())
+            {
+                <h2>No stocks found</h2>
+            }
+            else
+            {
+                @await Html.PartialAsync("_StocksListingPartial", Model.Posts)
+            }
+        </div>
+    </div>
+</div>

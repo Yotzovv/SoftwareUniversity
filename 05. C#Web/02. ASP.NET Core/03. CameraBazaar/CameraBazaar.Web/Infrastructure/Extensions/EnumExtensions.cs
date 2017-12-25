@@ -8,7 +8,7 @@ namespace CameraBazaar.Web.Infrastructure.Extensions
         {
             if(lightMetering == LightMeter.CenterWeighted)
             {
-                return "Center-Weighted"; ;
+                return "Center-Weighted";
             }
 
             return lightMetering.ToString();

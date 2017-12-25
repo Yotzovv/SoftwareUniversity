@@ -1,0 +1,58 @@
+﻿@model IEnumerable<UserListingServiceModel>
+@{
+    ViewData["Title"] = "_UserListingPartial";
+}
+
+<script src="https://use.fontawesome.com/1e803d693b.js"></script>
+
+<div class="container">
+    <div class="row">
+
+        <div class="panel panel-default user_panel">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+                <div class="table-container">
+                    <table class="table-users table" border="0">
+                        <thead>
+                            <tr>
+                                <td></td>
+                                <td>Username</td>
+                                <td>Location</td>
+                                <td>Email</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var user in Model)
+                            {
+                                <tr>
+                                    <td width="5" align="center">
+                                        @if (user.ProfilePicture != null)
+                                        {
+                                            <img id="profileImgListing" class="pull-left img-circle nav-user-photo" src="data:image;base64,@System.Convert.ToBase64String(user.ProfilePicture)" />
+                                        }
+                                        else
+                                        {
+                                            <i class="fa fa-2x fa-user fw"></i>
+                                        }
+                                    </td>
+                                    <td>
+                                        <a asp-area="User" asp-controller="Profile" asp-action="Profile" asp-route-username="@user.UserName">@user.UserName</a>
+                                        <br>
+                                        <i class="fa fa-envelope"></i>
+                                    </td>
+                                    <td>
+                                        @user.Area, @user.Country
+                                    </td>
+                                    <td>
+                                        @user.Email
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

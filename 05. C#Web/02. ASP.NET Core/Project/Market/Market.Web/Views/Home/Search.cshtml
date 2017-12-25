@@ -1,0 +1,38 @@
+﻿@model SearchViewModel
+
+<div>
+    @await Html.PartialAsync("_SearchFormPartial", Model)
+</div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom:5%;">
+    <li class="nav-item">
+        <a class="nav-link" id="home-tab" data-toggle="tab" href="#stocks" role="tab" aria-controls="home" aria-selected="true">Stock</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Users</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        @if (!Model.Users.Any())
+        {
+            <h2>No users found</h2>
+        }
+        else
+        {
+            @await Html.PartialAsync("_UserListingPartial", Model.Users)
+        }
+    </div>
+    <div class="tab-pane fade show active in" id="stocks" role="tabpanel" aria-expanded="false" aria-labelledby="home-tab">
+        <div class="row course-listings">
+            @if (!Model.Stocks.Any())
+            {
+                <h2>No stocks found</h2>
+            }
+            else
+            {
+                @await Html.PartialAsync("_StocksListingPartial", Model.Stocks)
+            }
+        </div>
+    </div>
+</div>

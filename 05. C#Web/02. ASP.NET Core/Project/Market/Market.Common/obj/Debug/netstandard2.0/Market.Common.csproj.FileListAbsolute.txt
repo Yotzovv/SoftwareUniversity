@@ -1,0 +1,9 @@
+C:\Users\asd\source\repos\Market\Market.Common\bin\Debug\netstandard2.0\Market.Common.deps.json
+C:\Users\asd\source\repos\Market\Market.Common\bin\Debug\netstandard2.0\Market.Common.dll
+C:\Users\asd\source\repos\Market\Market.Common\bin\Debug\netstandard2.0\Market.Common.pdb
+C:\Users\asd\source\repos\Market\Market.Common\obj\Debug\netstandard2.0\Market.Common.csprojResolveAssemblyReference.cache
+C:\Users\asd\source\repos\Market\Market.Common\obj\Debug\netstandard2.0\Market.Common.csproj.CoreCompileInputs.cache
+C:\Users\asd\source\repos\Market\Market.Common\obj\Debug\netstandard2.0\Market.Common.AssemblyInfoInputs.cache
+C:\Users\asd\source\repos\Market\Market.Common\obj\Debug\netstandard2.0\Market.Common.AssemblyInfo.cs
+C:\Users\asd\source\repos\Market\Market.Common\obj\Debug\netstandard2.0\Market.Common.dll
+C:\Users\asd\source\repos\Market\Market.Common\obj\Debug\netstandard2.0\Market.Common.pdb

@@ -1,0 +1,46 @@
+﻿@model PostViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Edit Product</h2>
+
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector: '#someselector' });</script>
+
+<div class="row">
+    <div class="col-md-8">
+        <form  asp-action="UpdateAsync" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <input hidden readonly asp-for="Id" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price">Price</label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                <textarea asp-for="Description" rows="5" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>Upload an avatar using this form:</p>
+                <input asp-for="FormUploadedImages" type="file" multiple />
+            </div>
+            <button type="submit" class="btn btn-default">Publish Article</button>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
