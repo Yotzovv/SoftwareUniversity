@@ -13,17 +13,24 @@ namespace Market.Web.Areas.Post.Controllers
     {
         private readonly IPostService products;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IUserActivityService userActivities;
 
-        public DeleteController(IPostService products, UserManager<ApplicationUser> userManager)
+        public DeleteController(IPostService products, IUserActivityService userActivities, UserManager<ApplicationUser> userManager)
         {
             this.products = products;
             this.userManager = userManager;
+            this.userActivities = userActivities;
         }
         
         [Route("Delete")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             await this.products.DeletePost(id);
+
+            var user = this.userManager.FindByNameAsync(User.Identity.Name);
+
+            await this.userActivities.AddUserActivity(string.Format(DeletedPost, id), user.Result);
 
             return RedirectToAction("", "Profile", new { username = User.Identity.Name });
         }

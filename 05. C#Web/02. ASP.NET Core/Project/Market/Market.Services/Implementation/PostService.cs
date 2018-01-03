@@ -5,6 +5,7 @@ using Market.Data.Models.Enums;
 using Market.Services.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,7 +30,8 @@ namespace Market.Services.Implementation
                 Description = description,
                 Price = price,
                 Owner = user,
-                Category = category
+                Category = category,
+                SubmissionDate = DateTime.UtcNow
             };
 
             if (images != null)
@@ -64,16 +66,17 @@ namespace Market.Services.Implementation
 
         public async Task DeletePost(int id)
         {
-            // var post = await this.db.Posts.FindAsync(id);
-            //
-            // if (post == null)
-            // {
-            //     return;
-            // }
-            //
-            // post.IsActive = false;
+            var post = await this.db.Posts.FindAsync(id);
+            
+            if (post == null)
+            {
+                return;
+            }
+            
+            post.IsActive = false;
 
-            this.db.Posts.Remove(await this.db.Posts.FindAsync(id));
+            //this.db.Posts.Remove(await this.db.Posts.FindAsync(id));
+
             await this.db.SaveChangesAsync();
         }
 
@@ -119,7 +122,7 @@ namespace Market.Services.Implementation
                          .Images
                          .Where(x => x.ProductId == productId)
                          .ToListAsync();
-
+        
         public async Task<List<Image>> GetAllPostImages(string productTitle)
             => await this.db
                          .Images
@@ -155,13 +158,14 @@ namespace Market.Services.Implementation
             {
                 return await this.db
                                  .Posts
+                                 .Where(x => x.IsActive)
                                  .ProjectTo<ProductListingServiceModel>()
                                  .ToListAsync();
             }
 
             return await this.db
                              .Posts
-                             .Where(p => p.Title.Contains(title))
+                             .Where(p => p.Title.Contains(title) && p.IsActive)
                              .ProjectTo<ProductListingServiceModel>()
                              .ToListAsync();
         }
@@ -177,5 +181,12 @@ namespace Market.Services.Implementation
                    .First(x => x.Title == postTitle)
                    .Owner
                    .Id;
+
+        public async Task AddView(int productId)
+        {
+            this.GetPostById(productId).Result.Views++;
+
+            await this.db.SaveChangesAsync();
+        }
     }
 }

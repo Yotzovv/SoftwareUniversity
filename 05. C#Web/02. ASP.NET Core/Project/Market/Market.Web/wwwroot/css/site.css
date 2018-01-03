@@ -182,11 +182,12 @@ a[aria-expanded="true"] {
 }
 
 .panel-footer {
-    width: 167px;
+    width: 150px;
+    height: 60px;
 }
 
 #stock {
-    width: 200px;
+    width: 180px;
 }
 
 #deleteButton {

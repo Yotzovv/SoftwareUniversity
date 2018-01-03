@@ -1,4 +1,5 @@
 ﻿using Market.Data.Models;
+using Market.Services;
 using Market.Web.Models.AccountViewModels;
 using Market.Web.Services;
 using Microsoft.AspNetCore.Authentication;
@@ -21,17 +22,20 @@ namespace Market.Web.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
+        private readonly IUserLoggsService usersLoggs;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            IUserLoggsService usersLoggs)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            this.usersLoggs = usersLoggs;
         }
 
         [HttpGet]
@@ -68,9 +72,11 @@ namespace Market.Web.Controllers
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, lockoutOnFailure: false);
+                
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+                    await usersLoggs.SetUserLoginDate(model.Username);
                     return RedirectToLocal(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
@@ -274,6 +280,7 @@ namespace Market.Web.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
+            await this.usersLoggs.SetUserLogoutDate(User.Identity.Name);
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 

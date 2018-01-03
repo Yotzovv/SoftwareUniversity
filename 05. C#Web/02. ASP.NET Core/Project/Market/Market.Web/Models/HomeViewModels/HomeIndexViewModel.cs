@@ -1,13 +1,13 @@
 ﻿using Market.Data.Models.Enums;
 using Market.Services.Model;
+using PagedList;
 using System.Collections.Generic;
 
 namespace Market.Web.Models.HomeViewModels
 {
     public class HomeIndexViewModel
     {
-        public IEnumerable<ProductListingServiceModel> Stocks { get; set; }
-            = new List<ProductListingServiceModel>();
+        public PagedList<ProductListingServiceModel> Stocks { get; set; }
         
         public string SearchText { get; set; }
 

@@ -22,7 +22,11 @@ namespace Market.Data.Models
         public string Area { get; set; }
         
         public byte[] ProfilePicture { get; set; }
-        
+
+        public IEnumerable<UserLogin> UserLoggs { get; set; } = new List<UserLogin>();
+
+        public List<UserActivity> UserActivities { get; set; } = new List<UserActivity>();
+
         public List<PostOwner> Posts { get; set; }
     }
 }

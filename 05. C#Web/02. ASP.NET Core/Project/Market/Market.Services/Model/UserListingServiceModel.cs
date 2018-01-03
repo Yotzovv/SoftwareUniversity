@@ -2,6 +2,8 @@
 {
     public class UserListingServiceModel
     {
+        public string Id { get; set; }
+
         public string UserName { get; set; }
 
         public byte[] ProfilePicture { get; set; }

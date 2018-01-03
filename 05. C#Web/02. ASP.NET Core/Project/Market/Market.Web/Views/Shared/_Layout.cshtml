@@ -17,7 +17,7 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -33,7 +33,11 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         //repair path
-                        <li><a asp-area="Post" asp-controller="Add" asp-action="Add">Add Product</a></li>
+                        <li><a asp-area="Post" asp-controller="Add" asp-action="Add">Add Post</a></li>
+                    }
+                    @if (User.IsInRole(AdministratorRole))
+                    {
+                        <li><a asp-area="Admin" asp-controller="AdminPanel" asp-action="AdminPanel">Admin Panel</a></li>
                     }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")

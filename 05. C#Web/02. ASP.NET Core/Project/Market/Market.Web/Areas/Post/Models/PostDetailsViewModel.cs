@@ -5,6 +5,7 @@ using AutoMapper;
 using Market.Services;
 using System.Threading.Tasks;
 using Market.Data.Models.Enums;
+using System;
 
 namespace Market.Web.Areas.Product.Models
 {
@@ -20,10 +21,13 @@ namespace Market.Web.Areas.Product.Models
 
         public Categories Category { get; set; }
         
+        public int ViewsCount { get; set; }
+
+        public DateTime SubmissionDate { get; set; }
+
         public List<Image> Images { get; set; }
 
         public ApplicationUser Owner { get; set; }
-
 
         public string SendedMessage { get; set; }
     }

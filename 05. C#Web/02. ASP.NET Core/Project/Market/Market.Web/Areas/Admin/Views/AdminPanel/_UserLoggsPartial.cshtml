@@ -1,0 +1,75 @@
+﻿@model IEnumerable<UserLogin>
+
+@{
+    ViewData["Title"] = "UserLoggs";
+}
+
+@{
+    <div class="container" align="left">
+        <div class="row">
+            <div class="panel panel-default user_panel">
+                <div class="panel-body">
+                    <div class="table-container">
+                        <table class="table-users table" border="0">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td>Username</td>
+                                    <td>Logged In</td>
+                                    <td>Logged Out</td>
+                                    <td>Timespan</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var logg in Model)
+                                {
+                                    <tr>
+                                        <td width="5" align="center">
+                                            @if (logg.User.ProfilePicture != null)
+                                            {
+                                                <img id="profileImgListing" class="pull-left img-circle nav-user-photo" src="data:image;base64,@System.Convert.ToBase64String(logg.User.ProfilePicture)" />
+                                            }
+                                            else
+                                            {
+                                                <i class="fa fa-2x fa-user fw"></i>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a asp-area="User" asp-controller="Profile" asp-action="Profile" asp-route-username="@logg.User.UserName">@logg.User.UserName</a>
+                                            <br>
+                                            <i class="fa fa-envelope"></i>
+                                        </td>
+                                        <td>
+                                            <span>@logg.LogoutDate.ToShortTimeString() @logg.LogoutDate.ToShortDateString()</span>
+                                        </td>
+                                        <td>
+
+                                            @if (logg.LogoutDate.Year != 1)
+                                            {
+                                            <span>@logg.LogoutDate.ToShortTimeString() @logg.LogoutDate.ToShortDateString()</span>
+                                            }
+                                            else
+                                            {
+                                                <span style="color: lawngreen">Online</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (logg.LogoutDate.Year == 1)
+                                            {
+                                                @(new DateTime(DateTime.UtcNow.Subtract(logg.LoginDate).Ticks).ToString("HH:mm:ss"))
+                                            }
+                                            else
+                                            {
+                                                @(new DateTime(logg.LogoutDate.Subtract(logg.LoginDate).Ticks).ToString("HH:mm:ss"))
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

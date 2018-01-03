@@ -16,13 +16,15 @@ namespace Market.Web.Areas.User.Controllers
         private readonly IUserService users;
         private readonly IMessageService messages;
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IUserActivityService userActivities;
 
-        public ProfileController(IPostService products, IUserService users, IMessageService messages, UserManager<ApplicationUser> userManager)
+        public ProfileController(IPostService products, IUserService users, IMessageService messages, IUserActivityService userActivities, UserManager<ApplicationUser> userManager)
         {
             this.products = products;
             this.users = users;
             this.messages = messages;
             this.userManager = userManager;
+            this.userActivities = userActivities;
         }
 
         [Route("Profile")]
@@ -36,6 +38,8 @@ namespace Market.Web.Areas.User.Controllers
             var user = await this.users.GetProfileAsync(username);
             user.Posts = await this.products.GetAllUsersPostsAsync(username);
             user.Messages = await this.messages.GetUserMessages(username);
+
+            await this.userActivities.AddUserActivity(string.Format(SawProfile, user.Username), User.Identity.Name);
             
             return View(user);
         }

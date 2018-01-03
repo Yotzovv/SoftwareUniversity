@@ -142,7 +142,11 @@ namespace Market.Data.Migrations
 
                     b.Property<double>("Price");
 
+                    b.Property<DateTime>("SubmissionDate");
+
                     b.Property<string>("Title");
+
+                    b.Property<int>("Views");
 
                     b.HasKey("Id");
 
@@ -162,6 +166,42 @@ namespace Market.Data.Migrations
                     b.HasIndex("PostId");
 
                     b.ToTable("PostOwner");
+                });
+
+            modelBuilder.Entity("Market.Data.Models.UserActivity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Activity");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserActivities");
+                });
+
+            modelBuilder.Entity("Market.Data.Models.UserLogin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("LoginDate");
+
+                    b.Property<DateTime>("LogoutDate");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserLoggs");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -309,6 +349,20 @@ namespace Market.Data.Migrations
                         .WithMany()
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Market.Data.Models.UserActivity", b =>
+                {
+                    b.HasOne("Market.Data.Models.ApplicationUser", "User")
+                        .WithMany("UserActivities")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("Market.Data.Models.UserLogin", b =>
+                {
+                    b.HasOne("Market.Data.Models.ApplicationUser", "User")
+                        .WithMany("UserLoggs")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

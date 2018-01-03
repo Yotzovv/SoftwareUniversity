@@ -195,3 +195,5 @@ C:\Users\asd\source\repos\Market\Market.Services\bin\Debug\AutoMapper.dll
 C:\Users\asd\source\repos\Market\Market.Services\bin\Debug\AutoMapper.xml
 C:\Users\asd\source\repos\Market\Market.Services\bin\Debug\Market.Common.dll
 C:\Users\asd\source\repos\Market\Market.Services\bin\Debug\Market.Common.pdb
+C:\Users\asd\source\repos\Market\Market.Services\bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.dll
+C:\Users\asd\source\repos\Market\Market.Services\bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.xml

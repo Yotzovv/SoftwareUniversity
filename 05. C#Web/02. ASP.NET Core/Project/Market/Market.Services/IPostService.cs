@@ -15,6 +15,8 @@ namespace Market.Services
 
         int GetPostId(string title);
 
+        Task AddView(int productId);
+
         Task<IEnumerable<ProductListingServiceModel>> GetAllPostsAsync();
 
         Task<IEnumerable<ProductListingServiceModel>> GetAllUsersPostsAsync(string userId);

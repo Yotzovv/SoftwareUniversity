@@ -81,6 +81,9 @@
     <Reference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Identity.EntityFrameworkCore.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv">
+      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.server.kestrel.transport.libuv\2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
     </Reference>
@@ -191,12 +194,16 @@
     <Compile Include="IMessageService.cs" />
     <Compile Include="Implementation\MessageService.cs" />
     <Compile Include="Implementation\PostService.cs" />
+    <Compile Include="Implementation\UserLoggsService.cs" />
     <Compile Include="Implementation\UserService.cs" />
     <Compile Include="IPostService.cs" />
     <Compile Include="IService.cs" />
+    <Compile Include="IUserActivityService.cs" />
+    <Compile Include="IUserLoggsService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Model\MessageServiceModel.cs" />
     <Compile Include="Model\ProductListingServiceModel.cs" />
+    <Compile Include="Implementation\UserActivityService.cs" />
     <Compile Include="Model\UserListingServiceModel.cs" />
     <Compile Include="Model\UserProfileServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

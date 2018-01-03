@@ -1,0 +1,57 @@
+﻿@model IEnumerable<UserActivity>
+
+@{
+    ViewData["Title"] = "_UserActivitiesPartial";
+}
+
+@{
+    <div class="container" align="left" style="margin-left: 1.3%;">
+        <div class="row">
+            <div class="panel panel-default user_panel">
+                <div class="panel-body">
+                    <div class="table-container">
+                        <table class="table-users table" border="0">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td>Username</td>
+                                    <td>Activity</td>
+                                    <td>Date</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var activity in Model.OrderByDescending(x => x.Date))
+                                {
+                                    <tr>
+                                        <td width="5" align="center">
+                                            @if (activity.User.ProfilePicture != null)
+                                            {
+                                                <img id="profileImgListing" class="pull-left img-circle nav-user-photo" src="data:image;base64,@System.Convert.ToBase64String(activity.User.ProfilePicture)" />
+                                            }
+                                            else
+                                            {
+                                                <i class="fa fa-2x fa-user fw"></i>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a asp-area="User" asp-controller="Profile" asp-action="Profile" asp-route-username="@activity.User.UserName">@activity.User.UserName</a>
+                                            <br>
+                                            <i class="fa fa-envelope"></i>
+                                        </td>
+                                        <td>
+                                            @activity.Activity
+                                        </td>
+                                        <td>
+                                            @activity.Date.ToShortDateString() @activity.Date.ToShortTimeString()
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

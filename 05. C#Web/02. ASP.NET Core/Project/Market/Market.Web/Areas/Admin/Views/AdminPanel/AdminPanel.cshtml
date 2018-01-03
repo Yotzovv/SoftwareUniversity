@@ -1,0 +1,38 @@
+﻿@model AdminPanelModel
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom:5%; margin-top: 5%;">
+    <li class="nav-item">
+        <a class="nav-link" id="home-tab" data-toggle="tab" href="#stocks" role="tab" aria-controls="home" aria-selected="true">Activities</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Loggs</a>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        @if (!Model.UserLogins.Any())
+        {
+            <h2>No user logins found</h2>
+        }
+        else
+        {
+            @await Html.PartialAsync("_UserLoggsPartial", Model.UserLogins)
+        }
+    </div>
+    <div class="tab-pane fade show active in" id="stocks" role="tabpanel" aria-expanded="false" aria-labelledby="home-tab">
+        <div class="row course-listings">
+            @if (!Model.UsersActivities.Any())
+            {
+                <h2>No activities found</h2>
+            }
+            else
+            {
+                @await Html.PartialAsync("_UserActivitiesPartial", Model.UsersActivities)
+            }
+        </div>
+    </div>
+</div>

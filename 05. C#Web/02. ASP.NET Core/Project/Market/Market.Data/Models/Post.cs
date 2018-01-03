@@ -1,4 +1,5 @@
 ﻿using Market.Data.Models.Enums;
+using System;
 using System.Collections.Generic;
 
 namespace Market.Data.Models
@@ -18,6 +19,10 @@ namespace Market.Data.Models
         public bool IsActive { get; set; } = true;
 
         public Categories Category { get; set; }
+
+        public DateTime SubmissionDate { get; set; }
+
+        public int Views { get; set; } = 0;
 
         public ApplicationUser Owner { get; set; }
     }

@@ -1,37 +1,54 @@
-﻿@model IEnumerable<ProductListingServiceModel>
+﻿@model PagedList<ProductListingServiceModel>
 
 @{
     ViewData["Title"] = "_StocksListingPartial";
 }
-@foreach (var stock in Model.OrderByDescending(x => x.Id))
-{
-    <div class="col-md-4" id="stock" style="margin-bottom: 50px;">
-        <div class="panel panel-default">
-            @{
-                if (User.IsInRole("Administrator"))
-                {
-                    <form method="post" asp-area="Post" asp-controller="Delete" asp-action="Delete" asp-route-id="@stock.Id">
-                        <button type="submit" id="deleteButton" class="btn col-lg-1 btn-xs btn-danger glyphicon glyphicon-remove"></button>
-                    </form>
-                }
-            }
-            <div class="panel-collapse">
-                @if (stock.Images.Count == 0)
-                {
-                    <img src="http://placehold.it/500x300" class="img-responsive" />
 
+<div class="container" style="margin-left: 4%;">
+    @foreach (var stock in Model.OrderByDescending(x => x.Id))
+    {
+        <div class="col-md-4" id="stock">
+            <div class="panel panel-default">
+                @{
+                    if (User.IsInRole("Administrator"))
+                    {
+                        <form method="post" asp-area="Post" asp-controller="Delete" asp-action="Delete" asp-route-id="@stock.Id">
+                            <button type="submit" id="deleteButton" class="btn col-lg-1 btn-xs btn-danger glyphicon glyphicon-remove"></button>
+                        </form>
+                    }
                 }
-                else
-                {
-                    <img src="data:image;base64,@System.Convert.ToBase64String(stock.Images.First(i => i.IsProductProfilePicture).ImageBytes)" class="img-responsive" />
-                }
+                <div class="panel-collapse panel-body">
+                    @if (stock.Images.Count == 0)
+                    {
+                        <img src="http://placehold.it/500x300" class="img-responsive" />
+
+                    }
+                    else
+                    {
+                        <img src="data:image;base64,@System.Convert.ToBase64String(stock.Images.First(i => i.IsProductProfilePicture).ImageBytes)" class="img-responsive" />
+                    }
+                </div>
+                <div class="panel-footer">
+                    <strong>
+                        <a asp-area="Post" asp-controller="Details" asp-action="Details" asp-route-id="@stock.Id">@(stock.Title.Length > 10 ? string.Join("", stock.Title.Take(14)) + ".." : stock.Title)</a>
+                    </strong>
+                    <p><strong style="font-size: 15px;">@stock.Price</strong> <span style="color: green;">USD</span></p>
+                </div>
             </div>
-            <div class="panel-footer">
-                <h4 style="text-align: left">
-                    <a asp-area="Post" asp-controller="Details" asp-action="Details" asp-route-id="@stock.Id">@(stock.Title.Length > 10 ? string.Join("", stock.Title.Take(10)) + ".." : stock.Title)</a>
-                </h4>
-                <p>@stock.Price USD</p>
-            </div>
+            <br />
         </div>
-    </div>
+    }
+</div>
+
+@{
+    <nav aria-label="...">
+        <ul class="pagination pagination-lg">
+            <li class="page-item @(Model.IsFirstPage ? "disabled" : string.Empty)">
+                <a class="page-link" href="?page=@(Model.HasPreviousPage ? Model.PageNumber - 1 : Model.PageNumber)" tabindex="-1">&laquo;</a>
+            </li>
+            <li class="page-item @(Model.IsLastPage ? "disabled" : string.Empty)">
+                <a class="page-link" href="?page=@(Model.HasNextPage ? Model.PageNumber + 1 : Model.PageNumber)">&raquo;</a>
+            </li>
+        </ul>
+    </nav>
 }

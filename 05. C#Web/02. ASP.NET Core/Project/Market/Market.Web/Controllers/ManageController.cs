@@ -1,4 +1,5 @@
 ﻿using Market.Data.Models;
+using Market.Services;
 using Market.Web.Models.ManageViewModels;
 using Market.Web.Services;
 using Microsoft.AspNetCore.Authentication;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using static Market.Web.WebConstants;
 
 namespace Market.Web.Controllers
 {
@@ -24,6 +26,7 @@ namespace Market.Web.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
         private readonly UrlEncoder _urlEncoder;
+        private readonly IUserActivityService userActivities;
 
         private const string AuthenicatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
 
@@ -32,13 +35,15 @@ namespace Market.Web.Controllers
           SignInManager<ApplicationUser> signInManager,
           IEmailSender emailSender,
           ILogger<ManageController> logger,
-          UrlEncoder urlEncoder)
+          UrlEncoder urlEncoder,
+          IUserActivityService userActivities)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
             _urlEncoder = urlEncoder;
+            this.userActivities = userActivities;
         }
 
         [TempData]
@@ -57,7 +62,9 @@ namespace Market.Web.Controllers
             {
                 Username = user.UserName,
                 Email = user.Email,
-                Name = user.FirstName,
+                FirstName = user.FirstName,
+                MiddleName = user.MiddleName,
+                LastName = user.LastName,
                 BirthDate = user.Birthdate,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
@@ -87,6 +94,7 @@ namespace Market.Web.Controllers
             if (model.Email != email)
             {
                 var setEmailResult = await _userManager.SetEmailAsync(user, model.Email);
+                await this.userActivities.AddUserActivity(EmailChanged, user);
                 if (!setEmailResult.Succeeded)
                 {
                     throw new ApplicationException($"Unexpected error occurred setting email for user with ID '{user.Id}'.");
@@ -97,24 +105,40 @@ namespace Market.Web.Controllers
             if (model.PhoneNumber != phoneNumber)
             {
                 var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, model.PhoneNumber);
+                await this.userActivities.AddUserActivity($"{user.UserName} changed Phone Number", user);
                 if (!setPhoneResult.Succeeded)
                 {
                     throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
                 }
             }
 
-            if (model.Name != user.FirstName)
+            if (model.FirstName != user.FirstName)
             {
-                user.FirstName = model.Name;
+                user.FirstName = model.FirstName;
+                await this.userActivities.AddUserActivity(FirstNameChanged, user);
+                await this._userManager.UpdateAsync(user);
+            }
+
+            if(model.MiddleName != user.MiddleName)
+            {
+                user.MiddleName = model.MiddleName;
+                await this.userActivities.AddUserActivity(MiddleNameChanged, user);
+                await this._userManager.UpdateAsync(user);
+            }
+
+            if(model.LastName != user.LastName)
+            {
+                user.LastName = model.LastName;
+                await this.userActivities.AddUserActivity(LastNameChanged, user);
                 await this._userManager.UpdateAsync(user);
             }
 
             if (model.BirthDate != user.Birthdate)
             {
                 user.Birthdate = model.BirthDate;
+                await this.userActivities.AddUserActivity(BirthDateChange, user);
                 await this._userManager.UpdateAsync(user);
             }
-
 
             if (model.ProfilePictureFile != null)
             {
@@ -126,6 +150,8 @@ namespace Market.Web.Controllers
                     {
                         user.ProfilePicture = memoryStream.ToArray();
                     }
+
+                    await this.userActivities.AddUserActivity(ProfilePictureChange, user);
 
                     await this._userManager.UpdateAsync(user);
                 }
@@ -197,6 +223,7 @@ namespace Market.Web.Controllers
             if (!changePasswordResult.Succeeded)
             {
                 AddErrors(changePasswordResult);
+                await this.userActivities.AddUserActivity(PasswordChanged, user);
                 return View(model);
             }
 

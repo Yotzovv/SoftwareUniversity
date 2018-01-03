@@ -11,10 +11,12 @@ namespace Market.Web.Areas.Product.Controllers
     public class UpdateController : Controller
     {
         private readonly IPostService posts;
+        private readonly IUserActivityService userActivities;
 
-        public UpdateController(IPostService posts)
+        public UpdateController(IPostService posts, IUserActivityService userActivities)
         {
             this.posts = posts;
+            this.userActivities = userActivities;
         }
 
         [Route("update")]
@@ -37,6 +39,7 @@ namespace Market.Web.Areas.Product.Controllers
 
         [HttpPost]
         [Route("updateasync")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> UpdateAsync(PostViewModel post)
         {
             await this.posts.UpdatePost(post.Id,
@@ -44,6 +47,8 @@ namespace Market.Web.Areas.Product.Controllers
                                         post.Description,
                                         post.Price,
                                         post.FormUploadedImages);
+
+            await this.userActivities.AddUserActivity(string.Format(UpdatedPost, post.Id), User.Identity.Name);
 
             return RedirectToAction(nameof(DetailsController.Details), "Details", new { id = post.Id });
         }

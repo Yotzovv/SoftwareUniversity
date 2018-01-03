@@ -1,11 +1,13 @@
-﻿using System.Threading.Tasks;
-using Market.Services.Model;
+﻿using AutoMapper.QueryableExtensions;
 using Market.Data;
-using System.Linq;
-using AutoMapper.QueryableExtensions;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using Market.Data.Models;
+using Market.Services.Model;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Market.Services.Implementation
 {
@@ -29,6 +31,11 @@ namespace Market.Services.Implementation
             => await this.db
                          .Users
                          .FindAsync(id);
+
+        public async Task<ApplicationUser> GetUserByUserName(string username)
+            => await this.db
+                         .Users
+                         .FirstAsync(x => x.UserName == username);
 
         public async Task<List<UserListingServiceModel>> SearchAsync(string searchText)
         {

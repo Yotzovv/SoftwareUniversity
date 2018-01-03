@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "c60e9e103d398c56fcf0dd19b7c836a7e52a173a"
+    "signature": "72e5cfdc8951ff7f3f658b71ffa966e3a2734da6"
   },
   "compilationOptions": {
     "defines": [
@@ -25,19 +25,48 @@
         "dependencies": {
           "AutoMapper": "6.2.2",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "3.2.0",
+          "HtmlSanitizer": "4.0.182",
           "Market.Common": "1.0.0",
           "Market.Data": "1.0.0",
           "Market.Services": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0",
+          "PagedList": "1.17.0"
         },
         "runtime": {
           "Market.Web.dll": {}
         },
         "compile": {
           "Market.Web.dll": {}
+        }
+      },
+      "AngleSharp/0.9.9": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Net.Primitives": "4.3.0",
+          "System.Net.Requests": "4.0.11",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/AngleSharp.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/AngleSharp.dll": {}
         }
       },
       "AutoMapper/6.2.2": {
@@ -72,6 +101,19 @@
         },
         "compile": {
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "HtmlSanitizer/4.0.182": {
+        "dependencies": {
+          "AngleSharp": "0.9.9",
+          "NETStandard.Library": "2.0.0",
+          "System.ComponentModel": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/HtmlSanitizer.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/HtmlSanitizer.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -2543,6 +2585,14 @@
           "lib/netstandard1.3/NuGet.Frameworks.dll": {}
         }
       },
+      "PagedList/1.17.0": {
+        "runtime": {
+          "lib/net40/PagedList.dll": {}
+        },
+        "compile": {
+          "lib/net40/PagedList.dll": {}
+        }
+      },
       "Remotion.Linq/2.1.1": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -3373,6 +3423,33 @@
           "System.Runtime.Handles": "4.3.0"
         }
       },
+      "System.Net.Requests/4.0.11": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tracing": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Net.Http": "4.3.0",
+          "System.Net.Primitives": "4.3.0",
+          "System.Net.WebHeaderCollection": "4.0.1",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "runtimeTargets": {
+          "runtime/unix/lib/_._": {
+            "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
+        }
+      },
       "System.Net.Security/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -3423,6 +3500,14 @@
           "System.Net.Primitives": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Threading.Tasks": "4.3.0"
+        }
+      },
+      "System.Net.WebHeaderCollection/4.0.1": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0"
         }
       },
       "System.Numerics.Vectors/4.4.0": {},
@@ -4314,6 +4399,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AngleSharp/0.9.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z3h0p8u7p7QFSStWaC+u9cx7+IaRvMmLXqczx5WYW5V9t58kGQg3xMyb4iRI2mIEnePQq2pp2sQAadEl4GhmBg==",
+      "path": "anglesharp/0.9.9",
+      "hashPath": "anglesharp.0.9.9.nupkg.sha512"
+    },
     "AutoMapper/6.2.2": {
       "type": "package",
       "serviceable": true,
@@ -4327,6 +4419,13 @@
       "sha512": "sha512-528nEpAwniNn8Z6Ae9qTiM/kN4f0BxmWE9mDMEkqKKGxbuElmv6Kj9DVvTXECJkIt6ARerb9+vYbOifNpcwvXQ==",
       "path": "automapper.extensions.microsoft.dependencyinjection/3.2.0",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.3.2.0.nupkg.sha512"
+    },
+    "HtmlSanitizer/4.0.182": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p5Ri0h8TrcEPFaMGMxGYhYB79N6Rkf3iZWEZt16YzTEHt+yCrQvYshD3vKwzlRZwvQqIxZUryOe5Yzzj6xUt1A==",
+      "path": "htmlsanitizer/4.0.182",
+      "hashPath": "htmlsanitizer.4.0.182.nupkg.sha512"
     },
     "Libuv/1.10.0": {
       "type": "package",
@@ -5553,6 +5652,13 @@
       "path": "nuget.frameworks/4.0.0",
       "hashPath": "nuget.frameworks.4.0.0.nupkg.sha512"
     },
+    "PagedList/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ou6F3WKXh49hOo0TxWM+SkIGuKllYPuPPvnSYOlQ1sTrtuEyuDUhYbSJd5Sdb06i/sWUJZTjiUecEs3Ht/Hx3g==",
+      "path": "pagedlist/1.17.0",
+      "hashPath": "pagedlist.1.17.0.nupkg.sha512"
+    },
     "Remotion.Linq/2.1.1": {
       "type": "package",
       "serviceable": true,
@@ -6057,6 +6163,13 @@
       "path": "system.net.primitives/4.3.0",
       "hashPath": "system.net.primitives.4.3.0.nupkg.sha512"
     },
+    "System.Net.Requests/4.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vxGt7C0cZixN+VqoSW4Yakc1Y9WknmxauDqzxgpw/FnBdz4kQNN51l4wxdXX5VY1xjqy//+G+4CvJWp1+f+y6Q==",
+      "path": "system.net.requests/4.0.11",
+      "hashPath": "system.net.requests.4.0.11.nupkg.sha512"
+    },
     "System.Net.Security/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -6070,6 +6183,13 @@
       "sha512": "sha512-m6icV6TqQOAdgt5N/9I5KNpjom/5NFtkmGseEH+AK/hny8XrytLH3+b5M8zL/Ycg3fhIocFpUMyl/wpFnVRvdw==",
       "path": "system.net.sockets/4.3.0",
       "hashPath": "system.net.sockets.4.3.0.nupkg.sha512"
+    },
+    "System.Net.WebHeaderCollection/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XX2TIAN+wBSAIV51BU2FvvXMdstUa8b0FBSZmDWjZdwUMmggQSifpTOZ5fNH20z9ZCg2fkV1L5SsZnpO2RQDRQ==",
+      "path": "system.net.webheadercollection/4.0.1",
+      "hashPath": "system.net.webheadercollection.4.0.1.nupkg.sha512"
     },
     "System.Numerics.Vectors/4.4.0": {
       "type": "package",

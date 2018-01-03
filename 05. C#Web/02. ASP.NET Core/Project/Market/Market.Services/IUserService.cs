@@ -12,5 +12,7 @@ namespace Market.Services
         Task<List<UserListingServiceModel>> SearchAsync(string searchText);
 
         Task<ApplicationUser> GetUserById(string id);
+
+        Task<ApplicationUser> GetUserByUserName(string username);
     }
 }

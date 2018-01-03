@@ -11,18 +11,22 @@ namespace Market.Web.Areas.Product.Controllers
     {
         private readonly IPostService posts;
         private readonly IUserService users;
+        private readonly IUserActivityService userActivities;
 
-        public DetailsController(IPostService posts, IUserService users)
+        public DetailsController(IPostService posts, IUserService users, IUserActivityService userActivities)
         {
             this.posts = posts;
             this.users = users;
+            this.userActivities = userActivities;
         }
 
         [Route("details")]
         public async Task<IActionResult> Details(int id)
         {
-            var post = posts.GetPostById(id);
+            await this.posts.AddView(id);
 
+            var post = posts.GetPostById(id);
+            
             var postDetails = new PostDetailsViewModel
             {
                 Id = id,
@@ -32,7 +36,15 @@ namespace Market.Web.Areas.Product.Controllers
                 Images = await posts.GetAllPostImages(id),
                 Owner = await this.users.GetUserById(posts.GetPostOwnerId(id)),
                 Category = post.Result.Category,
+                SubmissionDate = post.Result.SubmissionDate,
+                ViewsCount = post.Result.Views
             };
+            
+            if (User.Identity.IsAuthenticated)
+            {
+                var currentUser = this.users.GetUserByUserName(User.Identity.Name);
+                await this.userActivities.AddUserActivity(string.Format(SawPost, post.Result.Id), currentUser.Result);
+            }
 
             return View(postDetails);
         }

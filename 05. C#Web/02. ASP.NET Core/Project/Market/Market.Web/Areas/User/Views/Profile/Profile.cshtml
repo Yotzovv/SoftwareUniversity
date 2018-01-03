@@ -29,7 +29,12 @@
         <div class="row course-listings">
             @if (!Model.Posts.Any())
             {
-                <h2>No stocks found</h2>
+                <h2><span style="color: gray">No posts found</span></h2>
+                <br />
+                if (User.Identity.Name == Model.Username)
+                {
+                    <a asp-area="Post" asp-controller="Add" asp-action="Add" class="btn btn-warning btn-lg "><span class="glyphicon glyphicon-plus"></span> Add Post</a>
+                }
             }
             else
             {

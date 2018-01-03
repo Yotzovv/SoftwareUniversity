@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Market.Web.Models;
 using Market.Web.Models.HomeViewModels;
 using Market.Services;
+using static Market.Web.WebConstants;
+using PagedList;
+using Market.Services.Model;
 
 namespace Market.Web.Controllers
 {
@@ -14,16 +17,21 @@ namespace Market.Web.Controllers
     {
         private readonly IPostService products;
         private readonly IUserService users;
+        private readonly IUserActivityService userActivities;
 
-        public HomeController(IPostService products, IUserService users)
+        public HomeController(IPostService products, IUserService users, IUserActivityService userActivities)
         {
             this.products = products;
             this.users = users;
+            this.userActivities = userActivities;
         }
 
 
-        public async Task<IActionResult> Index()
-            => View(new HomeIndexViewModel { Stocks = await this.products.GetAllPostsAsync() });
+        public async Task<IActionResult> Index(int page = 1, int pageSize = 12)
+           => View(new HomeIndexViewModel
+           {
+               Stocks = new PagedList<ProductListingServiceModel>(await this.products.GetAllPostsAsync(), page, pageSize)
+           });
 
         public IActionResult About()
         {
@@ -44,10 +52,14 @@ namespace Market.Web.Controllers
                 MaxPrice = model.MaxPrice,
             };
 
-            viewModel.Stocks = await this.products.SearchAsync(model.SearchText);
+            viewModel.Stocks = new PagedList<ProductListingServiceModel>(await this.products.SearchAsync(model.SearchText), 1, 12);
             viewModel.Users = await this.users.SearchAsync(model.SearchText);
 
             viewModel.Filter();
+
+            string searchTxt = string.IsNullOrWhiteSpace(model.SearchText) ? (model.Category == null ? "anything" : model.Category.ToString()) : model.SearchText;
+
+            await this.userActivities.AddUserActivity(string.Format(SearchedFor, searchTxt), User.Identity.Name);
 
             return View(viewModel);
         }
