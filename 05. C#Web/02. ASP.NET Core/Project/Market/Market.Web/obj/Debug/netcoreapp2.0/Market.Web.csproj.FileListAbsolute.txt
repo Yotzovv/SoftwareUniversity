@@ -16,3 +16,21 @@ c:\users\asd\source\repos\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Servi
 C:\Users\asd\source\repos\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Common.dll
 C:\Users\asd\source\repos\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Common.pdb
 C:\Users\asd\source\repos\Market\Market.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Web.deps.json
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Web.runtimeconfig.json
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Web.runtimeconfig.dev.json
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Web.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Web.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Common.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Data.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Services.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Common.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Data.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\bin\Debug\netcoreapp2.0\Market.Services.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\obj\Debug\netcoreapp2.0\Market.Web.csprojResolveAssemblyReference.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\obj\Debug\netcoreapp2.0\Market.Web.csproj.CoreCompileInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\obj\Debug\netcoreapp2.0\Market.Web.AssemblyInfoInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\obj\Debug\netcoreapp2.0\Market.Web.AssemblyInfo.cs
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\obj\Debug\netcoreapp2.0\Market.Web.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Web\obj\Debug\netcoreapp2.0\Market.Web.pdb

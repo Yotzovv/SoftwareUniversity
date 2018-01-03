@@ -6,10 +6,10 @@
 
 <div class="container">
     <div id="imgDescr" class="table-hover">
-        <table id="guz" align="left" class="table-hover table-responsive">
+        <table align="left" class="table-condensed table-responsive">
             <tbody>
                 <tr>
-                    <td id="pic">
+                    <td id="imgDescrTd">
                         @if (Model.Images.Count == 0)
                         {
                             <img id="detailsImg" src="http://placehold.it/500x300" class="img-responsive" />
@@ -19,35 +19,7 @@
                         {
                             var profileImage = Convert.ToBase64String(Model.Images.First(x => x.IsProductProfilePicture).ImageBytes);
                             <img src="data:image;base64,@profileImage" id="detailsImg">
-
-
-                            //<div class="carousel slide article-slide" id="article-photo-carousel">
-                            //    <!-- Wrapper for slides -->
-                            //    <div class="carousel-inner cont-slider">
-                            //        @foreach (var image in Model.Images)
-                            //        {
-                            //            var img = Convert.ToBase64String(Model.Images.First(x => x.IsProductProfilePicture).ImageBytes);
-                            //
-                            //            <div class="item active">
-                            //                <img id="detailsImg" alt="" title="" src="data:image;base64,@img" class="img-responsive">
-                            //            </div>
-                            //        }
-                            //    </div>
-                            //
-                            //    <!-- Indicators -->
-                            //    <ol class="carousel-indicators">
-                            //        @foreach (var indicator in Model.Images)
-                            //        {
-                            //            var ind = Convert.ToBase64String(Model.Images.First(x => x.IsProductProfilePicture).ImageBytes);
-                            //
-                            //            <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
-                            //                <img alt="" src="data:image;base64,@ind" class="img-responsive">
-                            //            </li>
-                            //        }
-                            //    </ol>
-                            //</div>
                         }
-
                     </td>
                 </tr>
                 <tr>
@@ -59,7 +31,7 @@
         </table>
     </div>
 
-    <div style="margin-top:4.5%; margin-left:730px;">
+    <div style="margin-top:4.5%; margin-left:830px;">
         <h2>@Model.Title</h2>
         <table class="table-hover table-responsive table-condensed">
             <tr>
@@ -117,17 +89,12 @@
                     <th>
                         <a asp-area="Post" asp-controller="Update" asp-action="Update" asp-route-postId="@Model.Id" style="margin-top: 10px;" class="btn btn-warning">Edit Post</a>
                     </th>
-                    <th>
-                        <form>
-                            <a asp-area="Post" asp-controller="Delete" asp-action="Delete" asp-route-id="@Model.Id" style="margin-top: 10px;" class="btn btn-danger">Delete</a>
-                        </form>
-                    </th>
                 }
                 else
                 {
-                    <th>
-                        @if (User.Identity.IsAuthenticated)
-                        {
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <th>
                             <a style="margin-top:10px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@Model.Owner">Send Message</a>
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -158,7 +125,16 @@
                                     </div>
                                 </div>
                             </div>
-                        }
+                        </th>
+                    }
+                }
+
+                @if (User.IsInRole("Administrator"))
+                {
+                    <th>
+                        <form>
+                            <a asp-area="Post" asp-controller="Delete" asp-action="Delete" asp-route-id="@Model.Id" style="margin-top: 10px;" class="btn btn-danger">Delete</a>
+                        </form>
                     </th>
                 }
             </tr>

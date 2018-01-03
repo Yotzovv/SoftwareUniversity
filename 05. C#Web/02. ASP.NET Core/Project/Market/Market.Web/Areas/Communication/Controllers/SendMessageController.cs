@@ -26,7 +26,6 @@ namespace Market.Web.Areas.Communication.Controllers
         }
 
         [Route("SendMessageAsync")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> SendMessageAsync(string recieverId ,string text)
         {
             ApplicationUser sender = await this.userManager.GetUserAsync(User);

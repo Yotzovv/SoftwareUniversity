@@ -5703,11 +5703,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\asd\\source\\repos\\Market\\Market.Tests\\Market.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Tests\\Market.Tests.csproj",
       "projectName": "Market.Tests",
-      "projectPath": "C:\\Users\\asd\\source\\repos\\Market\\Market.Tests\\Market.Tests.csproj",
+      "projectPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Tests\\Market.Tests.csproj",
       "packagesPath": "C:\\Users\\asd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asd\\source\\repos\\Market\\Market.Tests\\obj\\",
+      "outputPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

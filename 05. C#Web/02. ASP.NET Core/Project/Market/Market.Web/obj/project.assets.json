@@ -13508,11 +13508,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\asd\\source\\repos\\Market\\Market.Web\\Market.Web.csproj",
+      "projectUniqueName": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Web\\Market.Web.csproj",
       "projectName": "Market.Web",
-      "projectPath": "C:\\Users\\asd\\source\\repos\\Market\\Market.Web\\Market.Web.csproj",
+      "projectPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Web\\Market.Web.csproj",
       "packagesPath": "C:\\Users\\asd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asd\\source\\repos\\Market\\Market.Web\\obj\\",
+      "outputPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13531,14 +13531,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\asd\\source\\repos\\Market\\Market.Common\\Market.Common.csproj": {
-              "projectPath": "C:\\Users\\asd\\source\\repos\\Market\\Market.Common\\Market.Common.csproj"
+            "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Common\\Market.Common.csproj": {
+              "projectPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Common\\Market.Common.csproj"
             },
-            "C:\\Users\\asd\\source\\repos\\Market\\Market.Services\\Market.Services.csproj": {
-              "projectPath": "C:\\Users\\asd\\source\\repos\\Market\\Market.Services\\Market.Services.csproj"
+            "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Services\\Market.Services.csproj": {
+              "projectPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Services\\Market.Services.csproj"
             },
-            "C:\\Users\\asd\\source\\repos\\Market\\Market.Data\\Market.Data.csproj": {
-              "projectPath": "C:\\Users\\asd\\source\\repos\\Market\\Market.Data\\Market.Data.csproj"
+            "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Data\\Market.Data.csproj": {
+              "projectPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Data\\Market.Data.csproj"
             }
           }
         }

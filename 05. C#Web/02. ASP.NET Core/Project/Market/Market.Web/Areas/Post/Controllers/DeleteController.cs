@@ -23,7 +23,6 @@ namespace Market.Web.Areas.Post.Controllers
         }
         
         [Route("Delete")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             await this.products.DeletePost(id);

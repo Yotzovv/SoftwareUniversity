@@ -59,7 +59,10 @@ namespace Market.Web.Controllers
 
             string searchTxt = string.IsNullOrWhiteSpace(model.SearchText) ? (model.Category == null ? "anything" : model.Category.ToString()) : model.SearchText;
 
-            await this.userActivities.AddUserActivity(string.Format(SearchedFor, searchTxt), User.Identity.Name);
+            if (User.Identity.IsAuthenticated)
+            {
+                await this.userActivities.AddUserActivity(string.Format(SearchedFor, searchTxt), User.Identity.Name);
+            }
 
             return View(viewModel);
         }

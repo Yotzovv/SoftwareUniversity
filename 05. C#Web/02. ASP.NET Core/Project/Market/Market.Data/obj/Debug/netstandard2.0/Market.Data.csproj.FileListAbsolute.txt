@@ -7,3 +7,12 @@ c:\users\asd\source\repos\Market\Market.Data\obj\Debug\netstandard2.0\Market.Dat
 c:\users\asd\source\repos\Market\Market.Data\bin\Debug\netstandard2.0\Market.Data.pdb
 c:\users\asd\source\repos\Market\Market.Data\obj\Debug\netstandard2.0\Market.Data.dll
 c:\users\asd\source\repos\Market\Market.Data\obj\Debug\netstandard2.0\Market.Data.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Data\bin\Debug\netstandard2.0\Market.Data.deps.json
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Data\bin\Debug\netstandard2.0\Market.Data.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Data\bin\Debug\netstandard2.0\Market.Data.pdb
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Data\obj\Debug\netstandard2.0\Market.Data.csprojResolveAssemblyReference.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Data\obj\Debug\netstandard2.0\Market.Data.csproj.CoreCompileInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Data\obj\Debug\netstandard2.0\Market.Data.AssemblyInfoInputs.cache
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Data\obj\Debug\netstandard2.0\Market.Data.AssemblyInfo.cs
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Data\obj\Debug\netstandard2.0\Market.Data.dll
+C:\Users\asd\Documents\Visual Studio 2015\SoftwareUniversity\05. C#Web\02. ASP.NET Core\Project\Market\Market.Data\obj\Debug\netstandard2.0\Market.Data.pdb
