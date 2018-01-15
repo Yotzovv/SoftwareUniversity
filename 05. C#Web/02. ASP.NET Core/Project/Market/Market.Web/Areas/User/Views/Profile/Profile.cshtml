@@ -12,6 +12,12 @@
         <li class="nav-item">
             <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" id="orders-tab" data-toggle="tab" href="#recievedOrders" role="tab" aria-controls="orders" aria-selected="false">Recieved Orders</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="orders-tab" data-toggle="tab" href="#sentOrders" role="tab" aria-controls="orders" aria-selected="false">Your Orders</a>
+        </li>
     }
 </ul>
 <div class="tab-content" id="myTabContent">
@@ -41,5 +47,29 @@
                 @await Html.PartialAsync("_StocksListingPartial", Model.Posts)
             }
         </div>
+    </div>
+    <div class="tab-pane fade" id="recievedOrders" role="tabpanel" aria-labelledby="orders-tab">
+        @{ var recievedOrders = Model.Orders.Where(x => x.Sender.UserName == User.Identity.Name); }
+
+        @if (recievedOrders.Count() == 0)
+        {
+            <h2><span style="color: gray">No recieved orders</span></h2>
+        }
+        else
+        {
+            @await Html.PartialAsync("_OrdersPartialView", Model.Orders.Where(x => x.Sender.UserName == User.Identity.Name))
+        }
+    </div>
+    <div class="tab-pane fade" id="sentOrders" role="tabpanel" aria-labelledby="orders-tab">
+        @{ var sentOrders = Model.Orders.Where(x => x.Recipient.UserName == User.Identity.Name); }
+
+        @if (sentOrders.Count() == 0)
+        {
+            <h2><span style="color: gray">No sent orders</span></h2>
+        }
+        else
+        {
+            @await Html.PartialAsync("_OrdersPartialView", Model.Orders.Where(x => x.Recipient.UserName == User.Identity.Name))
+        }
     </div>
 </div>

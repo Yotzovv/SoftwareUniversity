@@ -196,16 +196,19 @@
     <Compile Include="Implementation\PostService.cs" />
     <Compile Include="Implementation\UserLoggsService.cs" />
     <Compile Include="Implementation\UserService.cs" />
+    <Compile Include="IOrderService.cs" />
     <Compile Include="IPostService.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="IUserActivityService.cs" />
     <Compile Include="IUserLoggsService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Model\MessageServiceModel.cs" />
+    <Compile Include="Model\OrderServiceModel.cs" />
     <Compile Include="Model\ProductListingServiceModel.cs" />
     <Compile Include="Implementation\UserActivityService.cs" />
     <Compile Include="Model\UserListingServiceModel.cs" />
     <Compile Include="Model\UserProfileServiceModel.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

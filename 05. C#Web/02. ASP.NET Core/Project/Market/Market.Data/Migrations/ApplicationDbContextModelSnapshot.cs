@@ -37,6 +37,8 @@ namespace Market.Data.Migrations
 
                     b.Property<string>("Country");
 
+                    b.Property<string>("DeliveryOfficeAddress");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -64,6 +66,8 @@ namespace Market.Data.Migrations
                     b.Property<string>("PhoneNumber");
 
                     b.Property<bool>("PhoneNumberConfirmed");
+
+                    b.Property<double>("Prestige");
 
                     b.Property<byte[]>("ProfilePicture");
 
@@ -125,6 +129,38 @@ namespace Market.Data.Migrations
                     b.HasIndex("SenderId");
 
                     b.ToTable("Messages");
+                });
+
+            modelBuilder.Entity("Market.Data.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
+
+                    b.Property<bool>("IsApproved");
+
+                    b.Property<DateTime>("OrderedDate");
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<string>("RecipientDeliveryOfficeAddress");
+
+                    b.Property<string>("RecipientId");
+
+                    b.Property<string>("SenderId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("RecipientId");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Market.Data.Models.Post", b =>
@@ -325,6 +361,26 @@ namespace Market.Data.Migrations
                     b.HasOne("Market.Data.Models.ApplicationUser", "Reciever")
                         .WithMany()
                         .HasForeignKey("RecieverId");
+
+                    b.HasOne("Market.Data.Models.ApplicationUser", "Sender")
+                        .WithMany()
+                        .HasForeignKey("SenderId");
+                });
+
+            modelBuilder.Entity("Market.Data.Models.Order", b =>
+                {
+                    b.HasOne("Market.Data.Models.ApplicationUser")
+                        .WithMany("Orders")
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("Market.Data.Models.Post", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Market.Data.Models.ApplicationUser", "Recipient")
+                        .WithMany()
+                        .HasForeignKey("RecipientId");
 
                     b.HasOne("Market.Data.Models.ApplicationUser", "Sender")
                         .WithMany()

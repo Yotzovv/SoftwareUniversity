@@ -1,0 +1,81 @@
+﻿@model IEnumerable<OrderServiceModel>
+
+@{
+    ViewData["Title"] = "_OrdersPartialView";
+}
+
+@foreach (var order in Model)
+{
+    var borderColor = order.IsApproved ? "orange" : "#45e256";
+
+    @if (User.Identity.Name != order.Sender.UserName)
+    {
+        if (!order.IsApproved)
+        {
+            borderColor = "red";
+        }
+        else
+        {
+            borderColor = "#2E9AFE";
+        }
+    }
+
+    <div class="card w-50" style="border-color: @borderColor" id="order">
+        <div class="card-body">
+            <h5 class="card-title"><a asp-area="Post" asp-controller="Details" asp-action="Details" asp-route-id="@order.Product.Id">@order.Product.Title</a></h5>
+            <p class="card-text">Hello, I want to order your product on address: @order.Recipient.DeliveryOfficeAddress</p>
+            @if (User.Identity.Name == order.Sender.UserName)
+            {
+                if (!order.IsApproved)
+                {
+                    <a asp-area="Post" asp-controller="Order" asp-action="WillSend" asp-route-orderId="@order.Product.Id" class="btn btn-success">Will Send</a>
+                }
+                else
+                {
+                    <a asp-area="Post" asp-controller="Order" asp-action="CancelSending" asp-route-orderId="@order.Product.Id" class="btn btn-warning">Cancel Sending</a>
+                }
+            }
+
+            @if (User.Identity.Name != order.Sender.UserName)
+            {
+                if (!order.IsApproved)
+                {
+                    <a asp-area="Post" asp-controller="Order" asp-action="DeleteOrder" asp-route-orderId="@order.Product.Id" class="btn btn-danger">Delete Order</a>
+                }
+                else
+                {
+                    <a style="margin-top:10px;" class="btn btn-primary" data-toggle="modal" data-target="#recievedModal" data-whatever="">I recieved it</a>
+                    <div class="modal fade" id="recievedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form method="post" asp-area="Communication" asp-controller="SendMessage" asp-action="SendMessageAsync">
+                                    <div class="modal-body">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" value="">The recieved is inline with my expectations</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" value="">The sender was nice</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" value="">The sender was honest</label>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Send message</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <br />
+}

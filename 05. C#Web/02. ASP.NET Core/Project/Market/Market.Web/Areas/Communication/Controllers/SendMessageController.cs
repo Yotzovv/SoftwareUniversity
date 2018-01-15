@@ -26,6 +26,7 @@ namespace Market.Web.Areas.Communication.Controllers
         }
 
         [Route("SendMessageAsync")]
+        [HttpPost]
         public async Task<IActionResult> SendMessageAsync(string recieverId ,string text)
         {
             ApplicationUser sender = await this.userManager.GetUserAsync(User);

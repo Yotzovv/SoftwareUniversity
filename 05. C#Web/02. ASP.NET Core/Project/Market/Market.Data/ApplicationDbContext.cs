@@ -17,10 +17,23 @@ namespace Market.Data
         public DbSet<UserLogin> UserLoggs { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<UserActivity> UserActivities { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<ApplicationUser>()
+                   .HasMany(o => o.Orders);
+
+            builder.Entity<Order>()
+                   .HasOne(x => x.Recipient);
+
+            builder.Entity<Order>()
+                   .HasOne(x => x.Sender);
+
+            builder.Entity<Order>()
+                   .HasOne(x => x.Product);
 
             builder.Entity<UserActivity>()
                    .HasOne(u => u.User)

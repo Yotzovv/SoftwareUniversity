@@ -21,7 +21,13 @@ namespace Market.Data.Models
 
         public string Area { get; set; }
         
+        public string DeliveryOfficeAddress { get; set; }
+
+        public double Prestige { get; set; }
+
         public byte[] ProfilePicture { get; set; }
+
+        public List<Order> Orders { get; set; }
 
         public IEnumerable<UserLogin> UserLoggs { get; set; } = new List<UserLogin>();
 

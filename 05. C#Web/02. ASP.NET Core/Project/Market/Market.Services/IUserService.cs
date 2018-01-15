@@ -7,9 +7,11 @@ namespace Market.Services
 {
     public interface IUserService
     {
-        Task<UserProfileServiceModel> GetProfileAsync(string username);
-
         Task<List<UserListingServiceModel>> SearchAsync(string searchText);
+
+        string GetUserId(string username);
+
+        Task<UserProfileServiceModel> GetProfileAsync(string username);
 
         Task<ApplicationUser> GetUserById(string id);
 

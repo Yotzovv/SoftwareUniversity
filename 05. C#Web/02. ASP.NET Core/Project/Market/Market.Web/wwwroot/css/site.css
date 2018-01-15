@@ -67,6 +67,13 @@ input.hidden {
     margin: 5px 0 5px 0
 }
 
+#order {
+    border: 1px solid #45e256;
+    border-radius: .35rem;
+    padding: 10px;
+    width: 40%;
+}
+
 i {
     vertical-align: middle;
 }

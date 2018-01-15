@@ -37,6 +37,11 @@ namespace Market.Services.Implementation
                          .Users
                          .FirstAsync(x => x.UserName == username);
 
+        public string GetUserId(string username)
+            => this.GetUserByUserName(username)
+                   .Result
+                   .Id;
+
         public async Task<List<UserListingServiceModel>> SearchAsync(string searchText)
         {
             if(string.IsNullOrWhiteSpace(searchText))
