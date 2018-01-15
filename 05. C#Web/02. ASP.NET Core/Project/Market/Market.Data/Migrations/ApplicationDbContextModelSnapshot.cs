@@ -138,7 +138,7 @@ namespace Market.Data.Migrations
 
                     b.Property<string>("ApplicationUserId");
 
-                    b.Property<bool>("IsApproved");
+                    b.Property<bool>("IsRecieved");
 
                     b.Property<DateTime>("OrderedDate");
 
@@ -149,6 +149,8 @@ namespace Market.Data.Migrations
                     b.Property<string>("RecipientId");
 
                     b.Property<string>("SenderId");
+
+                    b.Property<bool>("WillSend");
 
                     b.HasKey("Id");
 

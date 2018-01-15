@@ -16,5 +16,7 @@ namespace Market.Services
         Task CancelSending(int orderId);
 
         Task DeleteOrder(int orderId, string recipientId);
+
+        Task IsRecieved(int orderId);
     }
 }

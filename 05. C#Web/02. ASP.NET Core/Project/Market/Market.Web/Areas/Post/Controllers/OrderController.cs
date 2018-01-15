@@ -29,15 +29,23 @@ namespace Market.Web.Areas.Post.Controllers
 
             await this.orders.OrderProduct(productId, recipient, sender);
 
-            return RedirectToAction(nameof(HomeController.Index), "", new { string.Empty });
+            return RedirectToAction("", "Profile", new { username = User.Identity.Name });
         }
 
         [Route("WillSend")]
         public async Task<IActionResult> WillSend(int orderId)
         {
             await this.orders.WillSend(orderId);
-            
-            return RedirectToAction(nameof(HomeController.Index), "", new { string.Empty });
+
+            return RedirectToAction("", "Profile", new { username = User.Identity.Name });
+        }
+
+        [Route("IsRecieved")]
+        public async Task<IActionResult> IsRecieved(int orderId)
+        {
+            await this.orders.IsRecieved(orderId);
+
+            return RedirectToAction("", "Profile", new { username = User.Identity.Name });
         }
 
         [Route("CancelSending")]
@@ -45,7 +53,7 @@ namespace Market.Web.Areas.Post.Controllers
         {
             await this.orders.CancelSending(orderId);
 
-            return RedirectToAction(nameof(HomeController.Index), "", new { string.Empty });
+            return RedirectToAction("", "Profile", new { username = User.Identity.Name });
         }
 
         [Route("DeleteOrder")]
@@ -53,7 +61,7 @@ namespace Market.Web.Areas.Post.Controllers
         {
             await this.orders.DeleteOrder(orderId, this.users.GetUserId(this.User.Identity.Name));
 
-            return RedirectToAction(nameof(HomeController.Index), "", new { string.Empty });
+            return RedirectToAction("", "Profile", new { username = User.Identity.Name });
         }
     }
 }

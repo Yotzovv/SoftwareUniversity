@@ -22,6 +22,8 @@ namespace Market.Data.Models
 
         public DateTime OrderedDate { get; set; }
 
-        public bool IsApproved { get; set; }
+        public bool WillSend { get; set; }
+
+        public bool IsRecieved { get; set; }
     }
 }

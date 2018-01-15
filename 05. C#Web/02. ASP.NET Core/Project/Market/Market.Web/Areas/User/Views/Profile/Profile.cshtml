@@ -16,7 +16,7 @@
             <a class="nav-link" id="orders-tab" data-toggle="tab" href="#recievedOrders" role="tab" aria-controls="orders" aria-selected="false">Recieved Orders</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="orders-tab" data-toggle="tab" href="#sentOrders" role="tab" aria-controls="orders" aria-selected="false">Your Orders</a>
+            <a class="nav-link" id="orders-tab" data-toggle="tab" href="#yourOrders" role="tab" aria-controls="orders" aria-selected="false">Your Orders</a>
         </li>
     }
 </ul>
@@ -49,27 +49,27 @@
         </div>
     </div>
     <div class="tab-pane fade" id="recievedOrders" role="tabpanel" aria-labelledby="orders-tab">
-        @{ var recievedOrders = Model.Orders.Where(x => x.Sender.UserName == User.Identity.Name); }
+        @{ var recievedOrders = Model.Orders.Where(x => x.Sender.UserName == User.Identity.Name && !x.IsRecieved); }
 
-        @if (recievedOrders.Count() == 0)
+        @if (!recievedOrders.Any())
         {
             <h2><span style="color: gray">No recieved orders</span></h2>
         }
         else
         {
-            @await Html.PartialAsync("_OrdersPartialView", Model.Orders.Where(x => x.Sender.UserName == User.Identity.Name))
+            @await Html.PartialAsync("_OrdersPartialView", recievedOrders)
         }
     </div>
-    <div class="tab-pane fade" id="sentOrders" role="tabpanel" aria-labelledby="orders-tab">
-        @{ var sentOrders = Model.Orders.Where(x => x.Recipient.UserName == User.Identity.Name); }
+    <div class="tab-pane fade" id="yourOrders" role="tabpanel" aria-labelledby="orders-tab">
+        @{ var yourOrders = Model.Orders.Where(x => x.Recipient.UserName == User.Identity.Name && !x.IsRecieved); }
 
-        @if (sentOrders.Count() == 0)
+        @if (!yourOrders.Any())
         {
-            <h2><span style="color: gray">No sent orders</span></h2>
+            <h2><span style="color: gray">No requested orders</span></h2>
         }
         else
         {
-            @await Html.PartialAsync("_OrdersPartialView", Model.Orders.Where(x => x.Recipient.UserName == User.Identity.Name))
+            @await Html.PartialAsync("_OrdersPartialView", yourOrders)
         }
     </div>
 </div>

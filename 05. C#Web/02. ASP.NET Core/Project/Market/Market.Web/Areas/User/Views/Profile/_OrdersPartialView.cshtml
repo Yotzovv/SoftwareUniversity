@@ -4,43 +4,70 @@
     ViewData["Title"] = "_OrdersPartialView";
 }
 
-@foreach (var order in Model)
+@foreach (var order in Model.Where(x => !x.IsRecieved))
 {
-    var borderColor = order.IsApproved ? "orange" : "#45e256";
+    var borderColor = order.WillSend ? "orange" : "#45e256";
 
-    @if (User.Identity.Name != order.Sender.UserName)
+    @if (User.Identity.Name == order.Recipient.UserName)
     {
-        if (!order.IsApproved)
+        if (order.WillSend)
         {
-            borderColor = "red";
+            borderColor = "#2E9AFE";
         }
         else
         {
-            borderColor = "#2E9AFE";
+            borderColor = "red";
         }
     }
 
     <div class="card w-50" style="border-color: @borderColor" id="order">
         <div class="card-body">
             <h5 class="card-title"><a asp-area="Post" asp-controller="Details" asp-action="Details" asp-route-id="@order.Product.Id">@order.Product.Title</a></h5>
-            <p class="card-text">Hello, I want to order your product on address: @order.Recipient.DeliveryOfficeAddress</p>
-            @if (User.Identity.Name == order.Sender.UserName)
+
+            @if (order.Recipient.UserName == User.Identity.Name)
             {
-                if (!order.IsApproved)
+                if (order.WillSend)
                 {
-                    <a asp-area="Post" asp-controller="Order" asp-action="WillSend" asp-route-orderId="@order.Product.Id" class="btn btn-success">Will Send</a>
+                    <p class="card-text">
+                        Hello,
+                        <a asp-area="User" asp-controller="Profile" asp-action="Profile" asp-route-username="@order.Sender.UserName">@order.Sender.UserName</a>
+                        sent your product on office address: @order.Recipient.DeliveryOfficeAddress
+                    </p>
                 }
                 else
                 {
-                    <a asp-area="Post" asp-controller="Order" asp-action="CancelSending" asp-route-orderId="@order.Product.Id" class="btn btn-warning">Cancel Sending</a>
+                    <p class="card-text">
+                        <a asp-area="User" asp-controller="Profile" asp-action="Profile" asp-route-username="@order.Sender.UserName">@order.Sender.UserName</a>
+                        still hasn't sent your product
+                    </p>
+                }
+            }
+            else
+            {
+                <p class="card-text">
+                    Hello,
+                    <a asp-area="User" asp-controller="Profile" asp-action="Profile" asp-route-username="@order.Recipient.UserName">@order.Recipient.UserName</a>
+                    want to order your product on office address: @order.Recipient.DeliveryOfficeAddress
+                </p>
+            }
+
+            @if (User.Identity.Name == order.Sender.UserName)
+            {
+                if (!order.WillSend)
+                {
+                    <a asp-area="Post" asp-controller="Order" asp-action="WillSend" asp-route-orderId="@order.Id" class="btn btn-success">Will Send</a>
+                }
+                else
+                {
+                    <a asp-area="Post" asp-controller="Order" asp-action="CancelSending" asp-route-orderId="@order.Id" class="btn btn-warning">Cancel Sending</a>
                 }
             }
 
             @if (User.Identity.Name != order.Sender.UserName)
             {
-                if (!order.IsApproved)
+                if (!order.WillSend)
                 {
-                    <a asp-area="Post" asp-controller="Order" asp-action="DeleteOrder" asp-route-orderId="@order.Product.Id" class="btn btn-danger">Delete Order</a>
+                    <a asp-area="Post" asp-controller="Order" asp-action="DeleteOrder" asp-route-orderId="@order.Id" class="btn btn-danger">Delete Order</a>
                 }
                 else
                 {
@@ -53,19 +80,26 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form method="post" asp-area="Communication" asp-controller="SendMessage" asp-action="SendMessageAsync">
+                                <form method="post" asp-area="User" asp-controller="Prestige" asp-action="SetPrestige" asp-route-userId="@order.SenderId" asp-route-orderId="@order.ProductId">
                                     <div class="modal-body">
                                         <div class="checkbox">
-                                            <label><input type="checkbox" value="">The recieved is inline with my expectations</label>
+                                            <label>
+                                                <input type="checkbox" name="wasInLineWithExpectations" value="true">The recieved is inline with my expectations
+                                            </label>
                                         </div>
                                         <div class="checkbox">
-                                            <label><input type="checkbox" value="">The sender was nice</label>
+                                            <label>
+                                                <input type="checkbox" name="wasNice" value="true">The sender was nice
+                                            </label>
                                         </div>
                                         <div class="checkbox">
-                                            <label><input type="checkbox" value="">The sender was honest</label>
+                                            <label><input type="checkbox" name="wasHonest" value="true">The sender was honest</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" name="wasHumble" value="true">The sender was humble</label>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Send message</button>
+                                            <button type="submit" class="btn btn-primary">Okay</button>
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>

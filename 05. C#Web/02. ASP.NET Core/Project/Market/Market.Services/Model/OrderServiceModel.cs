@@ -5,6 +5,8 @@ namespace Market.Services.Model
 {
     public class OrderServiceModel
     {
+        public int Id { get; set; }
+
         public string RecipientId { get; set; }
 
         public ApplicationUser Recipient { get; set; }
@@ -21,6 +23,8 @@ namespace Market.Services.Model
 
         public DateTime OrderedDate { get; set; }
 
-        public bool IsApproved { get; set; }
+        public bool WillSend { get; set; }
+
+        public bool IsRecieved { get; set; }
     }
 }

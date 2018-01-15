@@ -31,6 +31,8 @@ namespace Market.Services.Model
 
         public byte[] ProfilePicture { get; set; }
 
+        public double Prestige { get; set; }
+
         public IEnumerable<ProductListingServiceModel> Posts { get; set; }
 
         public IEnumerable<OrderServiceModel> Orders { get; set; }
