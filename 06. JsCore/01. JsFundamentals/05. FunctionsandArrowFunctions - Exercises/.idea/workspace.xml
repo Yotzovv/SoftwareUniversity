@@ -17,21 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="09. RadioCrystals.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/09. RadioCrystals.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="08. TripLength.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/08. TripLength.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -56,8 +46,8 @@
         <option value="$PROJECT_DIR$/07. TreasureLocator.js" />
         <option value="$PROJECT_DIR$/05. ModifyAverage.js" />
         <option value="$PROJECT_DIR$/06. ValidityChecker.js" />
-        <option value="$PROJECT_DIR$/08. TripLength.js" />
         <option value="$PROJECT_DIR$/09. RadioCrystals.js" />
+        <option value="$PROJECT_DIR$/08. TripLength.js" />
       </list>
     </option>
   </component>
@@ -105,26 +95,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.09. RadioCrystals.js">
-    <configuration name="04. CookingbyNumbers.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="04. CookingbyNumbers.js" working-dir="$PROJECT_DIR$" />
+  <component name="RunManager" selected="Node.js.08. TripLength.js">
     <configuration name="05. ModifyAverage.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="05. ModifyAverage.js" working-dir="$PROJECT_DIR$" />
     <configuration name="06. ValidityChecker.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="06. ValidityChecker.js" working-dir="$PROJECT_DIR$" />
     <configuration name="07. TreasureLocator.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="07. TreasureLocator.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="08. TripLength.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="08. TripLength.js" working-dir="$PROJECT_DIR$" />
     <configuration name="09. RadioCrystals.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="09. RadioCrystals.js" working-dir="$PROJECT_DIR$" />
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.04. CookingbyNumbers.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.05. ModifyAverage.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.06. ValidityChecker.js" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.07. TreasureLocator.js" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.09. RadioCrystals.js" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.05. ModifyAverage.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.06. ValidityChecker.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.07. TreasureLocator.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.09. RadioCrystals.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.08. TripLength.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.09. RadioCrystals.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.06. ValidityChecker.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.05. ModifyAverage.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.07. TreasureLocator.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.04. CookingbyNumbers.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.08. TripLength.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.09. RadioCrystals.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.06. ValidityChecker.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.05. ModifyAverage.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.07. TreasureLocator.js" />
       </list>
     </recent_temporary>
   </component>
@@ -143,14 +133,16 @@
       <updated>1516537440472</updated>
       <workItem from="1516537441959" duration="5688000" />
       <workItem from="1516610184853" duration="20717000" />
+      <workItem from="1516708957503" duration="1967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26405000" />
+    <option name="totallyTimeSpent" value="28372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -184,6 +176,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/09. RadioCrystals.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/08. TripLength.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/02. RoadRadar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -212,7 +220,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -228,7 +235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -236,7 +242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -250,7 +255,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/09. RadioCrystals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
+        <state relative-caret-position="306">
           <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding />
         </state>
@@ -258,8 +263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/08. TripLength.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
           <folding />
         </state>
       </provider>
