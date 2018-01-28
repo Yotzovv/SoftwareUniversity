@@ -13504,9 +13504,6 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
       "projectUniqueName": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Web\\Market.Web.csproj",
       "projectName": "Market.Web",
@@ -13534,11 +13531,11 @@
             "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Common\\Market.Common.csproj": {
               "projectPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Common\\Market.Common.csproj"
             },
-            "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Services\\Market.Services.csproj": {
-              "projectPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Services\\Market.Services.csproj"
-            },
             "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Data\\Market.Data.csproj": {
               "projectPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Data\\Market.Data.csproj"
+            },
+            "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Services\\Market.Services.csproj": {
+              "projectPath": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Services\\Market.Services.csproj"
             }
           }
         }

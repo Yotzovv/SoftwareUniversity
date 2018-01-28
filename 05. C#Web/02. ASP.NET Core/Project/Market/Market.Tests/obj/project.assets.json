@@ -14304,9 +14304,6 @@
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
       "projectUniqueName": "C:\\Users\\asd\\Documents\\Visual Studio 2015\\SoftwareUniversity\\05. C#Web\\02. ASP.NET Core\\Project\\Market\\Market.Tests\\Market.Tests.csproj",
       "projectName": "Market.Tests",
@@ -14363,6 +14360,7 @@
             "version": "[15.5.0, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.0.0, )",
             "autoReferenced": true
