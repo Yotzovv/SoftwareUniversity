@@ -15,13 +15,13 @@
                             <div class="col-sm-4">
                                 <div align="center">
                                     @if (Model.ProfilePicture == null)
-            {
-                        <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
-}
-else
-{
-                        <img alt="User Pic" id="profile-image1" class="img-circle img-responsive" src="data:image;base64,@System.Convert.ToBase64String(Model.ProfilePicture)" />
-}
+                                    {
+                                        <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
+                                    }
+                                    else
+                                    {
+                                        <img alt="User Pic" id="profile-image1" class="img-circle img-responsive" src="data:image;base64,@System.Convert.ToBase64String(Model.ProfilePicture)" />
+                                    }
                                     <input id="profile-image-upload" class="hidden" type="file">
                                     <!--Upload Image Js And Css-->
                                 </div>
@@ -55,7 +55,7 @@ else
                             <div class="clearfix"></div>
                             <div class="bot-border"></div>
                             <div class="col-sm-5 col-xs-6 tital ">Prestige: </div><div class="col-sm-7">@(Model.Prestige)</div>
-                            
+
                             <!-- /.box-body -->
                         </div>
                         <!-- /.box -->

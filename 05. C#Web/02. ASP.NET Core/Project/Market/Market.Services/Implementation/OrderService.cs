@@ -78,7 +78,10 @@ namespace Market.Services
         public async Task IsRecieved(int orderId)
         {
             var order = await this.db.Orders.FirstAsync(x => x.ProductId == orderId);
+            var product = await this.db.Posts.FirstAsync(x => x.Id == order.ProductId);
+
             order.IsRecieved = true;
+            product.IsActive = false;
 
             await this.db.SaveChangesAsync();
         }
