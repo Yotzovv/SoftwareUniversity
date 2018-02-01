@@ -37,8 +37,8 @@
       <file leaf-file-name="10. ExtractUniqueWords.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/10. ExtractUniqueWords.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -114,26 +114,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.09. LowestPricesInCities.js">
-    <configuration name="05. CountWordsInAText.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="05. CountWordsInAText.js" working-dir="$PROJECT_DIR$" />
+  <component name="RunManager" selected="Node.js.10. ExtractUniqueWords.js">
     <configuration name="06. CountWordsWithMaps.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="06. CountWordsWithMaps.js" working-dir="$PROJECT_DIR$" />
     <configuration name="07. PopulationInTowns.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="07. PopulationInTowns.js" working-dir="$PROJECT_DIR$" />
     <configuration name="08. CityMarkets.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="08. CityMarkets.js" working-dir="$PROJECT_DIR$" />
     <configuration name="09. LowestPricesInCities.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="09. LowestPricesInCities.js" working-dir="$PROJECT_DIR$" />
+    <configuration name="10. ExtractUniqueWords.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="10. ExtractUniqueWords.js" working-dir="$PROJECT_DIR$" />
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.05. CountWordsInAText.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.06. CountWordsWithMaps.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.07. PopulationInTowns.js" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.08. CityMarkets.js" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.09. LowestPricesInCities.js" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.06. CountWordsWithMaps.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.07. PopulationInTowns.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.08. CityMarkets.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.09. LowestPricesInCities.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.10. ExtractUniqueWords.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.09. LowestPricesInCities.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.08. CityMarkets.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.06. CountWordsWithMaps.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.07. PopulationInTowns.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.05. CountWordsInAText.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.10. ExtractUniqueWords.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.09. LowestPricesInCities.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.08. CityMarkets.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.06. CountWordsWithMaps.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.07. PopulationInTowns.js" />
       </list>
     </recent_temporary>
   </component>
@@ -152,23 +152,22 @@
       <updated>1517319190977</updated>
       <workItem from="1517319192691" duration="4111000" />
       <workItem from="1517402382360" duration="10338000" />
-      <workItem from="1517479396141" duration="8022000" />
+      <workItem from="1517479396141" duration="8327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22471000" />
+    <option name="totallyTimeSpent" value="22776000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23233405" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23233405" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -338,8 +337,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/10. ExtractUniqueWords.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="408">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
           <folding />
         </state>
       </provider>
