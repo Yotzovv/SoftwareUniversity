@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="content">
+    (Bulgarian brandy) lqlqlqlq (even apples) ororoororo (alcoholic drink)
+</p>
+<p id="holder">
+    lqlqlqlqlq (connsecteturr apuiscinsiskgkgk elit) (tempor) ofofof (et dolore magna);
+</p>
+<script>
+    function extract(elementId) {
+        let para = document.getElementById(elementId).textContent;
+        let pattern = /\(([^)]+)\)/g;
+        let result = [];
+
+        let match = pattern.exec(para);
+
+        while(match) {
+            result.push(match[1]);
+            match = pattern.exec(para);
+        }
+
+        return result.join('; ');
+    }
+</script>
+</body>
+</html>
