@@ -12,14 +12,14 @@ namespace Market.Services
         Task AddPost(string title, string description, double price, Categories Category,IEnumerable<IFormFile> images, ApplicationUser user);
 
         Task DeletePost(int id);
-
-        int GetPostId(string title);
-
+        
         Task AddView(int productId);
 
         Task<IEnumerable<ProductListingServiceModel>> GetAllPostsAsync();
 
         Task<IEnumerable<ProductListingServiceModel>> GetAllUsersPostsAsync(string userId);
+
+        int GetPostId(string title);
 
         Task<Post> GetPostById(int id);
 
