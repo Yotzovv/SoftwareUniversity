@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Search</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous"></script>
+    <style>
+        .add-controls,
+        .search-controls {
+            width: 20em;
+            height: 2em;
+        }
+
+        input {
+            position: absolute;
+            left: 6em;
+        }
+
+        .button {
+            background-color: darkgrey;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 15em;
+            border: 1px solid black;
+            padding: 0 5px 0 5px;
+        }
+
+        .result-controls .button {
+            position: relative;
+            left: 0;
+            font-size: 50%;
+            margin-right: 1em;
+            padding: 0;
+            bottom: 3px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div id="content"></div>
+        <script>
+            window.onload = function () {
+                domSearch("#content", false);
+            }
+
+            function domSearch(selector, isCaseSensitive) {
+                let content = $('#content').addClass('items-control');
+
+                let addDiv = $('<div>').addClass('add-controls')
+                    .append($('<label>Enter text:<input id="add"></label>'))
+                    .append('<a class="button" onclick="addItem()" style="display: inline-block;">Add</a>');
+
+                let searchDiv = $('<div class="search-controls"></div>')
+                    .append($('<label>Search:<input></label>'));
+
+                let foundItems = $('<div class="result-controls">')
+                    .append($('<ul id=itemsList class="items-list">'));
+
+                content.append(addDiv)
+                    .append(searchDiv)
+                    .append(foundItems);
+            }
+
+            function addItem() {
+                let textValue = $('#add').val();
+
+                $('#itemsList')
+                    .append($('<li class="list-item">')
+                        .append($(`<strong><a onclick="deleteItem()" class="button">X</a>${textValue}</strong>`)));
+
+                $('#add').val('');
+            }
+
+            function deleteItem() {
+               // $('#itemsList').children().remove();
+            }
+        </script>
+    </body>
+
+</html>
