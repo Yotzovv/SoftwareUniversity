@@ -6,7 +6,7 @@ function solve() {
         var obj = arguments[i];
         var type = typeof obj;
 
-        console.log(`${type}: ${isObject(obj) ? '' : obj}`);
+        console.log(`${type}: ${obj}`);
 
         if (!summary[type]) {
             summary[type] = 0;
@@ -22,10 +22,6 @@ function solve() {
     for (let [type, occurances] of sortedTypes) {
         console.log(`${type} = ${occurances}`);
     }
-
-    function isObject(value) {
-        return value && typeof value === 'object' && value.constructor === Object;
-    };
 }
 
 //solve('cat', 42, 11, { a: 1, b: 3 }, function () { console.log('Hello world!'); });
