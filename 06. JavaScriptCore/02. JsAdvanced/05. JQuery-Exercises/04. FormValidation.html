@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <form id="registerForm">
+            <fieldset id="userInfo">
+                <legend>User Information:</legend>
+                <div class="pairContainer">
+                    <label for="username">Userame:</label>
+                    <input id="username" type="text">
+                </div>
+                <div class="pairContainer">
+                    <label for="email">Email:</label>
+                    <input id="email" type="text">
+                </div>
+                <div class="pairContainer">
+                    <label for="password">Passwrod:</label>
+                    <input id="password" type="password">
+                </div>
+                <div class="pairContainer">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input id="confirm-password" type="password">
+                </div>
+                <div class="pairContainer">
+                    <label for="company">Is Company?</label>
+                    <input id="company" type="checkbox">
+                </div>
+            </fieldset>
+            <fieldset id="companyInfo" style="display: none;">
+                <legend>Company Informaion:</legend>
+                <div class="pairContainer">
+                    <label for="companyNumber">Company Number</label>
+                    <input id="companyNumber" type="number">
+                </div>
+            </fieldset>
+            <button id="submit">Submit</button>
+        </form>
+        <div id="valid" style="display: none">Valid</div>
+    </div>
+    <script src="formValidation.js"></script>
+    <script>
+        window.onload = function () {
+            validate();
+        }
+
+        function validate() {
+            let username = $('#username');
+            let email = $('#email');
+            let password = $('#password');
+            let confirmPassword = $('#confirm-password');
+            let companyCheckBox = $('#company');
+            let companyNum = $('#companyNumber');
+
+            username.on('input', validateUsername);
+            password.on('input', validatePassword);
+            confirmPassword.on('input', comparePwds);
+            companyNum.on('input', validateCompanyNum);
+            email.on('input', validateEmail);
+
+            username.add(password).add(confirmPassword).add(companyNum).add(email).on('input', showValid);
+            $(companyCheckBox).bind('change', showCompanyInfo);
+
+
+            function showValid() {
+                if (validateUsername() && validatePassword() && comparePwds() && validateEmail() && validateCompanyNum()) {
+                    $('#valid').css('display', 'block');
+                } else {
+                    $('#valid').css('display', 'none');
+                }
+            }
+
+            function validateUsername() {
+                var usernameLgth = $(username).val().length;
+                if (usernameLgth >= 3 && usernameLgth <= 20) {
+                    $('#username').css('border', '');
+                    return true;
+                } else {
+                    $('#username').css('border', '2px solid red');
+                    return false;
+                }
+            }
+
+            function validatePassword() {
+                var pwdLgth = $(password).val().length;
+                var pswdRgx = /^(\w*)$/g.exec($(password).val());
+
+                if ((pwdLgth >= 5 && pwdLgth <= 15) && pswdRgx) {
+                    $('#password').css('border', '');
+                    return true;
+                } else {
+                    $('#password').css('border', '2px solid red');
+                    return false;
+                }
+            }
+
+            function comparePwds() {
+                if ($('#confirm-password').val() === $(password).val()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function showCompanyInfo() {
+                if ($(this).is(':checked')) {
+                    $("#companyInfo").show();
+                } else {
+                    $("#companyInfo").hide();
+                }
+            }
+
+            function validateEmail() {
+                var emailstr = $(email).val();
+
+                if (emailstr.includes('@') && emailstr.includes('.')) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function validateCompanyNum() {
+                if (!$('#company').is(':checked')) {
+                    return true;
+                }
+
+                if ($('#companyNumber').val() >= 1000 && $('#companyNumber').val() <= 9999) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -57,10 +57,11 @@
 
                 let addDiv = $('<div>').addClass('add-controls')
                     .append($('<label>Enter text:<input id="add"></label>'))
-                    .append('<a class="button" onclick="addItem()" style="display: inline-block;">Add</a>');
+                    .append($('<a class="button" style="display: inline-block;">Add</a>').click(addItem));
 
                 let searchDiv = $('<div class="search-controls"></div>')
-                    .append($('<label>Search:<input></label>'));
+                    .append($('<label>Search:<input id="search"></label>'));
+
 
                 let foundItems = $('<div class="result-controls">')
                     .append($('<ul id=itemsList class="items-list">'));
@@ -68,21 +69,40 @@
                 content.append(addDiv)
                     .append(searchDiv)
                     .append(foundItems);
+
+                let searchTxt = $('#search');
+                searchTxt.on('input', search);
+
+
+                function addItem() {
+                    let textValue = $('#add').val();
+                    let a = $('<a class="button">X</a>a');
+                    a.click(deleteItem);
+
+                    $('#itemsList')
+                        .append($('<li class="list-item">')
+                            .append(a)
+                            .append($(`<strong>${textValue}</strong>`)));
+
+                    $('#add').val('');
+                }
+
+                function deleteItem() {
+                    $(this).parent().remove();
+                }
+
+                function search() {
+                    searchTxt = $('#search');
+                    if (searchTxt.val().length > 0) {
+                        $('.items-list li').css('display', 'none');
+                        $(`.items-list strong:contains('${searchTxt.val()}')`).parent().css('display', 'block');
+                    } else {
+                        $('.items-list li').css('display', 'block');
+                    }
+                }
             }
 
-            function addItem() {
-                let textValue = $('#add').val();
 
-                $('#itemsList')
-                    .append($('<li class="list-item">')
-                        .append($(`<strong><a onclick="deleteItem()" class="button">X</a>${textValue}</strong>`)));
-
-                $('#add').val('');
-            }
-
-            function deleteItem() {
-               // $('#itemsList').children().remove();
-            }
         </script>
     </body>
 
