@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <input type="text" id="num1" />
+    <input type="text" id="num2" />
+    <input type="text" id="result" readonly />
+    <br>
+    <button id="sumButton">
+        Sum</button>
+    <button id="subtractButton">
+        Subtract</button>
+</body>
+<script>
+    function solution() {
+        let element1, element2, result
+        return {
+            init: function (selector1, selector2, resultSelector) {
+                element1 = $(selector1);
+                element2 = $(selector2);
+                result = $(resultSelector);
+            },
+
+            add: function () {
+                result.val(Number(element1.val()) + Number(element2.val()));
+            },
+
+            substract: function () {
+                result.val(Number(element1.val() - Number(element2.val())));
+            }
+        }
+    }
+</script>
+
+</html>
