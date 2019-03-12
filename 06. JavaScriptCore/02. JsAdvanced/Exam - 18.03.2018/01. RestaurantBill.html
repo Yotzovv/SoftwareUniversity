@@ -91,20 +91,21 @@
     </section>
 
     <script>
-        function addProduct() {
-            var product = $('#add-product input:text').val();
-            var price = $($('#add-product input')[1]).val();
-            var newElement = $(`<tr><td>${product}</td><td>${price}</td></tr>`);
-            var totalPrice = $($('tfoot > tr > td')[1]).text();
-            var newTotalPrice = Number(totalPrice) + Number(price);
-
-            if ((product !== '' && price !== '') || (product !== undefined || price !== undefined)) {
-                $('#product-list').append(newElement);
-                $($('tfoot > tr > td')[1]).replaceWith(`<td>${newTotalPrice}</td>`);
-                $('#add-product input:text').replaceWith('<input type="text">');
-                $($('#add-product input')[1]).replaceWith('<input type="number">');
-            }
-        }
+     function addProduct() {
+         var product = $('#add-product input:text').val();
+         var price = $('#add-product input')[1].value;
+         var newEl = $(`<tr><td>${product}</td><td>${price}</td></tr>`);
+         var totalPrice = $($('tfoot > tr > td')[1]).text();
+         var newTotalPrice = Number(totalPrice) + Number(price);         
+         var hasInput = product.length > 0 && 0 < price.length;
+         
+         if(hasInput) {
+            $('#product-list').append(newEl);
+            $($('tfoot > tr > td')[1]).replaceWith(`<td>${newTotalPrice}</td>`);
+            $('#add-product input:text').replaceWith('<input type="text">');
+            $($('#add-product input')[1]).replaceWith('<input type="number">');
+         }
+     }
     </script>
 
 </body>
