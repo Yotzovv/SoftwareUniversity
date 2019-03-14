@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Generating 0 or 1 Vecto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. Generating Combinations", "05. Generating Combinations\05. Generating Combinations.csproj", "{1706EB68-5956-4510-B66D-84529CE8EEF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. 8 Queens Puzzle", "06. 8 Queens Puzzle\06. 8 Queens Puzzle.csproj", "{D6E0DECA-6540-4F96-B428-9899C1897273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Paths in Labyrinth", "07. Paths in Labyrinth\07. Paths in Labyrinth.csproj", "{4F86E86E-F0C7-412F-8D8D-0CF611D98312}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{1706EB68-5956-4510-B66D-84529CE8EEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1706EB68-5956-4510-B66D-84529CE8EEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1706EB68-5956-4510-B66D-84529CE8EEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E0DECA-6540-4F96-B428-9899C1897273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E0DECA-6540-4F96-B428-9899C1897273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E0DECA-6540-4F96-B428-9899C1897273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E0DECA-6540-4F96-B428-9899C1897273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F86E86E-F0C7-412F-8D8D-0CF611D98312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F86E86E-F0C7-412F-8D8D-0CF611D98312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F86E86E-F0C7-412F-8D8D-0CF611D98312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F86E86E-F0C7-412F-8D8D-0CF611D98312}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
