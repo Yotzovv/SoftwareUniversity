@@ -6,20 +6,22 @@ namespace _03._Combinatio
     class Launcher
     {
         private static int[] combinations;
+        private static int n;
+        private static int k;
 
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            int k = int.Parse(Console.ReadLine());
+            n = int.Parse(Console.ReadLine());
+            k = int.Parse(Console.ReadLine());
 
             combinations = new int[k];
 
-            GetCombinations(n);
+            GetCombinations();
         }
 
-        private static void GetCombinations(int n, int index = 0, int element = 1)
+        private static void GetCombinations(int index = 0, int element = 1)
         {
-            if(index == combinations.Length)
+            if(index == k)
             {
                 Console.WriteLine(string.Join(" ", combinations));
                 return;
@@ -29,7 +31,7 @@ namespace _03._Combinatio
             {
                 combinations[index] = i;
 
-                GetCombinations(n, index + 1, i);
+                GetCombinations(index + 1, i);
             }
         }
     }
