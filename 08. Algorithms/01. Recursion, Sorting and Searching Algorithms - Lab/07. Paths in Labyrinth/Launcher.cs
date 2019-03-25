@@ -1,32 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace _07._Paths_in_Labyrinth
 {
     class Launcher
     {
+        static char[,] labyrinth;
         static List<char> path = new List<char>();
-
-        public static char[][] lab = null;
 
         static void Main(string[] args)
         {
-            lab = ReadLab();
+            labyrinth = ReadLabyrinth();
             FindPaths(0, 0, 'S');
         }
 
         private static void FindPaths(int row, int col, char direction)
         {
-            if(!IsInBounds(row, col))
+            if (!IsInBounds(row, col))
             {
                 return;
             }
 
-            if(IsExit(row, col))
+            path.Add(direction);
+
+            if (IsExit(row, col))
             {
                 PrintPath();
             }
-            else if(!IsVisited(row, col) && IsFree(row, col))
+            else if (IsFree(row, col))
             {
                 Mark(row, col);
                 FindPaths(row, col + 1, 'R');
@@ -41,42 +43,55 @@ namespace _07._Paths_in_Labyrinth
 
         private static void Unmark(int row, int col)
         {
-            throw new NotImplementedException();
+            labyrinth[row, col] = '-';
         }
 
         private static void Mark(int row, int col)
         {
-            throw new NotImplementedException();
-        }
-
-        private static bool IsVisited(int row, int col)
-        {
-            throw new NotImplementedException();
+            labyrinth[row, col] = 'v';
         }
 
         private static bool IsFree(int row, int col)
         {
-            throw new NotImplementedException();
+            return labyrinth[row, col] == '-';
         }
 
         private static void PrintPath()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(String.Join(String.Empty, path.Skip(1)));
         }
 
         private static bool IsExit(int row, int col)
         {
-            throw new NotImplementedException();
+            return labyrinth[row, col] == 'e';
         }
 
         private static bool IsInBounds(int row, int col)
         {
-            throw new NotImplementedException();
+            bool isRowExisting = row >= 0 && row < labyrinth.GetLength(0);
+            bool isColExisting = col >= 0 && col < labyrinth.GetLength(1);
+
+            return isRowExisting && isColExisting;
         }
 
-        private static char[][] ReadLab()
+        private static char[,] ReadLabyrinth()
         {
-            throw new NotImplementedException();
+            int rows = int.Parse(Console.ReadLine());
+            int cols = int.Parse(Console.ReadLine());
+
+            char[,] labyrinth = new char[rows, cols];
+
+            for (int i = 0; i < labyrinth.GetLength(0); i++)
+            {
+                string line = Console.ReadLine();
+
+                for (int j = 0; j < labyrinth.GetLength(1); j++)
+                {
+                    labyrinth[i, j] = line[j];
+                }
+            }
+
+            return labyrinth;
         }
     }
 }
