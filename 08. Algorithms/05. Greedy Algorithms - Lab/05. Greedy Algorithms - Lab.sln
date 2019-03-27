@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Sum of Coins", "01. Sum of Coins\01. Sum of Coins.csproj", "{099EEAB4-BCD7-439D-BBB9-7ACE36EDBE76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Sum of Coins", "01. Sum of Coins\01. Sum of Coins.csproj", "{099EEAB4-BCD7-439D-BBB9-7ACE36EDBE76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Set Cover", "02. Set Cover\02. Set Cover.csproj", "{7F74C857-E5DB-40DB-BD9A-92CAE57C0F5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{099EEAB4-BCD7-439D-BBB9-7ACE36EDBE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{099EEAB4-BCD7-439D-BBB9-7ACE36EDBE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{099EEAB4-BCD7-439D-BBB9-7ACE36EDBE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F74C857-E5DB-40DB-BD9A-92CAE57C0F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F74C857-E5DB-40DB-BD9A-92CAE57C0F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F74C857-E5DB-40DB-BD9A-92CAE57C0F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F74C857-E5DB-40DB-BD9A-92CAE57C0F5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
