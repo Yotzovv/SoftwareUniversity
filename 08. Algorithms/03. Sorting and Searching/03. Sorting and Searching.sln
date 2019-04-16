@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Sorting", "01. Sorting\01. Sorting.csproj", "{1206CB04-875E-44B9-B308-4EBD2FDB87EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Sorting", "01. Sorting\01. Sorting.csproj", "{1206CB04-875E-44B9-B308-4EBD2FDB87EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Searching", "02. Searching\02. Searching.csproj", "{1A21B7F1-85C6-4D59-8EF6-CECD41E2D98D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1206CB04-875E-44B9-B308-4EBD2FDB87EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1206CB04-875E-44B9-B308-4EBD2FDB87EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1206CB04-875E-44B9-B308-4EBD2FDB87EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A21B7F1-85C6-4D59-8EF6-CECD41E2D98D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A21B7F1-85C6-4D59-8EF6-CECD41E2D98D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A21B7F1-85C6-4D59-8EF6-CECD41E2D98D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A21B7F1-85C6-4D59-8EF6-CECD41E2D98D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

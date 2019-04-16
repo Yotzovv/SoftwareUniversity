@@ -25,7 +25,7 @@ namespace _01._Sorting
 
             //Split array in half
             var arrOne = arr.Take(arr.Length / 2).ToArray();
-            var arrTwo = arr.Skip(arr.Length / 2).Take(arr.Length / 2 + 1).ToArray();
+            var arrTwo = arr.Skip(arr.Length / 2).ToArray();
 
             arrOne = MergeSort(arrOne);
             arrTwo = MergeSort(arrTwo);
