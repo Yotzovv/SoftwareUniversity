@@ -1,83 +1,69 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace _01._Sorting
 {
     class Launcher
     {
-        private static int[] aux;
+        private static int[] array;
 
         static void Main(string[] args)
         {
-            int[] arr = Console.ReadLine()
-                .Split()
-                .Select(int.Parse)
-                .ToArray();
+            array = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            array = MergeSort(array);
 
-            Sort(arr);
-
-            Console.WriteLine(String.Join(" ", arr));
+            Console.WriteLine(string.Join(" ", array));
         }
 
-        public static void Sort(int[] arr)
+        private static int[] MergeSort(int[] arr)
         {
-            aux = new int[arr.Length];
-            Sort(arr, 0, arr.Length - 1);
+            if (arr.Length == 1)
+            {
+                return arr;
+            }
+
+            //Split array in half
+            var arrOne = arr.Take(arr.Length / 2).ToArray();
+            var arrTwo = arr.Skip(arr.Length / 2).Take(arr.Length / 2 + 1).ToArray();
+
+            arrOne = MergeSort(arrOne);
+            arrTwo = MergeSort(arrTwo);
+
+            return Merge(arrOne, arrTwo);
         }
 
-        private static void Merge(int[] arr, int lo, int mid, int hi)
+        private static int[] Merge(int[] arrOne, int[] arrTwo)
         {
-            if (IsLess(arr[mid], arr[mid + 1]))
-            {
-                return;
-            }
+            Queue<int> result = new Queue<int>();
 
-            for (int index = lo; index < hi + 1; index++)
+            while(arrOne.Any() && arrTwo.Any())
             {
-                aux[index] = arr[index];
-            }
-
-            int i = lo;
-            int j = mid + 1;
-
-            for (int k = lo; k <= hi; k++)
-            {
-                if (i > mid)
+                if (arrOne[0] < arrTwo[0])
                 {
-                    arr[k] = aux[j++];
-                }
-                else if (j > hi)
-                {
-                    arr[k] = aux[i++];
-                }
-                else if (IsLess(aux[i], aux[j]))
-                {
-                    arr[k] = aux[i++];
+                    result.Enqueue(arrOne[0]);
+                    arrOne = arrOne.Skip(1).ToArray();
                 }
                 else
                 {
-                    arr[k] = aux[j++];
+                    result.Enqueue(arrTwo[0]);
+                    arrTwo = arrTwo.Skip(1).ToArray();
                 }
             }
-        }
 
-        private static bool IsLess(int current, int other)
-        {
-            return current.CompareTo(other) < 0;
-        }
-
-        private static void Sort(int[] arr, int lo, int hi)
-        {
-            if (lo >= hi)
+            while(arrOne.Any())
             {
-                return;
+                result.Enqueue(arrOne[0]);
+                arrOne = arrOne.Skip(1).ToArray();
             }
 
-            int mid = lo + (hi - lo) / 2;
+            while(arrTwo.Any())
+            {
+                result.Enqueue(arrTwo[0]);
+                arrTwo = arrTwo.Skip(1).ToArray();
+            }
 
-            Sort(arr, lo, mid);
-            Sort(arr, mid + 1, hi);
-            Merge(arr, lo, mid, hi);
+            return result.ToArray();
         }
     }
 }
