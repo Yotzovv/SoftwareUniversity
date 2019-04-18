@@ -28,14 +28,17 @@ namespace _02._Searching
                     return midIndex;
                 }
 
+                //Split scope
                 if (n < array[midIndex])
                 {
-                    return BinarySearch(startIndex, midIndex);
+                    endIndex = midIndex;
                 }
                 else if (n > array[midIndex])
                 {
-                    return BinarySearch(midIndex + 1, endIndex);
+                    startIndex = midIndex + 1;
                 }
+
+                return BinarySearch(startIndex, endIndex);
             }
 
             return -1;
