@@ -28,56 +28,31 @@ namespace _05._Needles
 
             int needle = needles[index];
 
-            //For each needle find the left most index where it can be inserted.
-            for (int i = numbers.Count - 1; i >= 0; i--)
+            int idx = numbers.Count;
+            int previous = numbers[idx - 1];
+
+            bool needToMoveLeft = (previous >= needle || previous == 0);
+
+            while (needToMoveLeft)
             {
-                int number = numbers[i];
-
-                if (number == 0)
+                if (idx <= 0)
                 {
-                    continue;
-                }
-
-                int difference = needle - number;
-                int idx = i;
-
-                if (difference == 0)
-                {
-                    if (i > 0)
-                    {
-                        if (numbers[i - 1] < needle)
-                        {
-                            idx = i;
-                        }
-                        else
-                        {
-                            idx = i - 1;
-                        }
-
-                        while (idx > 0 && numbers[idx - 1] == 0)
-                        {
-                            idx--;
-                        }
-                    }                   
-                }
-                else if (difference > 0)
-                {
-                    idx = i + 1;
-                }
-                else if (difference < 0 && i == 0)
-                {
-                    idx = 0;
-                }
-
-                if (difference >= 0 || difference < 0 && i == 0)
-                {
-                    numbers.Insert(idx, needle);
-                    numbers.Remove(0);
-
-                    output.Add(idx);
                     break;
                 }
+
+                int prev = numbers[idx - 1];
+                needToMoveLeft = (prev >= needle || prev == 0);
+
+                if (needToMoveLeft)
+                {
+                    --idx;
+                }
             }
+
+            numbers.Insert(idx, needle);
+            numbers.Remove(0);
+
+            output.Add(idx);
 
             FindProperPlaces(++index);
         }
@@ -91,9 +66,3 @@ namespace _05._Needles
         }
     }
 }
-
-
-//Code is magic, I'm a wizzard
-//My code is poetry, I'm a true poet
-//My poetry is magic, it will touch your hearth
-//Your hearth is stollen, I am the thief
