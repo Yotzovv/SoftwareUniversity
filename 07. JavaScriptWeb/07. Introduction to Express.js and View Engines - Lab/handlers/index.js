@@ -1,5 +1,4 @@
-const homeHandler = require('./home');
-const filesHandler = require('./static-files')
+const homeHandler = require('./home')
 const productsHandler = require('./product')
 const categoryHandler = require('./category')
 

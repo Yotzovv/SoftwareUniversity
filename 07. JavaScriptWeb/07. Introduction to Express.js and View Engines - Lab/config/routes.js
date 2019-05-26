@@ -11,4 +11,9 @@ module.exports = (app) => {
 
     app.get('/category/add', handlers.category.addGet)
     app.post('/category/add', handlers.category.addPost)
+
+    app.get('/product/edit/:id', handlers.product.editGet)
+    app.post('/product/edit/:id', upload.single('image'), handlers.product.editPost)
+
+    app.get('/category/:category/products', handlers.category.productByCategory)
 }
